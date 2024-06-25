@@ -5,7 +5,7 @@ import { AnchorSpec } from "../common/anchor";
 import { OverlaySpec } from "../common/overlay";
 import { PaintStyle } from "../common/paint-style";
 import { ConnectorSpec } from "../common/connector";
-export declare type UUID = string;
+export type UUID = string;
 /**
  * Options for the `connect` call on a JsPlumbInstance
  */

@@ -3,7 +3,7 @@
  */
 import { PointXY } from "../../util/util";
 import { AbstractSegment, PointNearPath, SegmentParams } from "../../common/abstract-segment";
-export declare type StraightSegmentCoordinates = {
+export type StraightSegmentCoordinates = {
     x1: number;
     y1: number;
     x2: number;

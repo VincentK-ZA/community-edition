@@ -22,7 +22,7 @@ export interface UIComponent {
     canvas: HTMLElement;
     svg: SVGElement;
 }
-export declare type EndpointHelperFunctions<E> = {
+export type EndpointHelperFunctions<E> = {
     makeNode: (ep: E, paintStyle: PaintStyle) => void;
     updateNode: (ep: E, node: SVGElement) => void;
 };
@@ -83,7 +83,7 @@ export interface jsPlumbDOMInformation {
  * this element plays an `active` role in the drag group.
  * @public
  */
-export declare type DragGroupSpec = string | {
+export type DragGroupSpec = string | {
     id: string;
     active: boolean;
 };

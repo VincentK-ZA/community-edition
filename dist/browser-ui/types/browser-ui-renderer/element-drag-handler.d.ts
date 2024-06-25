@@ -6,22 +6,22 @@ import { BoundingBox, PointXY } from "../util/util";
 import { DragSelection } from "./drag-selection";
 import { UIGroup } from "../core/group/group";
 import { RedrawResult } from "../core/router/router";
-export declare type IntersectingGroup = {
+export type IntersectingGroup = {
     groupLoc: GroupLocation;
     d: number;
     intersectingElement: Element;
 };
-export declare type GroupLocation = {
+export type GroupLocation = {
     el: Element;
     r: BoundingBox;
     group: UIGroup<Element>;
 };
-declare type DragGroupMemberSpec = {
+type DragGroupMemberSpec = {
     el: jsPlumbDOMElement;
     elId: string;
     active: boolean;
 };
-declare type DragGroup = {
+type DragGroup = {
     id: string;
     members: Set<DragGroupMemberSpec>;
 };
@@ -35,7 +35,7 @@ export interface DragPayload {
     originalPosition: PointXY;
     payload?: Record<string, any>;
 }
-export declare type DraggedElement = {
+export type DraggedElement = {
     el: jsPlumbDOMElement;
     id: string;
     pos: PointXY;

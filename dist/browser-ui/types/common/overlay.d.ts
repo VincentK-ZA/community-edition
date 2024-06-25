@@ -29,12 +29,12 @@ export interface LabelOverlayOptions extends OverlayOptions {
 /**
  * @public
  */
-export declare type FullOverlaySpec = {
+export type FullOverlaySpec = {
     type: string;
     options: OverlayOptions;
 };
 /**
  * @public
  */
-export declare type OverlaySpec = string | FullOverlaySpec;
+export type OverlaySpec = string | FullOverlaySpec;
 //# sourceMappingURL=overlay.d.ts.map

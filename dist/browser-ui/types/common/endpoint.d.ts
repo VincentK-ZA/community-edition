@@ -2,26 +2,26 @@ import { PaintStyle } from "./paint-style";
 /**
  * @public
  */
-export declare type EndpointId = "Rectangle" | "Dot" | "Blank" | UserDefinedEndpointId;
+export type EndpointId = "Rectangle" | "Dot" | "Blank" | UserDefinedEndpointId;
 /**
  * @public
  */
-export declare type UserDefinedEndpointId = string;
+export type UserDefinedEndpointId = string;
 /**
  * @public
  */
-export declare type EndpointParams = any;
+export type EndpointParams = any;
 /**
  * @public
  */
-export declare type FullEndpointSpec = {
+export type FullEndpointSpec = {
     type: EndpointId;
     options: EndpointParams;
 };
 /**
  * @public
  */
-export declare type EndpointSpec = EndpointId | FullEndpointSpec;
+export type EndpointSpec = EndpointId | FullEndpointSpec;
 /**
  * @public
  */

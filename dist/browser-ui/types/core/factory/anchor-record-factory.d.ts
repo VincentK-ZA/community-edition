@@ -3,8 +3,8 @@ import { Endpoint } from "../endpoint/endpoint";
 import { JsPlumbInstance } from "../core";
 import { PointXY, Rotations, Size } from "../../util/util";
 import { AnchorSpec, PerimeterAnchorShapes } from "../../common/anchor";
-export declare type AnchorOrientationHint = -1 | 0 | 1;
-export declare type Orientation = [AnchorOrientationHint, AnchorOrientationHint];
+export type AnchorOrientationHint = -1 | 0 | 1;
+export type Orientation = [AnchorOrientationHint, AnchorOrientationHint];
 declare enum FaceValues {
     top = "top",
     left = "left",
@@ -15,14 +15,14 @@ export declare const TOP = FaceValues.top;
 export declare const LEFT = FaceValues.left;
 export declare const RIGHT = FaceValues.right;
 export declare const BOTTOM = FaceValues.bottom;
-export declare type Face = keyof typeof FaceValues;
-export declare type Axis = [Face, Face];
+export type Face = keyof typeof FaceValues;
+export type Axis = [Face, Face];
 export declare const X_AXIS_FACES: Axis;
 export declare const Y_AXIS_FACES: Axis;
 /**
  * @internal
  */
-export declare type AnchorComputeParams = {
+export type AnchorComputeParams = {
     xy?: PointXY;
     wh?: Size;
     txy?: PointXY;

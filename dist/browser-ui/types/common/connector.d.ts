@@ -24,12 +24,12 @@ export interface ConnectorOptions extends Record<string, any> {
  * Alias for the use case that a Connector is referenced just by its `type`.
  * @public
  */
-export declare type ConnectorId = string;
+export type ConnectorId = string;
 /**
  * Connector spec in the form `{type:.., options:{.. }}`
  * @public
  */
-export declare type ConnectorWithOptions = {
+export type ConnectorWithOptions = {
     type: ConnectorId;
     options: ConnectorOptions;
 };
@@ -37,12 +37,12 @@ export declare type ConnectorWithOptions = {
  * Specification of a connector - either the type id of some Connector, a type+options object.
  * @public
  */
-export declare type ConnectorSpec = ConnectorId | ConnectorWithOptions;
+export type ConnectorSpec = ConnectorId | ConnectorWithOptions;
 /**
  * Used internally by connectors.
  * @internal
  */
-export declare type PaintAxis = "y" | "x";
+export type PaintAxis = "y" | "x";
 /**
  * High level definition of a Connector.
  * @public

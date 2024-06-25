@@ -9,7 +9,7 @@ import { OverlaySpec } from "../../common/overlay";
 import { EventGenerator } from "../../util/event-generator";
 import { Extents, PointXY } from "../../util/util";
 import { PaintStyle } from "../../common/paint-style";
-export declare type ComponentParameters = Record<string, any>;
+export type ComponentParameters = Record<string, any>;
 export declare function _removeTypeCssHelper<E>(component: Component, typeId: string): void;
 export declare function _updateHoverStyle<E>(component: Component): void;
 /**
@@ -18,12 +18,12 @@ export declare function _updateHoverStyle<E>(component: Component): void;
  * regardless of whether the detach occurred programmatically, or via the mouse.
  * @public
  */
-export declare type BeforeConnectionDetachInterceptor = (c: Connection) => boolean;
+export type BeforeConnectionDetachInterceptor = (c: Connection) => boolean;
 /**
  * Defines the method signature for the callback to the `beforeDrop` interceptor.
  * @public
  */
-export declare type BeforeConnectionDropInterceptor = (params: BeforeDropParams) => boolean;
+export type BeforeConnectionDropInterceptor = (params: BeforeDropParams) => boolean;
 /**
  * The parameters passed to a `beforeDrag` interceptor.
  * @public
@@ -46,12 +46,12 @@ export interface BeforeStartConnectionDetachParams<E> extends BeforeDragParams<E
  * that is created.
  * @public
  */
-export declare type BeforeDragInterceptor<E = any> = (params: BeforeDragParams<E>) => boolean | Record<string, any>;
+export type BeforeDragInterceptor<E = any> = (params: BeforeDragParams<E>) => boolean | Record<string, any>;
 /**
  * Defines the method signature for the callback to the `beforeStartDetach` interceptor.
  * @public
  */
-export declare type BeforeStartConnectionDetachInterceptor<E = any> = (params: BeforeStartConnectionDetachParams<E>) => boolean;
+export type BeforeStartConnectionDetachInterceptor<E = any> = (params: BeforeStartConnectionDetachParams<E>) => boolean;
 /**
  * @internal
  */
@@ -74,7 +74,7 @@ export declare const REMOVE_CLASS_ACTION = "remove";
 /**
  * @internal
  */
-export declare type ClassAction = typeof ADD_CLASS_ACTION | typeof REMOVE_CLASS_ACTION;
+export type ClassAction = typeof ADD_CLASS_ACTION | typeof REMOVE_CLASS_ACTION;
 /**
  * Base class for Endpoint and Connection.
  * @public

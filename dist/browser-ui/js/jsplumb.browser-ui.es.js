@@ -1,238 +1,162 @@
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function (obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function (obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
+function _arrayLikeToArray(r, a) {
+  (null == a || a > r.length) && (a = r.length);
+  for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+  return n;
 }
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
+function _arrayWithHoles(r) {
+  if (Array.isArray(r)) return r;
 }
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
+function _arrayWithoutHoles(r) {
+  if (Array.isArray(r)) return _arrayLikeToArray(r);
+}
+function _assertThisInitialized(e) {
+  if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  return e;
+}
+function _callSuper(t, o, e) {
+  return o = _getPrototypeOf(o), _possibleConstructorReturn(t, _isNativeReflectConstruct() ? Reflect.construct(o, e || [], _getPrototypeOf(t).constructor) : o.apply(t, e));
+}
+function _classCallCheck(a, n) {
+  if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
+}
+function _defineProperties(e, r) {
+  for (var t = 0; t < r.length; t++) {
+    var o = r[t];
+    o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
   }
 }
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
+function _createClass(e, r, t) {
+  return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+    writable: !1
+  }), e;
 }
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
+function _defineProperty(e, r, t) {
+  return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
 }
-
-function _inherits(subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function");
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
+function _get() {
+  return _get = "undefined" != typeof Reflect && Reflect.get ? Reflect.get.bind() : function (e, t, r) {
+    var p = _superPropBase(e, t);
+    if (p) {
+      var n = Object.getOwnPropertyDescriptor(p, t);
+      return n.get ? n.get.call(arguments.length < 3 ? e : r) : n.value;
+    }
+  }, _get.apply(null, arguments);
+}
+function _getPrototypeOf(t) {
+  return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) {
+    return t.__proto__ || Object.getPrototypeOf(t);
+  }, _getPrototypeOf(t);
+}
+function _inherits(t, e) {
+  if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+  t.prototype = Object.create(e && e.prototype, {
     constructor: {
-      value: subClass,
-      writable: true,
-      configurable: true
+      value: t,
+      writable: !0,
+      configurable: !0
     }
-  });
-  if (superClass) _setPrototypeOf(subClass, superClass);
+  }), Object.defineProperty(t, "prototype", {
+    writable: !1
+  }), e && _setPrototypeOf(t, e);
 }
-
-function _getPrototypeOf(o) {
-  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-    return o.__proto__ || Object.getPrototypeOf(o);
-  };
-  return _getPrototypeOf(o);
-}
-
-function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-    o.__proto__ = p;
-    return o;
-  };
-
-  return _setPrototypeOf(o, p);
-}
-
 function _isNativeReflectConstruct() {
-  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-  if (Reflect.construct.sham) return false;
-  if (typeof Proxy === "function") return true;
-
   try {
-    Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-    return true;
-  } catch (e) {
-    return false;
-  }
+    var t = !Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
+  } catch (t) {}
+  return (_isNativeReflectConstruct = function () {
+    return !!t;
+  })();
 }
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
+function _iterableToArray(r) {
+  if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r);
 }
-
-function _possibleConstructorReturn(self, call) {
-  if (call && (typeof call === "object" || typeof call === "function")) {
-    return call;
-  }
-
-  return _assertThisInitialized(self);
-}
-
-function _createSuper(Derived) {
-  var hasNativeReflectConstruct = _isNativeReflectConstruct();
-
-  return function _createSuperInternal() {
-    var Super = _getPrototypeOf(Derived),
-        result;
-
-    if (hasNativeReflectConstruct) {
-      var NewTarget = _getPrototypeOf(this).constructor;
-
-      result = Reflect.construct(Super, arguments, NewTarget);
-    } else {
-      result = Super.apply(this, arguments);
-    }
-
-    return _possibleConstructorReturn(this, result);
-  };
-}
-
-function _superPropBase(object, property) {
-  while (!Object.prototype.hasOwnProperty.call(object, property)) {
-    object = _getPrototypeOf(object);
-    if (object === null) break;
-  }
-
-  return object;
-}
-
-function _get(target, property, receiver) {
-  if (typeof Reflect !== "undefined" && Reflect.get) {
-    _get = Reflect.get;
-  } else {
-    _get = function _get(target, property, receiver) {
-      var base = _superPropBase(target, property);
-
-      if (!base) return;
-      var desc = Object.getOwnPropertyDescriptor(base, property);
-
-      if (desc.get) {
-        return desc.get.call(receiver);
-      }
-
-      return desc.value;
-    };
-  }
-
-  return _get(target, property, receiver || target);
-}
-
-function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
-}
-
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
-}
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
-}
-
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-
-function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
-}
-
-function _iterableToArrayLimit(arr, i) {
-  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-
-  if (_i == null) return;
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-
-  var _s, _e;
-
-  try {
-    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
+function _iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
     try {
-      if (!_n && _i["return"] != null) _i["return"]();
+      if (i = (t = t.call(r)).next, 0 === l) {
+        if (Object(t) !== t) return;
+        f = !1;
+      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+    } catch (r) {
+      o = !0, n = r;
     } finally {
-      if (_d) throw _e;
+      try {
+        if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return;
+      } finally {
+        if (o) throw n;
+      }
     }
+    return a;
   }
-
-  return _arr;
 }
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
-
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-
-  return arr2;
-}
-
 function _nonIterableSpread() {
   throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
+function _possibleConstructorReturn(t, e) {
+  if (e && ("object" == typeof e || "function" == typeof e)) return e;
+  if (void 0 !== e) throw new TypeError("Derived constructors may only return object or undefined");
+  return _assertThisInitialized(t);
+}
+function _setPrototypeOf(t, e) {
+  return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) {
+    return t.__proto__ = e, t;
+  }, _setPrototypeOf(t, e);
+}
+function _slicedToArray(r, e) {
+  return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest();
+}
+function _superPropBase(t, o) {
+  for (; !{}.hasOwnProperty.call(t, o) && null !== (t = _getPrototypeOf(t)););
+  return t;
+}
+function _toConsumableArray(r) {
+  return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread();
+}
+function _toPrimitive(t, r) {
+  if ("object" != typeof t || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != typeof i) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+function _toPropertyKey(t) {
+  var i = _toPrimitive(t, "string");
+  return "symbol" == typeof i ? i : i + "";
+}
+function _typeof(o) {
+  "@babel/helpers - typeof";
 
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
+function _unsupportedIterableToArray(r, a) {
+  if (r) {
+    if ("string" == typeof r) return _arrayLikeToArray(r, a);
+    var t = {}.toString.call(r).slice(8, -1);
+    return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;
+  }
 }
 
 function filterList(list, value, missingIsFalse) {
@@ -246,7 +170,7 @@ function extend(o1, o2, keys) {
   o1 = o1 || {};
   o2 = o2 || {};
   var _o1 = o1,
-      _o2 = o2;
+    _o2 = o2;
   if (keys) {
     for (i = 0; i < keys.length; i++) {
       _o1[keys[i]] = _o2[keys[i]];
@@ -323,9 +247,9 @@ function filterNull(obj) {
 }
 function merge(a, b, collations, overwrites) {
   var cMap = {},
-      ar,
-      i,
-      oMap = {};
+    ar,
+    i,
+    oMap = {};
   collations = collations || [];
   overwrites = overwrites || [];
   for (i = 0; i < collations.length; i++) {
@@ -422,7 +346,7 @@ function objectsEqual(a, b) {
   }
   for (var key in a) {
     var va = a[key],
-        vb = b[key];
+      vb = b[key];
     if (!_areEqual(va, vb)) {
       return false;
     }
@@ -434,16 +358,16 @@ function replace(inObj, path, value) {
     return;
   }
   var q = inObj,
-      t = q;
+    t = q;
   path.replace(/([^\.])+/g, function (term, lc, pos, str) {
     var array = term.match(/([^\[0-9]+){1}(\[)([0-9+])/),
-        last = pos + term.length >= str.length,
-        _getArray = function _getArray() {
-      return t[array[1]] || function () {
-        t[array[1]] = [];
-        return t[array[1]];
-      }();
-    };
+      last = pos + term.length >= str.length,
+      _getArray = function _getArray() {
+        return t[array[1]] || function () {
+          t[array[1]] = [];
+          return t[array[1]];
+        }();
+      };
     if (last) {
       if (array) {
         _getArray()[array[3]] = value;
@@ -452,10 +376,10 @@ function replace(inObj, path, value) {
       }
     } else {
       if (array) {
-        var _a2 = _getArray();
-        t = _a2[array[3]] || function () {
-          _a2[array[3]] = {};
-          return _a2[array[3]];
+        var _a = _getArray();
+        t = _a[array[3]] || function () {
+          _a[array[3]] = {};
+          return _a[array[3]];
         }();
       } else {
         t = t[term] || function () {
@@ -637,24 +561,24 @@ function suggest(list, item, insertAtHead) {
   }
   return false;
 }
-var lut$1 = [];
+var lut = [];
 for (var i$1 = 0; i$1 < 256; i$1++) {
-  lut$1[i$1] = (i$1 < 16 ? '0' : '') + i$1.toString(16);
+  lut[i$1] = (i$1 < 16 ? '0' : '') + i$1.toString(16);
 }
 function uuid() {
   var d0 = Math.random() * 0xffffffff | 0;
   var d1 = Math.random() * 0xffffffff | 0;
   var d2 = Math.random() * 0xffffffff | 0;
   var d3 = Math.random() * 0xffffffff | 0;
-  return lut$1[d0 & 0xff] + lut$1[d0 >> 8 & 0xff] + lut$1[d0 >> 16 & 0xff] + lut$1[d0 >> 24 & 0xff] + '-' + lut$1[d1 & 0xff] + lut$1[d1 >> 8 & 0xff] + '-' + lut$1[d1 >> 16 & 0x0f | 0x40] + lut$1[d1 >> 24 & 0xff] + '-' + lut$1[d2 & 0x3f | 0x80] + lut$1[d2 >> 8 & 0xff] + '-' + lut$1[d2 >> 16 & 0xff] + lut$1[d2 >> 24 & 0xff] + lut$1[d3 & 0xff] + lut$1[d3 >> 8 & 0xff] + lut$1[d3 >> 16 & 0xff] + lut$1[d3 >> 24 & 0xff];
+  return lut[d0 & 0xff] + lut[d0 >> 8 & 0xff] + lut[d0 >> 16 & 0xff] + lut[d0 >> 24 & 0xff] + '-' + lut[d1 & 0xff] + lut[d1 >> 8 & 0xff] + '-' + lut[d1 >> 16 & 0x0f | 0x40] + lut[d1 >> 24 & 0xff] + '-' + lut[d2 & 0x3f | 0x80] + lut[d2 >> 8 & 0xff] + '-' + lut[d2 >> 16 & 0xff] + lut[d2 >> 24 & 0xff] + lut[d3 & 0xff] + lut[d3 >> 8 & 0xff] + lut[d3 >> 16 & 0xff] + lut[d3 >> 24 & 0xff];
 }
 function rotatePoint(point, center, rotation) {
   var radial = {
-    x: point.x - center.x,
-    y: point.y - center.y
-  },
-      cr = Math.cos(rotation / 360 * Math.PI * 2),
-      sr = Math.sin(rotation / 360 * Math.PI * 2);
+      x: point.x - center.x,
+      y: point.y - center.y
+    },
+    cr = Math.cos(rotation / 360 * Math.PI * 2),
+    sr = Math.sin(rotation / 360 * Math.PI * 2);
   return {
     x: radial.x * cr - radial.y * sr + center.x,
     y: radial.y * cr + radial.x * sr + center.y,
@@ -677,8 +601,8 @@ function fastTrim(s) {
     return null;
   }
   var str = s.replace(/^\s\s*/, ''),
-      ws = /\s/,
-      i = str.length;
+    ws = /\s/,
+    i = str.length;
   while (ws.test(str.charAt(--i))) {}
   return str.slice(0, i + 1);
 }
@@ -835,7 +759,7 @@ function _classManip(el, classesToAdd, classesToRemove) {
   var cta = classesToAdd == null ? [] : Array.isArray(classesToAdd) ? classesToAdd : classesToAdd.split(/\s+/);
   var ctr = classesToRemove == null ? [] : Array.isArray(classesToRemove) ? classesToRemove : classesToRemove.split(/\s+/);
   var className = _getClassName(el),
-      curClasses = className.split(/\s+/);
+    curClasses = className.split(/\s+/);
   var _oneSet = function _oneSet(add, classes) {
     for (var i = 0; i < classes.length; i++) {
       if (add) {
@@ -956,14 +880,14 @@ function createElementNS(ns, tag, style, clazz, atts) {
 }
 function offsetRelativeToRoot(el) {
   var box = el.getBoundingClientRect(),
-      body = document.body,
-      docElem = document.documentElement,
-  scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
-      scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft,
-  clientTop = docElem.clientTop || body.clientTop || 0,
-      clientLeft = docElem.clientLeft || body.clientLeft || 0,
-  top = box.top + scrollTop - clientTop,
-      left = box.left + scrollLeft - clientLeft;
+    body = document.body,
+    docElem = document.documentElement,
+    scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
+    scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft,
+    clientTop = docElem.clientTop || body.clientTop || 0,
+    clientLeft = docElem.clientLeft || body.clientLeft || 0,
+    top = box.top + scrollTop - clientTop,
+    left = box.left + scrollLeft - clientLeft;
   return {
     x: Math.round(left),
     y: Math.round(top)
@@ -1018,11 +942,11 @@ function getElementSize(el, instance) {
     h: ec.height / z
   };
 }
-var ElementTypes;
-(function (ElementTypes) {
+var ElementTypes = function (ElementTypes) {
   ElementTypes["SVG"] = "SVG";
   ElementTypes["HTML"] = "HTML";
-})(ElementTypes || (ElementTypes = {}));
+  return ElementTypes;
+}({});
 function getElementType(el) {
   return el instanceof SVGElement ? ElementTypes.SVG : ElementTypes.HTML;
 }
@@ -1163,8 +1087,8 @@ function _applyStyles(parent, node, style) {
   }
   if (style[DASHSTYLE] && style[LINE_WIDTH] && !style[STROKE_DASHARRAY]) {
     var sep = style[DASHSTYLE].indexOf(",") === -1 ? " " : ",",
-        parts = style[DASHSTYLE].split(sep),
-        styleToUse = "";
+      parts = style[DASHSTYLE].split(sep),
+      styleToUse = "";
     forEach(parts, function (p) {
       styleToUse += Math.floor(p * style.strokeWidth) + sep;
     });
@@ -1262,17 +1186,16 @@ var SELECTOR_GROUP = att(ATTRIBUTE_GROUP);
 var SELECTOR_GROUP_CONTAINER = att(ATTRIBUTE_GROUP_CONTENT);
 var SELECTOR_OVERLAY = cls(CLASS_OVERLAY);
 
-var PerimeterAnchorShapes;
-(function (PerimeterAnchorShapes) {
+var PerimeterAnchorShapes = function (PerimeterAnchorShapes) {
   PerimeterAnchorShapes["Circle"] = "Circle";
   PerimeterAnchorShapes["Ellipse"] = "Ellipse";
   PerimeterAnchorShapes["Triangle"] = "Triangle";
   PerimeterAnchorShapes["Diamond"] = "Diamond";
   PerimeterAnchorShapes["Rectangle"] = "Rectangle";
   PerimeterAnchorShapes["Square"] = "Square";
-})(PerimeterAnchorShapes || (PerimeterAnchorShapes = {}));
-var AnchorLocations;
-(function (AnchorLocations) {
+  return PerimeterAnchorShapes;
+}({});
+var AnchorLocations = function (AnchorLocations) {
   AnchorLocations["Assign"] = "Assign";
   AnchorLocations["AutoDefault"] = "AutoDefault";
   AnchorLocations["Bottom"] = "Bottom";
@@ -1292,7 +1215,8 @@ var AnchorLocations;
   AnchorLocations["Top"] = "Top";
   AnchorLocations["TopLeft"] = "TopLeft";
   AnchorLocations["TopRight"] = "TopRight";
-})(AnchorLocations || (AnchorLocations = {}));
+  return AnchorLocations;
+}({});
 
 function noSuchPoint() {
   return {
@@ -1329,7 +1253,7 @@ var AbstractSegment = function () {
     this.x2 = params.x2;
     this.y2 = params.y2;
   }
-  _createClass(AbstractSegment, [{
+  return _createClass(AbstractSegment, [{
     key: "findClosestPointOnPath",
     value: function findClosestPointOnPath(x, y) {
       return noSuchPoint();
@@ -1355,7 +1279,6 @@ var AbstractSegment = function () {
       return this.boxIntersection(box.x, box.y, box.w, box.h);
     }
   }]);
-  return AbstractSegment;
 }();
 
 var UNDEFINED = "undefined";
@@ -1364,7 +1287,6 @@ var TRUE$1 = "true";
 var FALSE$1 = "false";
 var WILDCARD = "*";
 
-var _touchMap, _tapProfiles2;
 function _touch(target, pageX, pageY, screenX, screenY, clientX, clientY) {
   return new Touch({
     target: target,
@@ -1416,17 +1338,17 @@ function _pi(e, target, obj, doCompute) {
       };
     } else {
       var out = {
-        path: [],
-        end: -1
-      },
-          _one = function _one(el) {
-        out.path.push(el);
-        if (el === obj) {
-          out.end = out.path.length - 1;
-        } else if (el.parentNode != null) {
-          _one(el.parentNode);
-        }
-      };
+          path: [],
+          end: -1
+        },
+        _one = function _one(el) {
+          out.path.push(el);
+          if (el === obj) {
+            out.end = out.path.length - 1;
+          } else if (el.parentNode != null) {
+            _one(el.parentNode);
+          }
+        };
       _one(target);
       return out;
     }
@@ -1434,7 +1356,7 @@ function _pi(e, target, obj, doCompute) {
 }
 function _d(l, fn) {
   var i = 0,
-      j;
+    j;
   for (i = 0, j = l.length; i < j; i++) {
     if (l[i][0] === fn) {
       break;
@@ -1453,7 +1375,7 @@ function isTouchDevice() {
 function isMouseDevice() {
   return forceMouseEvents || "onmousedown" in document.documentElement;
 }
-var touchMap = (_touchMap = {}, _defineProperty(_touchMap, EVENT_MOUSEDOWN, EVENT_TOUCHSTART), _defineProperty(_touchMap, EVENT_MOUSEUP, EVENT_TOUCHEND), _defineProperty(_touchMap, EVENT_MOUSEMOVE, EVENT_TOUCHMOVE), _touchMap);
+var touchMap = _defineProperty(_defineProperty(_defineProperty({}, EVENT_MOUSEDOWN, EVENT_TOUCHSTART), EVENT_MOUSEUP, EVENT_TOUCHEND), EVENT_MOUSEMOVE, EVENT_TOUCHMOVE);
 var PAGE = "page";
 var SCREEN = "screen";
 var CLIENT = "client";
@@ -1463,7 +1385,7 @@ function _genLoc(e, prefix) {
     y: 0
   };
   var ts = touches(e),
-      t = getTouch(ts, 0);
+    t = getTouch(ts, 0);
   return {
     x: t[prefix + "X"],
     y: t[prefix + "Y"]
@@ -1500,7 +1422,7 @@ function getPageLocation(e) {
     };
   } else {
     var ts = touches(e),
-        t = getTouch(ts, 0);
+      t = getTouch(ts, 0);
     if (t != null && t.pageX != null) {
       return {
         x: t.pageX,
@@ -1580,8 +1502,8 @@ function _curryChildFilter(children, obj, fn, evt) {
     return fn;
   } else {
     var c = children.split(","),
-        pc = [],
-        nc = [];
+      pc = [],
+      nc = [];
     forEach(c, function (sel) {
       var m = sel.match(NOT_SELECTOR_REGEX);
       if (m != null) {
@@ -1635,16 +1557,16 @@ var DefaultHandler = function DefaultHandler(obj, evt, fn, children, options) {
   }
   _bind(obj, evt, _curryChildFilter(children, obj, fn, evt), fn, options);
 };
-var _tapProfiles = (_tapProfiles2 = {}, _defineProperty(_tapProfiles2, EVENT_TAP, {
+var _tapProfiles = _defineProperty(_defineProperty(_defineProperty({}, EVENT_TAP, {
   touches: 1,
   taps: 1
-}), _defineProperty(_tapProfiles2, EVENT_DBL_TAP, {
+}), EVENT_DBL_TAP, {
   touches: 1,
   taps: 2
-}), _defineProperty(_tapProfiles2, EVENT_CONTEXTMENU, {
+}), EVENT_CONTEXTMENU, {
   touches: 2,
   taps: 1
-}), _tapProfiles2);
+});
 function meeHelper(type, evt, obj, target) {
   for (var i in obj.__tamee[type]) {
     if (obj.__tamee[type].hasOwnProperty(i)) {
@@ -1656,7 +1578,7 @@ var TapHandler = function () {
   function TapHandler() {
     _classCallCheck(this, TapHandler);
   }
-  _createClass(TapHandler, null, [{
+  return _createClass(TapHandler, null, [{
     key: "generate",
     value: function generate(clickThreshold, dblClickThreshold) {
       return function (obj, evt, fn, children) {
@@ -1670,55 +1592,55 @@ var TapHandler = function () {
               downSelectors: []
             };
             var down = function down(e) {
-              var target = _t(e),
+                var target = _t(e),
                   pathInfo = _pi(e, target, obj, children != null),
                   finished = false;
-              for (var p = 0; p < pathInfo.end; p++) {
-                if (finished) return;
-                target = pathInfo.path[p];
-                for (var i = 0; i < tt.downSelectors.length; i++) {
-                  if (tt.downSelectors[i] == null || matchesSelector(target, tt.downSelectors[i], obj)) {
-                    tt.down = true;
-                    setTimeout(clearSingle, clickThreshold);
-                    setTimeout(clearDouble, dblClickThreshold);
-                    finished = true;
-                    break;
+                for (var p = 0; p < pathInfo.end; p++) {
+                  if (finished) return;
+                  target = pathInfo.path[p];
+                  for (var i = 0; i < tt.downSelectors.length; i++) {
+                    if (tt.downSelectors[i] == null || matchesSelector(target, tt.downSelectors[i], obj)) {
+                      tt.down = true;
+                      setTimeout(clearSingle, clickThreshold);
+                      setTimeout(clearDouble, dblClickThreshold);
+                      finished = true;
+                      break;
+                    }
                   }
                 }
-              }
-            },
-                up = function up(e) {
-              if (tt.down) {
-                var target = _t(e),
+              },
+              up = function up(e) {
+                if (tt.down) {
+                  var target = _t(e),
                     currentTarget,
                     pathInfo;
-                tt.taps++;
-                var tc = touchCount(e);
-                for (var eventId in _tapProfiles) {
-                  if (_tapProfiles.hasOwnProperty(eventId)) {
-                    var p = _tapProfiles[eventId];
-                    if (p.touches === tc && (p.taps === 1 || p.taps === tt.taps)) {
-                      for (var i = 0; i < tt[eventId].length; i++) {
-                        pathInfo = _pi(e, target, obj, tt[eventId][i][1] != null);
-                        for (var pLoop = 0; pLoop < pathInfo.end; pLoop++) {
-                          currentTarget = pathInfo.path[pLoop];
-                          if (tt[eventId][i][1] == null || matchesSelector(currentTarget, tt[eventId][i][1], obj)) {
-                            tt[eventId][i][0].apply(currentTarget, [e, currentTarget]);
-                            break;
+                  tt.taps++;
+                  var tc = touchCount(e);
+                  for (var eventId in _tapProfiles) {
+                    if (_tapProfiles.hasOwnProperty(eventId)) {
+                      var p = _tapProfiles[eventId];
+                      if (p.touches === tc && (p.taps === 1 || p.taps === tt.taps)) {
+                        for (var i = 0; i < tt[eventId].length; i++) {
+                          pathInfo = _pi(e, target, obj, tt[eventId][i][1] != null);
+                          for (var pLoop = 0; pLoop < pathInfo.end; pLoop++) {
+                            currentTarget = pathInfo.path[pLoop];
+                            if (tt[eventId][i][1] == null || matchesSelector(currentTarget, tt[eventId][i][1], obj)) {
+                              tt[eventId][i][0].apply(currentTarget, [e, currentTarget]);
+                              break;
+                            }
                           }
                         }
                       }
                     }
                   }
                 }
-              }
-            },
-                clearSingle = function clearSingle() {
-              tt.down = false;
-            },
-                clearDouble = function clearDouble() {
-              tt.taps = 0;
-            };
+              },
+              clearSingle = function clearSingle() {
+                tt.down = false;
+              },
+              clearDouble = function clearDouble() {
+                tt.taps = 0;
+              };
             obj.__taTapHandler.downHandler = down;
             obj.__taTapHandler.upHandler = up;
             DefaultHandler(obj, EVENT_MOUSEDOWN, down);
@@ -1743,13 +1665,12 @@ var TapHandler = function () {
       };
     }
   }]);
-  return TapHandler;
 }();
 var MouseEnterExitHandler = function () {
   function MouseEnterExitHandler() {
     _classCallCheck(this, MouseEnterExitHandler);
   }
-  _createClass(MouseEnterExitHandler, null, [{
+  return _createClass(MouseEnterExitHandler, null, [{
     key: "generate",
     value: function generate() {
       var activeElements = [];
@@ -1761,24 +1682,24 @@ var MouseEnterExitHandler = function () {
             mouseexit: []
           };
           var over = function over(e) {
-            var t = _t(e);
-            if (children == null && t == obj && !obj.__tamee.over || matchesSelector(t, children, obj) && (t.__tamee == null || !t.__tamee.over)) {
-              meeHelper(EVENT_MOUSEENTER, e, obj, t);
-              t.__tamee = t.__tamee || {};
-              t.__tamee.over = true;
-              activeElements.push(t);
-            }
-          },
-              out = function out(e) {
-            var t = _t(e);
-            for (var i = 0; i < activeElements.length; i++) {
-              if (t == activeElements[i] && !matchesSelector(e.relatedTarget || e.toElement, "*", t)) {
-                t.__tamee.over = false;
-                activeElements.splice(i, 1);
-                meeHelper(EVENT_MOUSEEXIT, e, obj, t);
+              var t = _t(e);
+              if (children == null && t == obj && !obj.__tamee.over || matchesSelector(t, children, obj) && (t.__tamee == null || !t.__tamee.over)) {
+                meeHelper(EVENT_MOUSEENTER, e, obj, t);
+                t.__tamee = t.__tamee || {};
+                t.__tamee.over = true;
+                activeElements.push(t);
               }
-            }
-          };
+            },
+            out = function out(e) {
+              var t = _t(e);
+              for (var i = 0; i < activeElements.length; i++) {
+                if (t == activeElements[i] && !matchesSelector(e.relatedTarget || e.toElement, "*", t)) {
+                  t.__tamee.over = false;
+                  activeElements.splice(i, 1);
+                  meeHelper(EVENT_MOUSEEXIT, e, obj, t);
+                }
+              }
+            };
           _bind(obj, EVENT_MOUSEOVER, _curryChildFilter(children, obj, over, EVENT_MOUSEOVER), over);
           _bind(obj, EVENT_MOUSEOUT, _curryChildFilter(children, obj, out, EVENT_MOUSEOUT), out);
         }
@@ -1790,7 +1711,6 @@ var MouseEnterExitHandler = function () {
       };
     }
   }]);
-  return MouseEnterExitHandler;
 }();
 var EventManager = function () {
   function EventManager(params) {
@@ -1805,7 +1725,7 @@ var EventManager = function () {
     this.mouseEnterExitHandler = MouseEnterExitHandler.generate();
     this.tapHandler = TapHandler.generate(this.clickThreshold, this.dblClickThreshold);
   }
-  _createClass(EventManager, [{
+  return _createClass(EventManager, [{
     key: "_doBind",
     value: function _doBind(el, evt, fn, children, options) {
       if (fn == null) return;
@@ -1820,7 +1740,7 @@ var EventManager = function () {
     key: "on",
     value: function on(el, event, children, fn, options) {
       var _c = fn == null ? null : children,
-          _f = fn == null ? children : fn;
+        _f = fn == null ? children : fn;
       this._doBind(el, event, _f, _c, options);
       return this;
     }
@@ -1835,10 +1755,10 @@ var EventManager = function () {
     value: function trigger(el, event, originalEvent, payload, detail) {
       var originalIsMouse = isMouseDevice() && (typeof MouseEvent === "undefined" || originalEvent == null || originalEvent.constructor === MouseEvent);
       var eventToBind = isTouchDevice() && !isMouseDevice() && touchMap[event] ? touchMap[event] : event,
-          bindingAMouseEvent = !(isTouchDevice() && !isMouseDevice() && touchMap[event]);
+        bindingAMouseEvent = !(isTouchDevice() && !isMouseDevice() && touchMap[event]);
       var pl = pageLocation(originalEvent),
-          sl = screenLocation(originalEvent),
-          cl = clientLocation(originalEvent);
+        sl = screenLocation(originalEvent),
+        cl = clientLocation(originalEvent);
       _each$1(el, function (_el) {
         var evt;
         originalEvent = originalEvent || {
@@ -1855,7 +1775,7 @@ var EventManager = function () {
         var eventGenerators = {
           "TouchEvent": function TouchEvent(evt) {
             var touchList = _touchAndList(_el, pl.x, pl.y, sl.x, sl.y, cl.x, cl.y),
-                init = evt.initTouchEvent || evt.initEvent;
+              init = evt.initTouchEvent || evt.initEvent;
             init(eventToBind, true, true, window, null, sl.x, sl.y, cl.x, cl.y, false, false, false, false, touchList, touchList, touchList, 1, 0);
           },
           "MouseEvents": function MouseEvents(evt) {
@@ -1863,7 +1783,7 @@ var EventManager = function () {
           }
         };
         var ite = !bindingAMouseEvent && !originalIsMouse && isTouchDevice() && touchMap[event],
-            evtName = ite ? "TouchEvent" : "MouseEvents";
+          evtName = ite ? "TouchEvent" : "MouseEvents";
         evt = document.createEvent(evtName);
         eventGenerators[evtName](evt);
         _decorate(evt);
@@ -1872,7 +1792,6 @@ var EventManager = function () {
       return this;
     }
   }]);
-  return EventManager;
 }();
 function setForceTouchEvents(value) {
   forceTouchEvents = value;
@@ -1916,21 +1835,21 @@ function quadrant(p1, p2) {
 }
 function theta(p1, p2) {
   var m = gradient(p1, p2),
-      t = Math.atan(m),
-      s = quadrant(p1, p2);
+    t = Math.atan(m),
+    s = quadrant(p1, p2);
   if (s == 4 || s == 3) t += Math.PI;
   if (t < 0) t += 2 * Math.PI;
   return t;
 }
 function intersects(r1, r2) {
   var x1 = r1.x,
-      x2 = r1.x + r1.w,
-      y1 = r1.y,
-      y2 = r1.y + r1.h,
-      a1 = r2.x,
-      a2 = r2.x + r2.w,
-      b1 = r2.y,
-      b2 = r2.y + r2.h;
+    x2 = r1.x + r1.w,
+    y1 = r1.y,
+    y2 = r1.y + r1.h,
+    a1 = r2.x,
+    a2 = r2.x + r2.w,
+    b1 = r2.y,
+    b2 = r2.y + r2.h;
   return x1 <= a1 && a1 <= x2 && y1 <= b1 && b1 <= y2 || x1 <= a2 && a2 <= x2 && y1 <= b1 && b1 <= y2 || x1 <= a1 && a1 <= x2 && y1 <= b2 && b2 <= y2 || x1 <= a2 && a1 <= x2 && y1 <= b2 && b2 <= y2 || a1 <= x1 && x1 <= a2 && b1 <= y1 && y1 <= b2 || a1 <= x2 && x2 <= a2 && b1 <= y1 && y1 <= b2 || a1 <= x1 && x1 <= a2 && b1 <= y2 && y2 <= b2 || a1 <= x2 && x1 <= a2 && b1 <= y2 && y2 <= b2;
 }
 function toABC(line) {
@@ -1948,23 +1867,23 @@ function fixPrecision(n, digits) {
 }
 function lineIntersection(l1, l2) {
   var abc1 = toABC(l1),
-      abc2 = toABC(l2),
-      det = abc1.A * abc2.B - abc2.A * abc1.B;
+    abc2 = toABC(l2),
+    det = abc1.A * abc2.B - abc2.A * abc1.B;
   if (det == 0) {
     return null;
   } else {
     var candidate = {
-      x: Math.round((abc2.B * abc1.C - abc1.B * abc2.C) / det),
-      y: Math.round((abc1.A * abc2.C - abc2.A * abc1.C) / det)
-    },
-        l1xmin = Math.floor(Math.min(l1[0].x, l1[1].x)),
-        l1xmax = Math.round(Math.max(l1[0].x, l1[1].x)),
-        l1ymin = Math.floor(Math.min(l1[0].y, l1[1].y)),
-        l1ymax = Math.round(Math.max(l1[0].y, l1[1].y)),
-        l2xmin = Math.floor(Math.min(l2[0].x, l2[1].x)),
-        l2xmax = Math.round(Math.max(l2[0].x, l2[1].x)),
-        l2ymin = Math.floor(Math.min(l2[0].y, l2[1].y)),
-        l2ymax = Math.round(Math.max(l2[0].y, l2[1].y));
+        x: Math.round((abc2.B * abc1.C - abc1.B * abc2.C) / det),
+        y: Math.round((abc1.A * abc2.C - abc2.A * abc1.C) / det)
+      },
+      l1xmin = Math.floor(Math.min(l1[0].x, l1[1].x)),
+      l1xmax = Math.round(Math.max(l1[0].x, l1[1].x)),
+      l1ymin = Math.floor(Math.min(l1[0].y, l1[1].y)),
+      l1ymax = Math.round(Math.max(l1[0].y, l1[1].y)),
+      l2xmin = Math.floor(Math.min(l2[0].x, l2[1].x)),
+      l2xmax = Math.round(Math.max(l2[0].x, l2[1].x)),
+      l2ymin = Math.floor(Math.min(l2[0].y, l2[1].y)),
+      l2ymax = Math.round(Math.max(l2[0].y, l2[1].y));
     if (candidate.x >= l1xmin && candidate.x <= l1xmax && candidate.y >= l1ymin && candidate.y <= l1ymax && candidate.x >= l2xmin && candidate.x <= l2xmax && candidate.y >= l2ymin && candidate.y <= l2ymax) {
       return candidate;
     } else {
@@ -1974,31 +1893,31 @@ function lineIntersection(l1, l2) {
 }
 function lineRectangleIntersection(line, r) {
   var out = [],
-      rectangleLines = [[{
-    x: r.x,
-    y: r.y
-  }, {
-    x: r.x + r.w,
-    y: r.y
-  }], [{
-    x: r.x + r.w,
-    y: r.y
-  }, {
-    x: r.x + r.w,
-    y: r.y + r.h
-  }], [{
-    x: r.x,
-    y: r.y
-  }, {
-    x: r.x,
-    y: r.y + r.h
-  }], [{
-    x: r.x,
-    y: r.y + r.h
-  }, {
-    x: r.x + r.w,
-    y: r.y + r.h
-  }]];
+    rectangleLines = [[{
+      x: r.x,
+      y: r.y
+    }, {
+      x: r.x + r.w,
+      y: r.y
+    }], [{
+      x: r.x + r.w,
+      y: r.y
+    }, {
+      x: r.x + r.w,
+      y: r.y + r.h
+    }], [{
+      x: r.x,
+      y: r.y
+    }, {
+      x: r.x,
+      y: r.y + r.h
+    }], [{
+      x: r.x,
+      y: r.y + r.h
+    }, {
+      x: r.x + r.w,
+      y: r.y + r.h
+    }]];
   forEach(rectangleLines, function (rLine) {
     var intersection = lineIntersection(line, rLine);
     if (intersection != null) {
@@ -2009,25 +1928,25 @@ function lineRectangleIntersection(line, r) {
 }
 function encloses(r1, r2, allowSharedEdges) {
   var x1 = r1.x,
-      x2 = r1.x + r1.w,
-      y1 = r1.y,
-      y2 = r1.y + r1.h,
-      a1 = r2.x,
-      a2 = r2.x + r2.w,
-      b1 = r2.y,
-      b2 = r2.y + r2.h,
-      c = function c(v1, v2, v3, v4) {
-    return allowSharedEdges ? v1 <= v2 && v3 >= v4 : v1 < v2 && v3 > v4;
-  };
+    x2 = r1.x + r1.w,
+    y1 = r1.y,
+    y2 = r1.y + r1.h,
+    a1 = r2.x,
+    a2 = r2.x + r2.w,
+    b1 = r2.y,
+    b2 = r2.y + r2.h,
+    c = function c(v1, v2, v3, v4) {
+      return allowSharedEdges ? v1 <= v2 && v3 >= v4 : v1 < v2 && v3 > v4;
+    };
   return c(x1, a1, x2, a2) && c(y1, b1, y2, b2);
 }
 function pointOnLine(fromPoint, toPoint, distance) {
   var m = gradient(fromPoint, toPoint),
-      s = quadrant(fromPoint, toPoint),
-      segmentMultiplier = distance > 0 ? segmentMultipliers[s] : inverseSegmentMultipliers[s],
-      theta = Math.atan(m),
-      y = Math.abs(distance * Math.sin(theta)) * segmentMultiplier[1],
-      x = Math.abs(distance * Math.cos(theta)) * segmentMultiplier[0];
+    s = quadrant(fromPoint, toPoint),
+    segmentMultiplier = distance > 0 ? segmentMultipliers[s] : inverseSegmentMultipliers[s],
+    theta = Math.atan(m),
+    y = Math.abs(distance * Math.sin(theta)) * segmentMultiplier[1],
+    x = Math.abs(distance * Math.cos(theta)) * segmentMultiplier[0];
   return {
     x: fromPoint.x + x,
     y: fromPoint.y + y
@@ -2035,9 +1954,9 @@ function pointOnLine(fromPoint, toPoint, distance) {
 }
 function perpendicularLineTo(fromPoint, toPoint, length) {
   var m = gradient(fromPoint, toPoint),
-      theta2 = Math.atan(-1 / m),
-      y = length / 2 * Math.sin(theta2),
-      x = length / 2 * Math.cos(theta2);
+    theta2 = Math.atan(-1 / m),
+    y = length / 2 * Math.sin(theta2),
+    x = length / 2 * Math.cos(theta2);
   return [{
     x: toPoint.x + x,
     y: toPoint.y + y
@@ -2050,13 +1969,13 @@ function snapToGrid(pos, grid, thresholdX, thresholdY) {
   thresholdX = thresholdX == null ? grid.thresholdX == null ? grid.w / 2 : grid.thresholdX : thresholdX;
   thresholdY = thresholdY == null ? grid.thresholdY == null ? grid.h / 2 : grid.thresholdY : thresholdY;
   var _dx = Math.floor(pos.x / grid.w),
-      _dxl = grid.w * _dx,
-      _dxt = _dxl + grid.w,
-      x = Math.abs(pos.x - _dxl) <= thresholdX ? _dxl : Math.abs(_dxt - pos.x) <= thresholdX ? _dxt : pos.x;
+    _dxl = grid.w * _dx,
+    _dxt = _dxl + grid.w,
+    x = Math.abs(pos.x - _dxl) <= thresholdX ? _dxl : Math.abs(_dxt - pos.x) <= thresholdX ? _dxt : pos.x;
   var _dy = Math.floor(pos.y / grid.h),
-      _dyl = grid.h * _dy,
-      _dyt = _dyl + grid.h,
-      y = Math.abs(pos.y - _dyl) <= thresholdY ? _dyl : Math.abs(_dyt - pos.y) <= thresholdY ? _dyt : pos.y;
+    _dyl = grid.h * _dy,
+    _dyt = _dyl + grid.h,
+    y = Math.abs(pos.y - _dyl) <= thresholdY ? _dyl : Math.abs(_dyt - pos.y) <= thresholdY ? _dyt : pos.y;
   return {
     x: x,
     y: y
@@ -2087,24 +2006,24 @@ function _assignId(obj) {
 }
 function isInsideParent(instance, _el, pos) {
   var p = _el.parentNode,
-      s = instance.getSize(p),
-      ss = instance.getSize(_el),
-      leftEdge = pos.x,
-      rightEdge = leftEdge + ss.w,
-      topEdge = pos.y,
-      bottomEdge = topEdge + ss.h;
+    s = instance.getSize(p),
+    ss = instance.getSize(_el),
+    leftEdge = pos.x,
+    rightEdge = leftEdge + ss.w,
+    topEdge = pos.y,
+    bottomEdge = topEdge + ss.h;
   return rightEdge > 0 && leftEdge < s.w && bottomEdge > 0 && topEdge < s.h;
 }
 function findMatchingSelector(availableSelectors, parentElement, childElement) {
   var el = null;
   var draggableId = parentElement.getAttribute("katavorio-draggable"),
-      prefix = draggableId != null ? "[katavorio-draggable='" + draggableId + "'] " : "";
+    prefix = draggableId != null ? "[katavorio-draggable='" + draggableId + "'] " : "";
   for (var i = 0; i < availableSelectors.length; i++) {
     el = findDelegateElement(parentElement, childElement, prefix + availableSelectors[i].selector);
     if (el != null) {
       if (availableSelectors[i].filter) {
         var matches = matchesSelector$1(childElement, availableSelectors[i].filter, el),
-            exclude = availableSelectors[i].filterExclude === true;
+          exclude = availableSelectors[i].filterExclude === true;
         if (exclude && !matches || matches) {
           return null;
         }
@@ -2140,12 +2059,12 @@ var _classes = {
   ghostProxy: "katavorio-ghost-proxy",
   clonedDrag: "katavorio-clone-drag"
 };
-var PositioningStrategies;
-(function (PositioningStrategies) {
+var PositioningStrategies = function (PositioningStrategies) {
   PositioningStrategies["absolutePosition"] = "absolutePosition";
   PositioningStrategies["transform"] = "transform";
   PositioningStrategies["xyAttributes"] = "xyAttributes";
-})(PositioningStrategies || (PositioningStrategies = {}));
+  return PositioningStrategies;
+}({});
 var positionerSetters = new Map();
 positionerSetters.set(PositioningStrategies.absolutePosition, function (el, p) {
   el.style.left = "".concat(p.x, "px");
@@ -2195,9 +2114,7 @@ var _devNull = function _devNull() {};
 var _each = function _each(obj, fn) {
   if (obj == null) return;
   obj = !isString(obj) && obj.tagName == null && obj.length != null ? obj : [obj];
-  for (var i = 0; i < obj.length; i++) {
-    fn.apply(obj[i], [obj[i]]);
-  }
+  for (var i = 0; i < obj.length; i++) fn.apply(obj[i], [obj[i]]);
 };
 var _inputFilter = function _inputFilter(e, el, collicat) {
   var t = e.srcElement || e.target;
@@ -2215,7 +2132,7 @@ var Base = function () {
     _defineProperty(this, "eventManager", void 0);
     this.eventManager = manager.eventManager;
   }
-  _createClass(Base, [{
+  return _createClass(Base, [{
     key: "setEnabled",
     value: function setEnabled(e) {
       this.enabled = e;
@@ -2276,7 +2193,6 @@ var Base = function () {
       }
     }
   }]);
-  return Base;
 }();
 function getConstrainingRectangle(el) {
   return {
@@ -2284,68 +2200,66 @@ function getConstrainingRectangle(el) {
     h: el.parentNode.offsetHeight + el.parentNode.scrollTop
   };
 }
-var ContainmentType;
-(function (ContainmentType) {
+var ContainmentType = function (ContainmentType) {
   ContainmentType["notNegative"] = "notNegative";
   ContainmentType["parent"] = "parent";
   ContainmentType["parentEnclosed"] = "parentEnclosed";
-})(ContainmentType || (ContainmentType = {}));
-var Drag = function (_Base) {
-  _inherits(Drag, _Base);
-  var _super = _createSuper(Drag);
+  return ContainmentType;
+}({});
+var Drag = function (_Base2) {
   function Drag(el, params, manager) {
     var _this;
     _classCallCheck(this, Drag);
-    _this = _super.call(this, el, manager);
-    _defineProperty(_assertThisInitialized(_this), "_class", void 0);
-    _defineProperty(_assertThisInitialized(_this), "rightButtonCanDrag", void 0);
-    _defineProperty(_assertThisInitialized(_this), "consumeStartEvent", void 0);
-    _defineProperty(_assertThisInitialized(_this), "clone", void 0);
-    _defineProperty(_assertThisInitialized(_this), "scroll", void 0);
-    _defineProperty(_assertThisInitialized(_this), "trackScroll", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_downAt", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_posAtDown", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_pagePosAtDown", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_pageDelta", {
+    _this = _callSuper(this, Drag, [el, manager]);
+    _defineProperty(_this, "_class", void 0);
+    _defineProperty(_this, "rightButtonCanDrag", void 0);
+    _defineProperty(_this, "consumeStartEvent", void 0);
+    _defineProperty(_this, "clone", void 0);
+    _defineProperty(_this, "scroll", void 0);
+    _defineProperty(_this, "trackScroll", void 0);
+    _defineProperty(_this, "_downAt", void 0);
+    _defineProperty(_this, "_posAtDown", void 0);
+    _defineProperty(_this, "_pagePosAtDown", void 0);
+    _defineProperty(_this, "_pageDelta", {
       x: 0,
       y: 0
     });
-    _defineProperty(_assertThisInitialized(_this), "_moving", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_lastPosition", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_lastScrollValues", {
+    _defineProperty(_this, "_moving", void 0);
+    _defineProperty(_this, "_lastPosition", void 0);
+    _defineProperty(_this, "_lastScrollValues", {
       x: 0,
       y: 0
     });
-    _defineProperty(_assertThisInitialized(_this), "_initialScroll", {
+    _defineProperty(_this, "_initialScroll", {
       x: 0,
       y: 0
     });
-    _defineProperty(_assertThisInitialized(_this), "_size", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_currentParentPosition", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_ghostParentPosition", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_dragEl", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_multipleDrop", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_ghostProxyOffsets", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_ghostDx", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_ghostDy", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_isConstrained", false);
-    _defineProperty(_assertThisInitialized(_this), "_ghostProxyParent", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_useGhostProxy", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_ghostProxyFunction", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_activeSelectorParams", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_availableSelectors", []);
-    _defineProperty(_assertThisInitialized(_this), "_canDrag", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_consumeFilteredEvents", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_parent", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_ignoreZoom", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_filters", {});
-    _defineProperty(_assertThisInitialized(_this), "_constrainRect", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_elementToDrag", void 0);
-    _defineProperty(_assertThisInitialized(_this), "downListener", void 0);
-    _defineProperty(_assertThisInitialized(_this), "moveListener", void 0);
-    _defineProperty(_assertThisInitialized(_this), "upListener", void 0);
-    _defineProperty(_assertThisInitialized(_this), "scrollTracker", void 0);
-    _defineProperty(_assertThisInitialized(_this), "listeners", {
+    _defineProperty(_this, "_size", void 0);
+    _defineProperty(_this, "_currentParentPosition", void 0);
+    _defineProperty(_this, "_ghostParentPosition", void 0);
+    _defineProperty(_this, "_dragEl", void 0);
+    _defineProperty(_this, "_multipleDrop", void 0);
+    _defineProperty(_this, "_ghostProxyOffsets", void 0);
+    _defineProperty(_this, "_ghostDx", void 0);
+    _defineProperty(_this, "_ghostDy", void 0);
+    _defineProperty(_this, "_isConstrained", false);
+    _defineProperty(_this, "_ghostProxyParent", void 0);
+    _defineProperty(_this, "_useGhostProxy", void 0);
+    _defineProperty(_this, "_ghostProxyFunction", void 0);
+    _defineProperty(_this, "_activeSelectorParams", void 0);
+    _defineProperty(_this, "_availableSelectors", []);
+    _defineProperty(_this, "_canDrag", void 0);
+    _defineProperty(_this, "_consumeFilteredEvents", void 0);
+    _defineProperty(_this, "_parent", void 0);
+    _defineProperty(_this, "_ignoreZoom", void 0);
+    _defineProperty(_this, "_filters", {});
+    _defineProperty(_this, "_constrainRect", void 0);
+    _defineProperty(_this, "_elementToDrag", void 0);
+    _defineProperty(_this, "downListener", void 0);
+    _defineProperty(_this, "moveListener", void 0);
+    _defineProperty(_this, "upListener", void 0);
+    _defineProperty(_this, "scrollTracker", void 0);
+    _defineProperty(_this, "listeners", {
       "start": [],
       "drag": [],
       "stop": [],
@@ -2356,9 +2270,9 @@ var Drag = function (_Base) {
     });
     _this._class = _this.manager.css.draggable;
     addClass(_this.el, _this._class);
-    _this.downListener = _this._downListener.bind(_assertThisInitialized(_this));
-    _this.upListener = _this._upListener.bind(_assertThisInitialized(_this));
-    _this.moveListener = _this._moveListener.bind(_assertThisInitialized(_this));
+    _this.downListener = _this._downListener.bind(_this);
+    _this.upListener = _this._upListener.bind(_this);
+    _this.moveListener = _this._moveListener.bind(_this);
     _this.rightButtonCanDrag = params.rightButtonCanDrag === true;
     _this.consumeStartEvent = params.consumeStartEvent !== false;
     _this._dragEl = _this.el;
@@ -2372,7 +2286,7 @@ var Drag = function (_Base) {
     _this._ignoreZoom = params.ignoreZoom === true;
     _this._ghostProxyParent = params.ghostProxyParent;
     if (_this.trackScroll) {
-      _this.scrollTracker = _this._trackScroll.bind(_assertThisInitialized(_this));
+      _this.scrollTracker = _this._trackScroll.bind(_this);
       document.addEventListener("scroll", _this.scrollTracker);
     }
     if (params.ghostProxy === true) {
@@ -2412,23 +2326,24 @@ var Drag = function (_Base) {
     _this.eventManager.on(_this.el, EVENT_MOUSEDOWN, _this.downListener);
     return _this;
   }
-  _createClass(Drag, [{
+  _inherits(Drag, _Base2);
+  return _createClass(Drag, [{
     key: "_trackScroll",
     value: function _trackScroll(e) {
       if (this._moving) {
         var currentScrollValues = {
-          x: document.documentElement.scrollLeft,
-          y: document.documentElement.scrollTop
-        },
-            dsx = currentScrollValues.x - this._lastScrollValues.x,
-            dsy = currentScrollValues.y - this._lastScrollValues.y,
-            _pos = {
-          x: dsx + this._lastPosition.x,
-          y: dsy + this._lastPosition.y
-        },
-        dx = _pos.x - this._downAt.x,
-            dy = _pos.y - this._downAt.y,
-            _z = this._ignoreZoom ? 1 : this.manager.getZoom();
+            x: document.documentElement.scrollLeft,
+            y: document.documentElement.scrollTop
+          },
+          dsx = currentScrollValues.x - this._lastScrollValues.x,
+          dsy = currentScrollValues.y - this._lastScrollValues.y,
+          _pos = {
+            x: dsx + this._lastPosition.x,
+            y: dsy + this._lastPosition.y
+          },
+          dx = _pos.x - this._downAt.x,
+          dy = _pos.y - this._downAt.y,
+          _z = this._ignoreZoom ? 1 : this.manager.getZoom();
         if (this._dragEl && this._dragEl.parentNode) {
           dx += this._dragEl.parentNode.scrollLeft - this._initialScroll.x;
           dy += this._dragEl.parentNode.scrollTop - this._initialScroll.y;
@@ -2587,9 +2502,9 @@ var Drag = function (_Base) {
         }
         if (this._downAt) {
           var _pos2 = pageLocation(e),
-              dx = _pos2.x - this._downAt.x,
-              dy = _pos2.y - this._downAt.y,
-              _z2 = this._ignoreZoom ? 1 : this.manager.getZoom();
+            dx = _pos2.x - this._downAt.x,
+            dy = _pos2.y - this._downAt.y,
+            _z2 = this._ignoreZoom ? 1 : this.manager.getZoom();
           this._lastPosition = {
             x: _pos2.x,
             y: _pos2.y
@@ -2658,10 +2573,10 @@ var Drag = function (_Base) {
     key: "moveBy",
     value: function moveBy(dx, dy, e) {
       var desiredLoc = this.toGrid({
-        x: this._posAtDown.x + dx,
-        y: this._posAtDown.y + dy
-      }),
-          cPos = this._doConstrain(desiredLoc, this._dragEl, this._constrainRect, this._size, e);
+          x: this._posAtDown.x + dx,
+          y: this._posAtDown.y + dy
+        }),
+        cPos = this._doConstrain(desiredLoc, this._dragEl, this._constrainRect, this._size, e);
       if (cPos != null) {
         if (this._useGhostProxy(this.el, this._dragEl)) {
           if (desiredLoc.x !== cPos.x || desiredLoc.y !== cPos.y) {
@@ -2724,7 +2639,7 @@ var Drag = function (_Base) {
     value: function stop(e, force) {
       if (force || this._moving) {
         var positions = [],
-            dPos = this.manager.getPosition(this._dragEl);
+          dPos = this.manager.getPosition(this._dragEl);
         positions.push([this._dragEl, dPos, this, this._size]);
         this._dispatch(EVENT_STOP, {
           el: this._dragEl,
@@ -2782,14 +2697,14 @@ var Drag = function (_Base) {
     key: "toGrid",
     value: function toGrid(pos) {
       var _this$resolveGrid = this.resolveGrid(),
-          grid = _this$resolveGrid.grid,
-          thresholdX = _this$resolveGrid.thresholdX,
-          thresholdY = _this$resolveGrid.thresholdY;
+        grid = _this$resolveGrid.grid,
+        thresholdX = _this$resolveGrid.thresholdX,
+        thresholdY = _this$resolveGrid.thresholdY;
       if (grid == null) {
         return pos;
       } else {
         var tx = grid ? grid.w / 2 : thresholdX,
-            ty = grid ? grid.h / 2 : thresholdY;
+          ty = grid ? grid.h / 2 : thresholdY;
         return snapToGrid(pos, grid, tx, ty);
       }
     }
@@ -2876,7 +2791,6 @@ var Drag = function (_Base) {
       }
     }
   }]);
-  return Drag;
 }(Base);
 var DEFAULT_INPUTS = ["input", "textarea", "select", "button", "option"];
 var DEFAULT_INPUT_FILTER_SELECTOR = DEFAULT_INPUTS.join(",");
@@ -2904,7 +2818,7 @@ var Collicat = function () {
     var _c = options.css || {};
     extend(this.css, _c);
   }
-  _createClass(Collicat, [{
+  return _createClass(Collicat, [{
     key: "getPosition",
     value: function getPosition(el) {
       return this._positionGetter(el);
@@ -2934,12 +2848,10 @@ var Collicat = function () {
     value: function _prepareParams(p) {
       p = p || {};
       var _p = {
-        events: {}
-      },
-          i;
-      for (i in p) {
-        _p[i] = p[i];
-      }
+          events: {}
+        },
+        i;
+      for (i in p) _p[i] = p[i];
       for (i = 0; i < _events.length; i++) {
         _p.events[_events[i]] = p[_events[i]] || _devNull;
       }
@@ -2978,7 +2890,6 @@ var Collicat = function () {
       }
     }
   }]);
-  return Collicat;
 }();
 
 var CLASS_DRAG_SELECTED = "jtk-drag-selected";
@@ -2993,7 +2904,7 @@ var DragSelection = function () {
     _defineProperty(this, "_dragElementPositions", new Map());
     _defineProperty(this, "__activeSet", void 0);
   }
-  _createClass(DragSelection, [{
+  return _createClass(DragSelection, [{
     key: "_activeSet",
     get: function get() {
       if (this.__activeSet == null) {
@@ -3060,18 +2971,18 @@ var DragSelection = function () {
     value: function updatePositions(currentPosition, originalPosition, callback) {
       var _this4 = this;
       var dx = currentPosition.x - originalPosition.x,
-          dy = currentPosition.y - originalPosition.y;
+        dy = currentPosition.y - originalPosition.y;
       forEach(this._activeSet, function (p) {
         var op = _this4._dragElementStartPositions.get(p.id);
         if (op) {
           var x = op.x + dx,
-              y = op.y + dy;
-          var _s = _this4._dragSizes.get(p.id);
+            y = op.y + dy;
+          var s = _this4._dragSizes.get(p.id);
           var _b = {
             x: x,
             y: y,
-            w: _s.w,
-            h: _s.h
+            w: s.w,
+            h: s.h
           };
           if (p.jel._jsPlumbParentGroup && p.jel._jsPlumbParentGroup.constrain) {
             var constrainRect = {
@@ -3080,8 +2991,8 @@ var DragSelection = function () {
             };
             _b.x = Math.max(_b.x, 0);
             _b.y = Math.max(_b.y, 0);
-            _b.x = Math.min(_b.x, constrainRect.w - _s.w);
-            _b.y = Math.min(_b.y, constrainRect.h - _s.h);
+            _b.x = Math.min(_b.x, constrainRect.w - s.w);
+            _b.y = Math.min(_b.y, constrainRect.h - s.h);
           }
           _this4._dragElementPositions.set(p.id, {
             x: x,
@@ -3089,7 +3000,7 @@ var DragSelection = function () {
           });
           p.jel.style.left = _b.x + "px";
           p.jel.style.top = _b.y + "px";
-          callback(p.jel, p.id, _s, _b);
+          callback(p.jel, p.id, s, _b);
         }
       });
     }
@@ -3147,7 +3058,6 @@ var DragSelection = function () {
       }
     }
   }]);
-  return DragSelection;
 }();
 
 var CLASS_DELEGATED_DRAGGABLE = "jtk-delegated-draggable";
@@ -3191,7 +3101,7 @@ var DragManager = function () {
     options = options || {};
     this._trackScroll = options.trackScroll !== false;
   }
-  _createClass(DragManager, [{
+  return _createClass(DragManager, [{
     key: "addHandler",
     value: function addHandler(handler, dragOptions) {
       var _this2 = this;
@@ -3336,7 +3246,6 @@ var DragManager = function () {
       }
     }
   }]);
-  return DragManager;
 }();
 
 function decodeDragGroupSpec(instance, spec) {
@@ -3391,7 +3300,7 @@ var ElementDragHandler = function () {
     _defineProperty(this, "drag", void 0);
     _defineProperty(this, "originalPosition", void 0);
   }
-  _createClass(ElementDragHandler, [{
+  return _createClass(ElementDragHandler, [{
     key: "onDragInit",
     value: function onDragInit(el) {
       return null;
@@ -3421,7 +3330,7 @@ var ElementDragHandler = function () {
     key: "onStop",
     value: function onStop(params) {
       var _this$_currentDragGro,
-          _this = this;
+        _this = this;
       var jel = params.drag.getDragElement();
       var dropGroup = this.getDropGroup();
       var elementsToProcess = [];
@@ -3437,7 +3346,7 @@ var ElementDragHandler = function () {
       });
       function addElementToProcess(el, id, currentPos, s, originalPosition) {
         var x = currentPos.x,
-            y = currentPos.y;
+          y = currentPos.y;
         if (el._jsPlumbParentGroup && el._jsPlumbParentGroup.constrain) {
           var constrainRect = {
             w: el.parentNode.offsetWidth + el.parentNode.scrollLeft,
@@ -3469,7 +3378,7 @@ var ElementDragHandler = function () {
           }, s, originalPosition);
         }
       });
-      (_this$_currentDragGro = this._currentDragGroup) === null || _this$_currentDragGro === void 0 ? void 0 : _this$_currentDragGro.members.forEach(function (d) {
+      (_this$_currentDragGro = this._currentDragGroup) === null || _this$_currentDragGro === void 0 || _this$_currentDragGro.members.forEach(function (d) {
         if (d.el !== params.el) {
           var offset = _this._currentDragGroupOffsets.get(d.elId);
           var s = _this._currentDragGroupSizes.get(d.elId);
@@ -3482,11 +3391,11 @@ var ElementDragHandler = function () {
       });
       forEach(elementsToProcess, function (p) {
         var wasInGroup = p.originalGroup != null,
-            isInOriginalGroup = wasInGroup && isInsideParent(_this.instance, p.el, p.pos),
-            parentOffset = {
-          x: 0,
-          y: 0
-        };
+          isInOriginalGroup = wasInGroup && isInsideParent(_this.instance, p.el, p.pos),
+          parentOffset = {
+            x: 0,
+            y: 0
+          };
         if (wasInGroup && !isInOriginalGroup) {
           if (dropGroup == null) {
             var orphanedPosition = _this._pruneOrOrphan(p, true, true);
@@ -3685,9 +3594,9 @@ var ElementDragHandler = function () {
         this._intersectingGroups.length = 0;
         this.instance.hoverSuspended = true;
         var originalElement = params.drag.getDragElement(true),
-            descendants = originalElement.querySelectorAll(SELECTOR_MANAGED_ELEMENT),
-            ancestors = getAncestors(originalElement),
-            a = [];
+          descendants = originalElement.querySelectorAll(SELECTOR_MANAGED_ELEMENT),
+          ancestors = getAncestors(originalElement),
+          a = [];
         Array.prototype.push.apply(a, descendants);
         Array.prototype.push.apply(a, ancestors);
         this._dragSelection.filterActiveSet(function (p) {
@@ -3704,14 +3613,14 @@ var ElementDragHandler = function () {
                 var elementGroup = _el._jsPlumbGroup;
                 if (group.droppable !== false && group.enabled !== false && _el._jsPlumbGroup !== group && !_this4.instance.groupManager.isDescendant(group, elementGroup)) {
                   var groupEl = group.el,
-                      groupElId = _this4.instance.getId(groupEl),
-                      p = _this4.instance.viewport.getPosition(groupElId),
-                      boundingRect = {
-                    x: p.x,
-                    y: p.y,
-                    w: p.w,
-                    h: p.h
-                  };
+                    groupElId = _this4.instance.getId(groupEl),
+                    p = _this4.instance.viewport.getPosition(groupElId),
+                    boundingRect = {
+                      x: p.x,
+                      y: p.y,
+                      w: p.w,
+                      h: p.h
+                    };
                   var groupLocation = {
                     el: groupEl,
                     r: boundingRect,
@@ -3893,7 +3802,6 @@ var ElementDragHandler = function () {
       return orphanedPosition;
     }
   }]);
-  return ElementDragHandler;
 }();
 
 var endpointMap$1 = {};
@@ -3952,7 +3860,7 @@ var EndpointRepresentation = function () {
       this.classes.push(params.cssClass);
     }
   }
-  _createClass(EndpointRepresentation, [{
+  return _createClass(EndpointRepresentation, [{
     key: "addClass",
     value: function addClass(c) {
       this.classes.push(c);
@@ -3981,17 +3889,15 @@ var EndpointRepresentation = function () {
       this.instance.setEndpointVisible(this.endpoint, v);
     }
   }]);
-  return EndpointRepresentation;
 }();
 
-var _opposites, _clockwiseOptions, _antiClockwiseOptions;
-var FaceValues;
-(function (FaceValues) {
+var FaceValues = function (FaceValues) {
   FaceValues["top"] = "top";
   FaceValues["left"] = "left";
   FaceValues["right"] = "right";
   FaceValues["bottom"] = "bottom";
-})(FaceValues || (FaceValues = {}));
+  return FaceValues;
+}(FaceValues || {});
 var TOP = FaceValues.top;
 var LEFT = FaceValues.left;
 var RIGHT = FaceValues.right;
@@ -4028,7 +3934,7 @@ var LightweightFloatingAnchor = function () {
       cls: ''
     });
   }
-  _createClass(LightweightFloatingAnchor, [{
+  return _createClass(LightweightFloatingAnchor, [{
     key: "_updateOrientationInRouter",
     value: function _updateOrientationInRouter() {
       this.instance.router.setAnchorOrientation(this, [this.locations[0].ox, this.locations[0].oy]);
@@ -4050,11 +3956,10 @@ var LightweightFloatingAnchor = function () {
       this._updateOrientationInRouter();
     }
   }]);
-  return LightweightFloatingAnchor;
 }();
-var opposites = (_opposites = {}, _defineProperty(_opposites, TOP, BOTTOM), _defineProperty(_opposites, RIGHT, LEFT), _defineProperty(_opposites, LEFT, RIGHT), _defineProperty(_opposites, BOTTOM, TOP), _opposites);
-var clockwiseOptions = (_clockwiseOptions = {}, _defineProperty(_clockwiseOptions, TOP, RIGHT), _defineProperty(_clockwiseOptions, RIGHT, BOTTOM), _defineProperty(_clockwiseOptions, LEFT, TOP), _defineProperty(_clockwiseOptions, BOTTOM, LEFT), _clockwiseOptions);
-var antiClockwiseOptions = (_antiClockwiseOptions = {}, _defineProperty(_antiClockwiseOptions, TOP, LEFT), _defineProperty(_antiClockwiseOptions, RIGHT, TOP), _defineProperty(_antiClockwiseOptions, LEFT, BOTTOM), _defineProperty(_antiClockwiseOptions, BOTTOM, RIGHT), _antiClockwiseOptions);
+var opposites = _defineProperty(_defineProperty(_defineProperty(_defineProperty({}, TOP, BOTTOM), RIGHT, LEFT), LEFT, RIGHT), BOTTOM, TOP);
+var clockwiseOptions = _defineProperty(_defineProperty(_defineProperty(_defineProperty({}, TOP, RIGHT), RIGHT, BOTTOM), LEFT, TOP), BOTTOM, LEFT);
+var antiClockwiseOptions = _defineProperty(_defineProperty(_defineProperty(_defineProperty({}, TOP, LEFT), RIGHT, TOP), LEFT, BOTTOM), BOTTOM, RIGHT);
 function getDefaultFace(a) {
   return a.faces.length === 0 ? TOP : a.faces[0];
 }
@@ -4089,77 +3994,77 @@ function verifyFace(a, edge) {
   return edge;
 }
 var _top = {
-  x: 0.5,
-  y: 0,
-  ox: 0,
-  oy: -1,
-  offx: 0,
-  offy: 0
-},
-    _bottom = {
-  x: 0.5,
-  y: 1,
-  ox: 0,
-  oy: 1,
-  offx: 0,
-  offy: 0
-},
-    _left = {
-  x: 0,
-  y: 0.5,
-  ox: -1,
-  oy: 0,
-  offx: 0,
-  offy: 0
-},
-    _right = {
-  x: 1,
-  y: 0.5,
-  ox: 1,
-  oy: 0,
-  offx: 0,
-  offy: 0
-},
-    _topLeft = {
-  x: 0,
-  y: 0,
-  ox: 0,
-  oy: -1,
-  offx: 0,
-  offy: 0
-},
-    _topRight = {
-  x: 1,
-  y: 0,
-  ox: 1,
-  oy: -1,
-  offx: 0,
-  offy: 0
-},
-    _bottomLeft = {
-  x: 0,
-  y: 1,
-  ox: 0,
-  oy: 1,
-  offx: 0,
-  offy: 0
-},
-    _bottomRight = {
-  x: 1,
-  y: 1,
-  ox: 0,
-  oy: 1,
-  offx: 0,
-  offy: 0
-},
-    _center = {
-  x: 0.5,
-  y: 0.5,
-  ox: 0,
-  oy: 0,
-  offx: 0,
-  offy: 0
-};
+    x: 0.5,
+    y: 0,
+    ox: 0,
+    oy: -1,
+    offx: 0,
+    offy: 0
+  },
+  _bottom = {
+    x: 0.5,
+    y: 1,
+    ox: 0,
+    oy: 1,
+    offx: 0,
+    offy: 0
+  },
+  _left = {
+    x: 0,
+    y: 0.5,
+    ox: -1,
+    oy: 0,
+    offx: 0,
+    offy: 0
+  },
+  _right = {
+    x: 1,
+    y: 0.5,
+    ox: 1,
+    oy: 0,
+    offx: 0,
+    offy: 0
+  },
+  _topLeft = {
+    x: 0,
+    y: 0,
+    ox: 0,
+    oy: -1,
+    offx: 0,
+    offy: 0
+  },
+  _topRight = {
+    x: 1,
+    y: 0,
+    ox: 1,
+    oy: -1,
+    offx: 0,
+    offy: 0
+  },
+  _bottomLeft = {
+    x: 0,
+    y: 1,
+    ox: 0,
+    oy: 1,
+    offx: 0,
+    offy: 0
+  },
+  _bottomRight = {
+    x: 1,
+    y: 1,
+    ox: 0,
+    oy: 1,
+    offx: 0,
+    offy: 0
+  },
+  _center = {
+    x: 0.5,
+    y: 0.5,
+    ox: 0,
+    oy: 0,
+    offx: 0,
+    offy: 0
+  };
 var namedValues = {
   "Top": [_top],
   "Bottom": [_bottom],
@@ -4318,12 +4223,12 @@ function makeLightweightAnchorFromSpec(spec) {
 }
 function circleGenerator(anchorCount) {
   var r = 0.5,
-      step = Math.PI * 2 / anchorCount,
-      a = [];
+    step = Math.PI * 2 / anchorCount,
+    a = [];
   var current = 0;
   for (var i = 0; i < anchorCount; i++) {
     var x = r + r * Math.sin(current),
-        y = r + r * Math.cos(current);
+      y = r + r * Math.cos(current);
     a.push({
       x: x,
       y: y,
@@ -4341,25 +4246,25 @@ function circleGenerator(anchorCount) {
 }
 function _path(segments, anchorCount) {
   var anchorsPerFace = anchorCount / segments.length,
-      a = [],
-      _computeFace = function _computeFace(x1, y1, x2, y2, fractionalLength, ox, oy) {
-    anchorsPerFace = anchorCount * fractionalLength;
-    var dx = (x2 - x1) / anchorsPerFace,
+    a = [],
+    _computeFace = function _computeFace(x1, y1, x2, y2, fractionalLength, ox, oy) {
+      anchorsPerFace = anchorCount * fractionalLength;
+      var dx = (x2 - x1) / anchorsPerFace,
         dy = (y2 - y1) / anchorsPerFace;
-    for (var i = 0; i < anchorsPerFace; i++) {
-      a.push({
-        x: x1 + dx * i,
-        y: y1 + dy * i,
-        ox: ox == null ? 0 : ox,
-        oy: oy == null ? 0 : oy,
-        offx: 0,
-        offy: 0,
-        iox: 0,
-        ioy: 0,
-        cls: ''
-      });
-    }
-  };
+      for (var i = 0; i < anchorsPerFace; i++) {
+        a.push({
+          x: x1 + dx * i,
+          y: y1 + dy * i,
+          ox: ox == null ? 0 : ox,
+          oy: oy == null ? 0 : oy,
+          offx: 0,
+          offy: 0,
+          iox: 0,
+          ioy: 0,
+          cls: ''
+        });
+      }
+    };
   for (var i = 0; i < segments.length; i++) {
     _computeFace.apply(null, segments[i]);
   }
@@ -4383,10 +4288,10 @@ function triangleGenerator(anchorCount) {
 }
 function rotate$1(points, amountInDegrees) {
   var o = [],
-      theta = amountInDegrees / 180 * Math.PI;
+    theta = amountInDegrees / 180 * Math.PI;
   for (var i = 0; i < points.length; i++) {
     var _x = points[i].x - 0.5,
-        _y = points[i].y - 0.5;
+      _y = points[i].y - 0.5;
     o.push({
       x: 0.5 + (_x * Math.cos(theta) - _y * Math.sin(theta)),
       y: 0.5 + (_x * Math.sin(theta) + _y * Math.cos(theta)),
@@ -4411,7 +4316,7 @@ anchorGenerators.set(PerimeterAnchorShapes.Triangle, triangleGenerator);
 function _createPerimeterAnchor(params) {
   params = params || {};
   var anchorCount = params.anchorCount || 60,
-      shape = params.shape;
+    shape = params.shape;
   if (!shape) {
     throw new Error("no shape supplied to Perimeter Anchor type");
   }
@@ -4441,7 +4346,7 @@ var ConnectionDragSelector = function () {
     this.id = uuid();
     this.redrop = def.def.redrop || REDROP_POLICY_STRICT;
   }
-  _createClass(ConnectionDragSelector, [{
+  return _createClass(ConnectionDragSelector, [{
     key: "setEnabled",
     value: function setEnabled(enabled) {
       this.def.enabled = enabled;
@@ -4452,7 +4357,6 @@ var ConnectionDragSelector = function () {
       return this.def.enabled !== false;
     }
   }]);
-  return ConnectionDragSelector;
 }();
 var REDROP_POLICY_STRICT = "strict";
 var REDROP_POLICY_ANY = "any";
@@ -4482,8 +4386,8 @@ function _makeFloatingEndpoint(ep, endpoint, referenceCanvas, sourceElement, sou
 }
 function selectorFilter(evt, _el, selector, _instance, negate) {
   var t = evt.target || evt.srcElement,
-      ok = false,
-      sel = _instance.getSelector(_el, selector);
+    ok = false,
+    sel = _instance.getSelector(_el, selector);
   for (var j = 0; j < sel.length; j++) {
     if (sel[j] === t) {
       ok = true;
@@ -4531,7 +4435,7 @@ var EndpointDragHandler = function () {
     instance.on(container, EVENT_MOUSEDOWN, SELECTOR_MANAGED_ELEMENT, this.mousedownHandler);
     instance.on(container, EVENT_MOUSEUP, [SELECTOR_MANAGED_ELEMENT, cls(CLASS_ENDPOINT)].join(","), this.mouseupHandler);
   }
-  _createClass(EndpointDragHandler, [{
+  return _createClass(EndpointDragHandler, [{
     key: "_resolveDragParent",
     value: function _resolveDragParent(def, eventTarget) {
       var container = this.instance.getContainer();
@@ -4564,7 +4468,7 @@ var EndpointDragHandler = function () {
       }
       if (sourceSelector) {
         var sourceElement = e.currentTarget,
-            def;
+          def;
         if (eventTarget.getAttribute(ATTRIBUTE_JTK_ENABLED) !== FALSE$1) {
           consume(e);
           this._activeDefinition = sourceSelector;
@@ -4665,7 +4569,7 @@ var EndpointDragHandler = function () {
     key: "onDragInit",
     value: function onDragInit(el) {
       var ipco = getElementPosition(el, this.instance),
-          ips = getElementSize(el, this.instance);
+        ips = getElementSize(el, this.instance);
       this._makeDraggablePlaceholder(ipco, ips);
       this.placeholderInfo.element.jtk = el.jtk;
       return this.placeholderInfo.element;
@@ -4820,7 +4724,7 @@ var EndpointDragHandler = function () {
         if ((_this.jpc != null || candidate !== canvasElement) && candidate !== _this.floatingElement && (_this.jpc != null || !candidate.jtk.endpoint.isFull())) {
           if (isSourceDrag && candidate.jtk.endpoint.isSource || !isSourceDrag && candidate.jtk.endpoint.isTarget) {
             var o = getElementPosition(candidate, _this.instance),
-                s = getElementSize(candidate, _this.instance);
+              s = getElementSize(candidate, _this.instance);
             boundingRect = {
               x: o.x,
               y: o.y,
@@ -4856,7 +4760,7 @@ var EndpointDragHandler = function () {
               };
               d.targetEl = findParent(el, SELECTOR_MANAGED_ELEMENT, _this.instance.getContainer(), true);
               var o = getElementPosition(d.el, _this.instance),
-                  s = getElementSize(d.el, _this.instance);
+                s = getElementSize(d.el, _this.instance);
               d.r = {
                 x: o.x,
                 y: o.y,
@@ -4911,7 +4815,7 @@ var EndpointDragHandler = function () {
                 }
               }
               var o = getElementPosition(el, _this.instance),
-                  s = getElementSize(el, _this.instance);
+                s = getElementSize(el, _this.instance);
               d.r = {
                 x: o.x,
                 y: o.y,
@@ -5003,9 +4907,9 @@ var EndpointDragHandler = function () {
       this.canvasElement = this.endpointRepresentation.canvas;
       this.jpc = this.ep.connectorSelector();
       var _this$_shouldStartDra = this._shouldStartDrag(),
-          _this$_shouldStartDra2 = _slicedToArray(_this$_shouldStartDra, 2),
-          _continue = _this$_shouldStartDra2[0],
-          payload = _this$_shouldStartDra2[1];
+        _this$_shouldStartDra2 = _slicedToArray(_this$_shouldStartDra, 2),
+        _continue = _this$_shouldStartDra2[0],
+        payload = _this$_shouldStartDra2[1];
       if (_continue === false) {
         this._stopped = true;
         return false;
@@ -5040,14 +4944,14 @@ var EndpointDragHandler = function () {
         var floatingElementSize = getElementSize(this.floatingElement, this.instance);
         this.instance.setElementPosition(this.placeholderInfo.element, params.pos.x, params.pos.y);
         var boundingRect = {
-          x: params.pos.x,
-          y: params.pos.y,
-          w: floatingElementSize.w,
-          h: floatingElementSize.h
-        },
-            newDropTarget,
-            idx,
-            _cont;
+            x: params.pos.x,
+            y: params.pos.y,
+            w: floatingElementSize.w,
+            h: floatingElementSize.h
+          },
+          newDropTarget,
+          idx,
+          _cont;
         for (var i = 0; i < this.endpointDropTargets.length; i++) {
           if (intersects(boundingRect, this.endpointDropTargets[i].r)) {
             newDropTarget = this.endpointDropTargets[i];
@@ -5294,8 +5198,8 @@ var EndpointDragHandler = function () {
         return true;
       } else {
         var suspendedEndpoint = this.jpc.suspendedEndpoint,
-            otherEndpointIdx = this.jpc.suspendedElementType == SOURCE ? 1 : 0,
-            otherEndpoint = this.jpc.endpoints[otherEndpointIdx];
+          otherEndpointIdx = this.jpc.suspendedElementType == SOURCE ? 1 : 0,
+          otherEndpoint = this.jpc.endpoints[otherEndpointIdx];
         return !functionChain(true, false, [[suspendedEndpoint, IS_DETACH_ALLOWED, [this.jpc]], [otherEndpoint, IS_DETACH_ALLOWED, [this.jpc]], [this.jpc, IS_DETACH_ALLOWED, [this.jpc]], [this.instance, CHECK_CONDITION, [INTERCEPT_BEFORE_DETACH, this.jpc]]]);
       }
     }
@@ -5377,24 +5281,22 @@ var EndpointDragHandler = function () {
       return this.floatingIndex == null ? 1 : this.floatingIndex;
     }
   }]);
-  return EndpointDragHandler;
 }();
 
 var GroupDragHandler = function (_ElementDragHandler) {
-  _inherits(GroupDragHandler, _ElementDragHandler);
-  var _super = _createSuper(GroupDragHandler);
   function GroupDragHandler(instance, dragSelection) {
     var _this;
     _classCallCheck(this, GroupDragHandler);
-    _this = _super.call(this, instance, dragSelection);
+    _this = _callSuper(this, GroupDragHandler, [instance, dragSelection]);
     _this.instance = instance;
     _this.dragSelection = dragSelection;
-    _defineProperty(_assertThisInitialized(_this), "selector", [">", SELECTOR_GROUP, SELECTOR_MANAGED_ELEMENT].join(" "));
-    _defineProperty(_assertThisInitialized(_this), "doRevalidate", void 0);
-    _this.doRevalidate = _this._revalidate.bind(_assertThisInitialized(_this));
+    _defineProperty(_this, "selector", [">", SELECTOR_GROUP, SELECTOR_MANAGED_ELEMENT].join(" "));
+    _defineProperty(_this, "doRevalidate", void 0);
+    _this.doRevalidate = _this._revalidate.bind(_this);
     return _this;
   }
-  _createClass(GroupDragHandler, [{
+  _inherits(GroupDragHandler, _ElementDragHandler);
+  return _createClass(GroupDragHandler, [{
     key: "reset",
     value: function reset() {
       this.drag.off(EVENT_REVERT, this.doRevalidate);
@@ -5425,7 +5327,6 @@ var GroupDragHandler = function (_ElementDragHandler) {
       return newEl;
     }
   }]);
-  return GroupDragHandler;
 }(ElementDragHandler);
 
 var HTMLElementOverlay = function () {
@@ -5436,7 +5337,7 @@ var HTMLElementOverlay = function () {
     _defineProperty(this, "htmlElementOverlay", void 0);
     this.htmlElementOverlay = overlay;
   }
-  _createClass(HTMLElementOverlay, null, [{
+  return _createClass(HTMLElementOverlay, null, [{
     key: "getElement",
     value: function getElement(o, component, elementCreator) {
       if (o.canvas == null) {
@@ -5488,7 +5389,6 @@ var HTMLElementOverlay = function () {
       return o.cachedDimensions;
     }
   }]);
-  return HTMLElementOverlay;
 }();
 
 var EventGenerator = function () {
@@ -5502,7 +5402,7 @@ var EventGenerator = function () {
     });
     _defineProperty(this, "queue", []);
   }
-  _createClass(EventGenerator, [{
+  return _createClass(EventGenerator, [{
     key: "fire",
     value: function fire(event, value, originalEvent) {
       var ret = null;
@@ -5510,8 +5410,8 @@ var EventGenerator = function () {
         this.tick = true;
         if (!this.eventsSuspended && this._listeners[event]) {
           var l = this._listeners[event].length,
-              i = 0,
-              _gone = false;
+            i = 0,
+            _gone = false;
           if (!this.shouldFireEvent || this.shouldFireEvent(event, value, originalEvent)) {
             while (!_gone && i < l && ret !== false) {
               if (this.eventsToDieOn[event]) {
@@ -5610,22 +5510,19 @@ var EventGenerator = function () {
       this.setSuspendEvents(false);
     }
   }]);
-  return EventGenerator;
 }();
-var OptimisticEventGenerator = function (_EventGenerator) {
-  _inherits(OptimisticEventGenerator, _EventGenerator);
-  var _super = _createSuper(OptimisticEventGenerator);
+var OptimisticEventGenerator = function (_EventGenerator2) {
   function OptimisticEventGenerator() {
     _classCallCheck(this, OptimisticEventGenerator);
-    return _super.apply(this, arguments);
+    return _callSuper(this, OptimisticEventGenerator, arguments);
   }
-  _createClass(OptimisticEventGenerator, [{
+  _inherits(OptimisticEventGenerator, _EventGenerator2);
+  return _createClass(OptimisticEventGenerator, [{
     key: "shouldFireEvent",
     value: function shouldFireEvent(event, value, originalEvent) {
       return true;
     }
   }]);
-  return OptimisticEventGenerator;
 }(EventGenerator);
 
 function isFullOverlaySpec(o) {
@@ -5645,33 +5542,32 @@ function convertToFullOverlaySpec(spec) {
   return o;
 }
 var Overlay = function (_EventGenerator) {
-  _inherits(Overlay, _EventGenerator);
-  var _super = _createSuper(Overlay);
   function Overlay(instance, component, p) {
     var _this;
     _classCallCheck(this, Overlay);
-    _this = _super.call(this);
+    _this = _callSuper(this, Overlay);
     _this.instance = instance;
     _this.component = component;
-    _defineProperty(_assertThisInitialized(_this), "id", void 0);
-    _defineProperty(_assertThisInitialized(_this), "type", void 0);
-    _defineProperty(_assertThisInitialized(_this), "cssClass", void 0);
-    _defineProperty(_assertThisInitialized(_this), "visible", true);
-    _defineProperty(_assertThisInitialized(_this), "location", void 0);
-    _defineProperty(_assertThisInitialized(_this), "events", void 0);
-    _defineProperty(_assertThisInitialized(_this), "attributes", void 0);
+    _defineProperty(_this, "id", void 0);
+    _defineProperty(_this, "type", void 0);
+    _defineProperty(_this, "cssClass", void 0);
+    _defineProperty(_this, "visible", true);
+    _defineProperty(_this, "location", void 0);
+    _defineProperty(_this, "events", void 0);
+    _defineProperty(_this, "attributes", void 0);
     p = p || {};
     _this.id = p.id || uuid();
     _this.cssClass = p.cssClass || "";
     _this.setLocation(p.location);
     _this.events = p.events || {};
     _this.attributes = p.attributes || {};
-    for (var _event in _this.events) {
-      _this.bind(_event, _this.events[_event]);
+    for (var event in _this.events) {
+      _this.bind(event, _this.events[event]);
     }
     return _this;
   }
-  _createClass(Overlay, [{
+  _inherits(Overlay, _EventGenerator);
+  return _createClass(Overlay, [{
     key: "setLocation",
     value: function setLocation(l) {
       var newLocation = this.location == null ? 0.5 : this.location;
@@ -5703,7 +5599,6 @@ var Overlay = function (_EventGenerator) {
       return this.visible;
     }
   }]);
-  return Overlay;
 }(EventGenerator);
 
 var overlayMap = {};
@@ -5724,25 +5619,24 @@ var OverlayFactory = {
 };
 
 var LabelOverlay = function (_Overlay) {
-  _inherits(LabelOverlay, _Overlay);
-  var _super = _createSuper(LabelOverlay);
   function LabelOverlay(instance, component, p) {
     var _this;
     _classCallCheck(this, LabelOverlay);
-    _this = _super.call(this, instance, component, p);
+    _this = _callSuper(this, LabelOverlay, [instance, component, p]);
     _this.instance = instance;
     _this.component = component;
-    _defineProperty(_assertThisInitialized(_this), "label", void 0);
-    _defineProperty(_assertThisInitialized(_this), "labelText", void 0);
-    _defineProperty(_assertThisInitialized(_this), "type", LabelOverlay.type);
-    _defineProperty(_assertThisInitialized(_this), "cachedDimensions", void 0);
+    _defineProperty(_this, "label", void 0);
+    _defineProperty(_this, "labelText", void 0);
+    _defineProperty(_this, "type", LabelOverlay.type);
+    _defineProperty(_this, "cachedDimensions", void 0);
     p = p || {
       label: ""
     };
     _this.setLabel(p.label);
     return _this;
   }
-  _createClass(LabelOverlay, [{
+  _inherits(LabelOverlay, _Overlay);
+  return _createClass(LabelOverlay, [{
     key: "getLabel",
     value: function getLabel() {
       if (isFunction(this.label)) {
@@ -5778,7 +5672,6 @@ var LabelOverlay = function (_Overlay) {
       }
     }
   }]);
-  return LabelOverlay;
 }(Overlay);
 _defineProperty(LabelOverlay, "type", "Label");
 function isLabelOverlay(o) {
@@ -5811,7 +5704,7 @@ var ACTION_REMOVE = "remove";
 function _applyTypes(component, params) {
   if (component.getDefaultType) {
     var td = component.getTypeDescriptor(),
-        map = {};
+      map = {};
     var defType = component.getDefaultType();
     var o = extend({}, defType);
     _mapType(map, defType, DEFAULT_TYPE_KEY);
@@ -5854,11 +5747,11 @@ var ADD_CLASS_ACTION = "add";
 var REMOVE_CLASS_ACTION = "remove";
 function _makeLabelOverlay(component, params) {
   var _params = {
-    cssClass: params.cssClass,
-    id: _internalLabelOverlayId,
-    component: component
-  },
-      mergedParams = extend(_params, params);
+      cssClass: params.cssClass,
+      id: _internalLabelOverlayId,
+      component: component
+    },
+    mergedParams = extend(_params, params);
   return new LabelOverlay(component.instance, component, mergedParams);
 }
 function _processOverlay(component, o) {
@@ -5878,43 +5771,41 @@ function _processOverlay(component, o) {
   return _newOverlay;
 }
 var Component = function (_EventGenerator) {
-  _inherits(Component, _EventGenerator);
-  var _super = _createSuper(Component);
   function Component(instance, params) {
     var _this;
     _classCallCheck(this, Component);
-    _this = _super.call(this);
+    _this = _callSuper(this, Component);
     _this.instance = instance;
-    _defineProperty(_assertThisInitialized(_this), "defaultLabelLocation", 0.5);
-    _defineProperty(_assertThisInitialized(_this), "overlays", {});
-    _defineProperty(_assertThisInitialized(_this), "overlayPositions", {});
-    _defineProperty(_assertThisInitialized(_this), "overlayPlacements", {});
-    _defineProperty(_assertThisInitialized(_this), "clone", void 0);
-    _defineProperty(_assertThisInitialized(_this), "deleted", void 0);
-    _defineProperty(_assertThisInitialized(_this), "segment", void 0);
-    _defineProperty(_assertThisInitialized(_this), "x", void 0);
-    _defineProperty(_assertThisInitialized(_this), "y", void 0);
-    _defineProperty(_assertThisInitialized(_this), "w", void 0);
-    _defineProperty(_assertThisInitialized(_this), "h", void 0);
-    _defineProperty(_assertThisInitialized(_this), "id", void 0);
-    _defineProperty(_assertThisInitialized(_this), "visible", true);
-    _defineProperty(_assertThisInitialized(_this), "typeId", void 0);
-    _defineProperty(_assertThisInitialized(_this), "params", {});
-    _defineProperty(_assertThisInitialized(_this), "paintStyle", void 0);
-    _defineProperty(_assertThisInitialized(_this), "hoverPaintStyle", void 0);
-    _defineProperty(_assertThisInitialized(_this), "paintStyleInUse", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_hover", false);
-    _defineProperty(_assertThisInitialized(_this), "lastPaintedAt", void 0);
-    _defineProperty(_assertThisInitialized(_this), "data", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_defaultType", void 0);
-    _defineProperty(_assertThisInitialized(_this), "events", void 0);
-    _defineProperty(_assertThisInitialized(_this), "parameters", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_types", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_typeCache", void 0);
-    _defineProperty(_assertThisInitialized(_this), "cssClass", void 0);
-    _defineProperty(_assertThisInitialized(_this), "hoverClass", void 0);
-    _defineProperty(_assertThisInitialized(_this), "beforeDetach", void 0);
-    _defineProperty(_assertThisInitialized(_this), "beforeDrop", void 0);
+    _defineProperty(_this, "defaultLabelLocation", 0.5);
+    _defineProperty(_this, "overlays", {});
+    _defineProperty(_this, "overlayPositions", {});
+    _defineProperty(_this, "overlayPlacements", {});
+    _defineProperty(_this, "clone", void 0);
+    _defineProperty(_this, "deleted", void 0);
+    _defineProperty(_this, "segment", void 0);
+    _defineProperty(_this, "x", void 0);
+    _defineProperty(_this, "y", void 0);
+    _defineProperty(_this, "w", void 0);
+    _defineProperty(_this, "h", void 0);
+    _defineProperty(_this, "id", void 0);
+    _defineProperty(_this, "visible", true);
+    _defineProperty(_this, "typeId", void 0);
+    _defineProperty(_this, "params", {});
+    _defineProperty(_this, "paintStyle", void 0);
+    _defineProperty(_this, "hoverPaintStyle", void 0);
+    _defineProperty(_this, "paintStyleInUse", void 0);
+    _defineProperty(_this, "_hover", false);
+    _defineProperty(_this, "lastPaintedAt", void 0);
+    _defineProperty(_this, "data", void 0);
+    _defineProperty(_this, "_defaultType", void 0);
+    _defineProperty(_this, "events", void 0);
+    _defineProperty(_this, "parameters", void 0);
+    _defineProperty(_this, "_types", void 0);
+    _defineProperty(_this, "_typeCache", void 0);
+    _defineProperty(_this, "cssClass", void 0);
+    _defineProperty(_this, "hoverClass", void 0);
+    _defineProperty(_this, "beforeDetach", void 0);
+    _defineProperty(_this, "beforeDrop", void 0);
     params = params || {};
     _this.cssClass = params.cssClass || "";
     _this.hoverClass = params.hoverClass || instance.defaults.hoverClass;
@@ -5942,7 +5833,7 @@ var Component = function (_EventGenerator) {
     _this.overlays = {};
     _this.overlayPositions = {};
     var o = params.overlays || [],
-        oo = {};
+      oo = {};
     var defaultOverlayKey = _this.getDefaultOverlayKey();
     if (defaultOverlayKey) {
       var defaultOverlays = _this.instance.defaults[defaultOverlayKey];
@@ -5968,7 +5859,8 @@ var Component = function (_EventGenerator) {
     }
     return _this;
   }
-  _createClass(Component, [{
+  _inherits(Component, _EventGenerator);
+  return _createClass(Component, [{
     key: "isDetachAllowed",
     value: function isDetachAllowed(connection) {
       var r = true;
@@ -6057,7 +5949,7 @@ var Component = function (_EventGenerator) {
     key: "addType",
     value: function addType(typeId, params) {
       var t = _splitType(typeId),
-          _somethingAdded = false;
+        _somethingAdded = false;
       if (t != null) {
         for (var i = 0, j = t.length; i < j; i++) {
           if (!this._types.has(t[i])) {
@@ -6075,15 +5967,15 @@ var Component = function (_EventGenerator) {
     value: function removeType(typeId, params) {
       var _this2 = this;
       var t = _splitType(typeId),
-          _cont = false,
-          _one = function _one(tt) {
-        if (_this2._types.has(tt)) {
-          _removeTypeCssHelper(_this2, tt);
-          _this2._types["delete"](tt);
-          return true;
-        }
-        return false;
-      };
+        _cont = false,
+        _one = function _one(tt) {
+          if (_this2._types.has(tt)) {
+            _removeTypeCssHelper(_this2, tt);
+            _this2._types["delete"](tt);
+            return true;
+          }
+          return false;
+        };
       if (t != null) {
         for (var i = 0, j = t.length; i < j; i++) {
           _cont = _one(t[i]) || _cont;
@@ -6128,7 +6020,7 @@ var Component = function (_EventGenerator) {
       this.paintStyleInUse = this.getPaintStyle();
       if (t.overlays) {
         var keep = {},
-            i;
+          i;
         for (i in t.overlays) {
           var existing = this.overlays[t.overlays[i].options.id];
           if (existing) {
@@ -6285,7 +6177,7 @@ var Component = function (_EventGenerator) {
       var o = _processOverlay(this, overlay);
       if (this.getData && o.type === LabelOverlay.type && !isString(overlay)) {
         var d = this.getData(),
-            p = overlay.options;
+          p = overlay.options;
         if (d) {
           var locationAttribute = p.labelLocationAttribute || LOCATION_ATTRIBUTE;
           var loc = d[locationAttribute];
@@ -6422,50 +6314,47 @@ var Component = function (_EventGenerator) {
       }
     }
   }]);
-  return Component;
 }(EventGenerator);
 
 var typeParameters = ["connectorStyle", "connectorHoverStyle", "connectorOverlays", "connector", "connectionType", "connectorClass", "connectorHoverClass"];
 var Endpoint = function (_Component) {
-  _inherits(Endpoint, _Component);
-  var _super = _createSuper(Endpoint);
   function Endpoint(instance, params) {
     var _this;
     _classCallCheck(this, Endpoint);
-    _this = _super.call(this, instance, params);
+    _this = _callSuper(this, Endpoint, [instance, params]);
     _this.instance = instance;
-    _defineProperty(_assertThisInitialized(_this), "connections", []);
-    _defineProperty(_assertThisInitialized(_this), "endpoint", void 0);
-    _defineProperty(_assertThisInitialized(_this), "element", void 0);
-    _defineProperty(_assertThisInitialized(_this), "elementId", void 0);
-    _defineProperty(_assertThisInitialized(_this), "dragAllowedWhenFull", true);
-    _defineProperty(_assertThisInitialized(_this), "timestamp", void 0);
-    _defineProperty(_assertThisInitialized(_this), "portId", void 0);
-    _defineProperty(_assertThisInitialized(_this), "maxConnections", void 0);
-    _defineProperty(_assertThisInitialized(_this), "proxiedBy", void 0);
-    _defineProperty(_assertThisInitialized(_this), "connectorClass", void 0);
-    _defineProperty(_assertThisInitialized(_this), "connectorHoverClass", void 0);
-    _defineProperty(_assertThisInitialized(_this), "finalEndpoint", void 0);
-    _defineProperty(_assertThisInitialized(_this), "enabled", true);
-    _defineProperty(_assertThisInitialized(_this), "isSource", void 0);
-    _defineProperty(_assertThisInitialized(_this), "isTarget", void 0);
-    _defineProperty(_assertThisInitialized(_this), "isTemporarySource", void 0);
-    _defineProperty(_assertThisInitialized(_this), "connectionCost", 1);
-    _defineProperty(_assertThisInitialized(_this), "connectionsDirected", void 0);
-    _defineProperty(_assertThisInitialized(_this), "connectionsDetachable", void 0);
-    _defineProperty(_assertThisInitialized(_this), "reattachConnections", void 0);
-    _defineProperty(_assertThisInitialized(_this), "currentAnchorClass", void 0);
-    _defineProperty(_assertThisInitialized(_this), "referenceEndpoint", void 0);
-    _defineProperty(_assertThisInitialized(_this), "edgeType", void 0);
-    _defineProperty(_assertThisInitialized(_this), "connector", void 0);
-    _defineProperty(_assertThisInitialized(_this), "connectorOverlays", void 0);
-    _defineProperty(_assertThisInitialized(_this), "connectorStyle", void 0);
-    _defineProperty(_assertThisInitialized(_this), "connectorHoverStyle", void 0);
-    _defineProperty(_assertThisInitialized(_this), "deleteOnEmpty", void 0);
-    _defineProperty(_assertThisInitialized(_this), "uuid", void 0);
-    _defineProperty(_assertThisInitialized(_this), "scope", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_anchor", void 0);
-    _defineProperty(_assertThisInitialized(_this), "defaultLabelLocation", [0.5, 0.5]);
+    _defineProperty(_this, "connections", []);
+    _defineProperty(_this, "endpoint", void 0);
+    _defineProperty(_this, "element", void 0);
+    _defineProperty(_this, "elementId", void 0);
+    _defineProperty(_this, "dragAllowedWhenFull", true);
+    _defineProperty(_this, "timestamp", void 0);
+    _defineProperty(_this, "portId", void 0);
+    _defineProperty(_this, "maxConnections", void 0);
+    _defineProperty(_this, "proxiedBy", void 0);
+    _defineProperty(_this, "connectorClass", void 0);
+    _defineProperty(_this, "connectorHoverClass", void 0);
+    _defineProperty(_this, "finalEndpoint", void 0);
+    _defineProperty(_this, "enabled", true);
+    _defineProperty(_this, "isSource", void 0);
+    _defineProperty(_this, "isTarget", void 0);
+    _defineProperty(_this, "isTemporarySource", void 0);
+    _defineProperty(_this, "connectionCost", 1);
+    _defineProperty(_this, "connectionsDirected", void 0);
+    _defineProperty(_this, "connectionsDetachable", void 0);
+    _defineProperty(_this, "reattachConnections", void 0);
+    _defineProperty(_this, "currentAnchorClass", void 0);
+    _defineProperty(_this, "referenceEndpoint", void 0);
+    _defineProperty(_this, "edgeType", void 0);
+    _defineProperty(_this, "connector", void 0);
+    _defineProperty(_this, "connectorOverlays", void 0);
+    _defineProperty(_this, "connectorStyle", void 0);
+    _defineProperty(_this, "connectorHoverStyle", void 0);
+    _defineProperty(_this, "deleteOnEmpty", void 0);
+    _defineProperty(_this, "uuid", void 0);
+    _defineProperty(_this, "scope", void 0);
+    _defineProperty(_this, "_anchor", void 0);
+    _defineProperty(_this, "defaultLabelLocation", [0.5, 0.5]);
     _this.appendToDefaultType({
       edgeType: params.edgeType,
       maxConnections: params.maxConnections == null ? _this.instance.defaults.maxConnections : params.maxConnections,
@@ -6523,7 +6412,8 @@ var Endpoint = function (_Component) {
     _this.addType(type, params.data);
     return _this;
   }
-  _createClass(Endpoint, [{
+  _inherits(Endpoint, _Component);
+  return _createClass(Endpoint, [{
     key: "getIdPrefix",
     value: function getIdPrefix() {
       return "_jsplumb_e";
@@ -6768,7 +6658,6 @@ var Endpoint = function (_Component) {
       }
     }
   }]);
-  return Endpoint;
 }(Component);
 
 var TYPE_ITEM_ANCHORS = "anchors";
@@ -6822,43 +6711,41 @@ function prepareEndpoint(conn, existing, index, anchor, element, elementId, endp
   return e;
 }
 var Connection = function (_Component) {
-  _inherits(Connection, _Component);
-  var _super = _createSuper(Connection);
   function Connection(instance, params) {
     var _this;
     _classCallCheck(this, Connection);
-    _this = _super.call(this, instance, params);
+    _this = _callSuper(this, Connection, [instance, params]);
     _this.instance = instance;
-    _defineProperty(_assertThisInitialized(_this), "connector", void 0);
-    _defineProperty(_assertThisInitialized(_this), "defaultLabelLocation", 0.5);
-    _defineProperty(_assertThisInitialized(_this), "scope", void 0);
-    _defineProperty(_assertThisInitialized(_this), "typeId", "_jsplumb_connection");
-    _defineProperty(_assertThisInitialized(_this), "previousConnection", void 0);
-    _defineProperty(_assertThisInitialized(_this), "sourceId", void 0);
-    _defineProperty(_assertThisInitialized(_this), "targetId", void 0);
-    _defineProperty(_assertThisInitialized(_this), "source", void 0);
-    _defineProperty(_assertThisInitialized(_this), "target", void 0);
-    _defineProperty(_assertThisInitialized(_this), "detachable", true);
-    _defineProperty(_assertThisInitialized(_this), "reattach", false);
-    _defineProperty(_assertThisInitialized(_this), "uuids", void 0);
-    _defineProperty(_assertThisInitialized(_this), "cost", 1);
-    _defineProperty(_assertThisInitialized(_this), "directed", void 0);
-    _defineProperty(_assertThisInitialized(_this), "endpoints", [null, null]);
-    _defineProperty(_assertThisInitialized(_this), "endpointStyles", void 0);
-    _defineProperty(_assertThisInitialized(_this), "endpointSpec", void 0);
-    _defineProperty(_assertThisInitialized(_this), "endpointsSpec", void 0);
-    _defineProperty(_assertThisInitialized(_this), "endpointStyle", {});
-    _defineProperty(_assertThisInitialized(_this), "endpointHoverStyle", {});
-    _defineProperty(_assertThisInitialized(_this), "endpointHoverStyles", void 0);
-    _defineProperty(_assertThisInitialized(_this), "suspendedEndpoint", void 0);
-    _defineProperty(_assertThisInitialized(_this), "suspendedIndex", void 0);
-    _defineProperty(_assertThisInitialized(_this), "suspendedElement", void 0);
-    _defineProperty(_assertThisInitialized(_this), "suspendedElementId", void 0);
-    _defineProperty(_assertThisInitialized(_this), "suspendedElementType", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_forceReattach", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_forceDetach", void 0);
-    _defineProperty(_assertThisInitialized(_this), "proxies", []);
-    _defineProperty(_assertThisInitialized(_this), "pending", false);
+    _defineProperty(_this, "connector", void 0);
+    _defineProperty(_this, "defaultLabelLocation", 0.5);
+    _defineProperty(_this, "scope", void 0);
+    _defineProperty(_this, "typeId", "_jsplumb_connection");
+    _defineProperty(_this, "previousConnection", void 0);
+    _defineProperty(_this, "sourceId", void 0);
+    _defineProperty(_this, "targetId", void 0);
+    _defineProperty(_this, "source", void 0);
+    _defineProperty(_this, "target", void 0);
+    _defineProperty(_this, "detachable", true);
+    _defineProperty(_this, "reattach", false);
+    _defineProperty(_this, "uuids", void 0);
+    _defineProperty(_this, "cost", 1);
+    _defineProperty(_this, "directed", void 0);
+    _defineProperty(_this, "endpoints", [null, null]);
+    _defineProperty(_this, "endpointStyles", void 0);
+    _defineProperty(_this, "endpointSpec", void 0);
+    _defineProperty(_this, "endpointsSpec", void 0);
+    _defineProperty(_this, "endpointStyle", {});
+    _defineProperty(_this, "endpointHoverStyle", {});
+    _defineProperty(_this, "endpointHoverStyles", void 0);
+    _defineProperty(_this, "suspendedEndpoint", void 0);
+    _defineProperty(_this, "suspendedIndex", void 0);
+    _defineProperty(_this, "suspendedElement", void 0);
+    _defineProperty(_this, "suspendedElementId", void 0);
+    _defineProperty(_this, "suspendedElementType", void 0);
+    _defineProperty(_this, "_forceReattach", void 0);
+    _defineProperty(_this, "_forceDetach", void 0);
+    _defineProperty(_this, "proxies", []);
+    _defineProperty(_this, "pending", false);
     _this.id = params.id;
     _this.previousConnection = params.previousConnection;
     _this.source = params.source;
@@ -6969,7 +6856,8 @@ var Connection = function (_Component) {
     }
     return _this;
   }
-  _createClass(Connection, [{
+  _inherits(Connection, _Component);
+  return _createClass(Connection, [{
     key: "getIdPrefix",
     value: function getIdPrefix() {
       return "_jsPlumb_c";
@@ -7122,11 +7010,11 @@ var Connection = function (_Component) {
     key: "prepareConnector",
     value: function prepareConnector(connectorSpec, typeId) {
       var connectorArgs = {
-        cssClass: this.params.cssClass,
-        hoverClass: this.params.hoverClass,
-        "pointer-events": this.params["pointer-events"]
-      },
-          connector;
+          cssClass: this.params.cssClass,
+          hoverClass: this.params.hoverClass,
+          "pointer-events": this.params["pointer-events"]
+        },
+        connector;
       if (isString(connectorSpec)) {
         connector = this.instance._makeConnector(this, connectorSpec, connectorArgs);
       } else {
@@ -7143,7 +7031,7 @@ var Connection = function (_Component) {
     value: function setPreparedConnector(connector, doNotRepaint, doNotChangeListenerComponent, typeId) {
       if (this.connector !== connector) {
         var previous,
-            previousClasses = "";
+          previousClasses = "";
         if (this.connector != null) {
           previous = this.connector;
           previousClasses = this.instance.getConnectorClass(this.connector);
@@ -7175,10 +7063,10 @@ var Connection = function (_Component) {
     key: "replaceEndpoint",
     value: function replaceEndpoint(idx, endpointDef) {
       var current = this.endpoints[idx],
-          elId = current.elementId,
-          ebe = this.instance.getEndpoints(current.element),
-          _idx = ebe.indexOf(current),
-          _new = prepareEndpoint(this, null, idx, null, current.element, elId, endpointDef);
+        elId = current.elementId,
+        ebe = this.instance.getEndpoints(current.element),
+        _idx = ebe.indexOf(current),
+        _new = prepareEndpoint(this, null, idx, null, current.element, elId, endpointDef);
       this.endpoints[idx] = _new;
       ebe.splice(_idx, 1, _new);
       current.detachFromConnection(this);
@@ -7189,7 +7077,6 @@ var Connection = function (_Component) {
       });
     }
   }]);
-  return Connection;
 }(Component);
 _defineProperty(Connection, "type", "connection");
 
@@ -7250,31 +7137,30 @@ function destroySVGOverlay(o, force) {
   delete _o.bgPath;
 }
 (function (_Overlay) {
-  _inherits(SVGElementOverlay, _Overlay);
-  var _super = _createSuper(SVGElementOverlay);
   function SVGElementOverlay() {
     var _this;
     _classCallCheck(this, SVGElementOverlay);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
-    _this = _super.call.apply(_super, [this].concat(args));
-    _defineProperty(_assertThisInitialized(_this), "path", void 0);
+    _this = _callSuper(this, SVGElementOverlay, [].concat(args));
+    _defineProperty(_this, "path", void 0);
     return _this;
   }
-  return SVGElementOverlay;
+  _inherits(SVGElementOverlay, _Overlay);
+  return _createClass(SVGElementOverlay);
 })(Overlay);
 
 var SvgComponent = function () {
   function SvgComponent() {
     _classCallCheck(this, SvgComponent);
   }
-  _createClass(SvgComponent, null, [{
+  return _createClass(SvgComponent, null, [{
     key: "paint",
     value: function paint(connector, instance, paintStyle, extents) {
       if (paintStyle != null) {
         var xy = [connector.x, connector.y],
-            wh = [connector.w, connector.h];
+          wh = [connector.w, connector.h];
         if (extents != null) {
           if (extents.xmin < 0) {
             xy[0] += extents.xmin;
@@ -7304,14 +7190,13 @@ var SvgComponent = function () {
       }
     }
   }]);
-  return SvgComponent;
 }();
 
 function paintSvgConnector(instance, connector, paintStyle, extents) {
   getConnectorElement(instance, connector);
   SvgComponent.paint(connector, instance, paintStyle, extents);
   var p = "",
-      offset = [0, 0];
+    offset = [0, 0];
   if (extents.xmin < 0) {
     offset[0] = -extents.xmin;
   }
@@ -7321,14 +7206,14 @@ function paintSvgConnector(instance, connector, paintStyle, extents) {
   if (connector.segments.length > 0) {
     p = instance.getPathData(connector);
     var a = {
-      d: p,
-      transform: "translate(" + offset[0] + "," + offset[1] + ")",
-      "pointer-events": "visibleStroke"
-    },
-        outlineStyle = null;
+        d: p,
+        transform: "translate(" + offset[0] + "," + offset[1] + ")",
+        "pointer-events": "visibleStroke"
+      },
+      outlineStyle = null;
     if (paintStyle.outlineStroke) {
       var outlineWidth = paintStyle.outlineWidth || 1,
-          outlineStrokeWidth = paintStyle.strokeWidth + 2 * outlineWidth;
+        outlineStrokeWidth = paintStyle.strokeWidth + 2 * outlineWidth;
       outlineStyle = extend({}, paintStyle);
       outlineStyle.stroke = paintStyle.outlineStroke;
       outlineStyle.strokeWidth = outlineStrokeWidth;
@@ -7381,7 +7266,7 @@ var SvgEndpoint = function () {
   function SvgEndpoint() {
     _classCallCheck(this, SvgEndpoint);
   }
-  _createClass(SvgEndpoint, null, [{
+  return _createClass(SvgEndpoint, null, [{
     key: "getEndpointElement",
     value: function getEndpointElement(ep) {
       if (ep.canvas != null) {
@@ -7432,7 +7317,6 @@ var SvgEndpoint = function () {
       }
     }
   }]);
-  return SvgEndpoint;
 }();
 
 var AbstractConnector = function () {
@@ -7474,7 +7358,7 @@ var AbstractConnector = function () {
     this.cssClass = params.cssClass || "";
     this.hoverClass = params.hoverClass || "";
   }
-  _createClass(AbstractConnector, [{
+  return _createClass(AbstractConnector, [{
     key: "getTypeDescriptor",
     value: function getTypeDescriptor() {
       return "connector";
@@ -7667,31 +7551,31 @@ var AbstractConnector = function () {
     value: function _prepareCompute(params) {
       this.strokeWidth = params.strokeWidth;
       var x1 = params.sourcePos.curX,
-          x2 = params.targetPos.curX,
-          y1 = params.sourcePos.curY,
-          y2 = params.targetPos.curY,
-          segment = quadrant({
-        x: x1,
-        y: y1
-      }, {
-        x: x2,
-        y: y2
-      }),
-          swapX = x2 < x1,
-          swapY = y2 < y1,
-          so = [params.sourcePos.ox, params.sourcePos.oy],
-          to = [params.targetPos.ox, params.targetPos.oy],
-          x = swapX ? x2 : x1,
-          y = swapY ? y2 : y1,
-          w = Math.abs(x2 - x1),
-          h = Math.abs(y2 - y1);
+        x2 = params.targetPos.curX,
+        y1 = params.sourcePos.curY,
+        y2 = params.targetPos.curY,
+        segment = quadrant({
+          x: x1,
+          y: y1
+        }, {
+          x: x2,
+          y: y2
+        }),
+        swapX = x2 < x1,
+        swapY = y2 < y1,
+        so = [params.sourcePos.ox, params.sourcePos.oy],
+        to = [params.targetPos.ox, params.targetPos.oy],
+        x = swapX ? x2 : x1,
+        y = swapY ? y2 : y1,
+        w = Math.abs(x2 - x1),
+        h = Math.abs(y2 - y1);
       var noSourceOrientation = so[0] === 0 && so[1] === 0;
       var noTargetOrientation = to[0] === 0 && to[1] === 0;
       if (noSourceOrientation || noTargetOrientation) {
         var index = w > h ? 0 : 1,
-            oIndex = [1, 0][index],
-            v1 = index === 0 ? x1 : y1,
-            v2 = index === 0 ? x2 : y2;
+          oIndex = [1, 0][index],
+          v1 = index === 0 ? x1 : y1,
+          v2 = index === 0 ? x2 : y2;
         if (noSourceOrientation) {
           so[index] = v1 > v2 ? -1 : 1;
           so[oIndex] = 0;
@@ -7702,10 +7586,10 @@ var AbstractConnector = function () {
         }
       }
       var sx = swapX ? w + this.sourceGap * so[0] : this.sourceGap * so[0],
-          sy = swapY ? h + this.sourceGap * so[1] : this.sourceGap * so[1],
-          tx = swapX ? this.targetGap * to[0] : w + this.targetGap * to[0],
-          ty = swapY ? this.targetGap * to[1] : h + this.targetGap * to[1],
-          oProduct = so[0] * to[0] + so[1] * to[1];
+        sy = swapY ? h + this.sourceGap * so[1] : this.sourceGap * so[1],
+        tx = swapX ? this.targetGap * to[0] : w + this.targetGap * to[0],
+        ty = swapY ? this.targetGap * to[1] : h + this.targetGap * to[1],
+        oProduct = so[0] * to[0] + so[1] * to[1];
       var result = {
         sx: sx,
         sy: sy,
@@ -7796,28 +7680,25 @@ var AbstractConnector = function () {
     key: "setAnchorOrientation",
     value: function setAnchorOrientation(idx, orientation) {}
   }]);
-  return AbstractConnector;
 }();
 
 var DEFAULT_WIDTH = 20;
 var DEFAULT_LENGTH = 20;
 var ArrowOverlay = function (_Overlay) {
-  _inherits(ArrowOverlay, _Overlay);
-  var _super = _createSuper(ArrowOverlay);
   function ArrowOverlay(instance, component, p) {
     var _this;
     _classCallCheck(this, ArrowOverlay);
-    _this = _super.call(this, instance, component, p);
+    _this = _callSuper(this, ArrowOverlay, [instance, component, p]);
     _this.instance = instance;
     _this.component = component;
-    _defineProperty(_assertThisInitialized(_this), "width", void 0);
-    _defineProperty(_assertThisInitialized(_this), "length", void 0);
-    _defineProperty(_assertThisInitialized(_this), "foldback", void 0);
-    _defineProperty(_assertThisInitialized(_this), "direction", void 0);
-    _defineProperty(_assertThisInitialized(_this), "location", 0.5);
-    _defineProperty(_assertThisInitialized(_this), "paintStyle", void 0);
-    _defineProperty(_assertThisInitialized(_this), "type", ArrowOverlay.type);
-    _defineProperty(_assertThisInitialized(_this), "cachedDimensions", void 0);
+    _defineProperty(_this, "width", void 0);
+    _defineProperty(_this, "length", void 0);
+    _defineProperty(_this, "foldback", void 0);
+    _defineProperty(_this, "direction", void 0);
+    _defineProperty(_this, "location", 0.5);
+    _defineProperty(_this, "paintStyle", void 0);
+    _defineProperty(_this, "type", ArrowOverlay.type);
+    _defineProperty(_this, "cachedDimensions", void 0);
     p = p || {};
     _this.width = p.width || DEFAULT_WIDTH;
     _this.length = p.length || DEFAULT_LENGTH;
@@ -7829,7 +7710,8 @@ var ArrowOverlay = function (_Overlay) {
     _this.location = p.location == null ? _this.location : Array.isArray(p.location) ? p.location[0] : p.location;
     return _this;
   }
-  _createClass(ArrowOverlay, [{
+  _inherits(ArrowOverlay, _Overlay);
+  return _createClass(ArrowOverlay, [{
     key: "draw",
     value: function draw(component, currentConnectionPaintStyle, absolutePosition) {
       if (component instanceof AbstractConnector) {
@@ -7866,13 +7748,13 @@ var ArrowOverlay = function (_Overlay) {
         tail = perpendicularLineTo(hxy, txy, this.width);
         cxy = pointOnLine(hxy, txy, this.foldback * this.length);
         var d = {
-          hxy: hxy,
-          tail: tail,
-          cxy: cxy
-        },
-            stroke = this.paintStyle.stroke || currentConnectionPaintStyle.stroke,
-            fill = this.paintStyle.fill || currentConnectionPaintStyle.stroke,
-            lineWidth = this.paintStyle.strokeWidth || currentConnectionPaintStyle.strokeWidth;
+            hxy: hxy,
+            tail: tail,
+            cxy: cxy
+          },
+          stroke = this.paintStyle.stroke || currentConnectionPaintStyle.stroke,
+          fill = this.paintStyle.fill || currentConnectionPaintStyle.stroke,
+          lineWidth = this.paintStyle.strokeWidth || currentConnectionPaintStyle.strokeWidth;
         return {
           component: component,
           d: d,
@@ -7890,7 +7772,6 @@ var ArrowOverlay = function (_Overlay) {
     key: "updateFrom",
     value: function updateFrom(d) {}
   }]);
-  return ArrowOverlay;
 }(Overlay);
 _defineProperty(ArrowOverlay, "type", "Arrow");
 function isArrowOverlay(o) {
@@ -7899,19 +7780,18 @@ function isArrowOverlay(o) {
 OverlayFactory.register(ArrowOverlay.type, ArrowOverlay);
 
 var DiamondOverlay = function (_ArrowOverlay) {
-  _inherits(DiamondOverlay, _ArrowOverlay);
-  var _super = _createSuper(DiamondOverlay);
   function DiamondOverlay(instance, component, p) {
     var _this;
     _classCallCheck(this, DiamondOverlay);
-    _this = _super.call(this, instance, component, p);
+    _this = _callSuper(this, DiamondOverlay, [instance, component, p]);
     _this.instance = instance;
-    _defineProperty(_assertThisInitialized(_this), "type", DiamondOverlay.type);
+    _defineProperty(_this, "type", DiamondOverlay.type);
     _this.length = _this.length / 2;
     _this.foldback = 2;
     return _this;
   }
-  return DiamondOverlay;
+  _inherits(DiamondOverlay, _ArrowOverlay);
+  return _createClass(DiamondOverlay);
 }(ArrowOverlay);
 _defineProperty(DiamondOverlay, "type", "Diamond");
 function isDiamondOverlay(o) {
@@ -7920,18 +7800,17 @@ function isDiamondOverlay(o) {
 OverlayFactory.register(DiamondOverlay.type, DiamondOverlay);
 
 var PlainArrowOverlay = function (_ArrowOverlay) {
-  _inherits(PlainArrowOverlay, _ArrowOverlay);
-  var _super = _createSuper(PlainArrowOverlay);
   function PlainArrowOverlay(instance, component, p) {
     var _this;
     _classCallCheck(this, PlainArrowOverlay);
-    _this = _super.call(this, instance, component, p);
+    _this = _callSuper(this, PlainArrowOverlay, [instance, component, p]);
     _this.instance = instance;
-    _defineProperty(_assertThisInitialized(_this), "type", PlainArrowOverlay.type);
+    _defineProperty(_this, "type", PlainArrowOverlay.type);
     _this.foldback = 1;
     return _this;
   }
-  return PlainArrowOverlay;
+  _inherits(PlainArrowOverlay, _ArrowOverlay);
+  return _createClass(PlainArrowOverlay);
 }(ArrowOverlay);
 _defineProperty(PlainArrowOverlay, "type", "PlainArrow");
 function isPlainArrowOverlay(o) {
@@ -7940,24 +7819,22 @@ function isPlainArrowOverlay(o) {
 OverlayFactory.register("PlainArrow", PlainArrowOverlay);
 
 var CustomOverlay = function (_Overlay) {
-  _inherits(CustomOverlay, _Overlay);
-  var _super = _createSuper(CustomOverlay);
   function CustomOverlay(instance, component, p) {
     var _this;
     _classCallCheck(this, CustomOverlay);
-    _this = _super.call(this, instance, component, p);
+    _this = _callSuper(this, CustomOverlay, [instance, component, p]);
     _this.instance = instance;
     _this.component = component;
-    _defineProperty(_assertThisInitialized(_this), "create", void 0);
-    _defineProperty(_assertThisInitialized(_this), "type", CustomOverlay.type);
+    _defineProperty(_this, "create", void 0);
+    _defineProperty(_this, "type", CustomOverlay.type);
     _this.create = p.create;
     return _this;
   }
-  _createClass(CustomOverlay, [{
+  _inherits(CustomOverlay, _Overlay);
+  return _createClass(CustomOverlay, [{
     key: "updateFrom",
     value: function updateFrom(d) {}
   }]);
-  return CustomOverlay;
 }(Overlay);
 _defineProperty(CustomOverlay, "type", "Custom");
 function isCustomOverlay(o) {
@@ -7988,23 +7865,22 @@ var DEFAULT_KEY_REATTACH_CONNECTIONS = "reattachConnections";
 var DEFAULT_KEY_SCOPE = "scope";
 
 var DotEndpoint = function (_EndpointRepresentati) {
-  _inherits(DotEndpoint, _EndpointRepresentati);
-  var _super = _createSuper(DotEndpoint);
   function DotEndpoint(endpoint, params) {
     var _this;
     _classCallCheck(this, DotEndpoint);
-    _this = _super.call(this, endpoint, params);
-    _defineProperty(_assertThisInitialized(_this), "radius", void 0);
-    _defineProperty(_assertThisInitialized(_this), "defaultOffset", void 0);
-    _defineProperty(_assertThisInitialized(_this), "defaultInnerRadius", void 0);
-    _defineProperty(_assertThisInitialized(_this), "type", DotEndpoint.type);
+    _this = _callSuper(this, DotEndpoint, [endpoint, params]);
+    _defineProperty(_this, "radius", void 0);
+    _defineProperty(_this, "defaultOffset", void 0);
+    _defineProperty(_this, "defaultInnerRadius", void 0);
+    _defineProperty(_this, "type", DotEndpoint.type);
     params = params || {};
     _this.radius = params.radius || 5;
     _this.defaultOffset = 0.5 * _this.radius;
     _this.defaultInnerRadius = _this.radius / 3;
     return _this;
   }
-  return DotEndpoint;
+  _inherits(DotEndpoint, _EndpointRepresentati);
+  return _createClass(DotEndpoint);
 }(EndpointRepresentation);
 _defineProperty(DotEndpoint, "type", "Dot");
 var DotEndpointHandler = {
@@ -8012,9 +7888,9 @@ var DotEndpointHandler = {
   cls: DotEndpoint,
   compute: function compute(ep, anchorPoint, orientation, endpointStyle) {
     var x = anchorPoint.curX - ep.radius,
-        y = anchorPoint.curY - ep.radius,
-        w = ep.radius * 2,
-        h = ep.radius * 2;
+      y = anchorPoint.curY - ep.radius,
+      w = ep.radius * 2,
+      h = ep.radius * 2;
     if (endpointStyle && endpointStyle.stroke) {
       var lw = endpointStyle.strokeWidth || 1;
       x -= lw;
@@ -8035,44 +7911,42 @@ var DotEndpointHandler = {
   }
 };
 
-var UINode = function UINode(instance, el) {
+var UINode = _createClass(function UINode(instance, el) {
   _classCallCheck(this, UINode);
   this.instance = instance;
   this.el = el;
   _defineProperty(this, "group", void 0);
-};
-var UIGroup = function (_UINode) {
-  _inherits(UIGroup, _UINode);
-  var _super = _createSuper(UIGroup);
+});
+var UIGroup = function (_UINode2) {
   function UIGroup(instance, el, options) {
     var _this;
     _classCallCheck(this, UIGroup);
-    _this = _super.call(this, instance, el);
+    _this = _callSuper(this, UIGroup, [instance, el]);
     _this.instance = instance;
-    _defineProperty(_assertThisInitialized(_this), "children", []);
-    _defineProperty(_assertThisInitialized(_this), "collapsed", false);
-    _defineProperty(_assertThisInitialized(_this), "droppable", void 0);
-    _defineProperty(_assertThisInitialized(_this), "enabled", void 0);
-    _defineProperty(_assertThisInitialized(_this), "orphan", void 0);
-    _defineProperty(_assertThisInitialized(_this), "constrain", void 0);
-    _defineProperty(_assertThisInitialized(_this), "proxied", void 0);
-    _defineProperty(_assertThisInitialized(_this), "ghost", void 0);
-    _defineProperty(_assertThisInitialized(_this), "revert", void 0);
-    _defineProperty(_assertThisInitialized(_this), "prune", void 0);
-    _defineProperty(_assertThisInitialized(_this), "dropOverride", void 0);
-    _defineProperty(_assertThisInitialized(_this), "anchor", void 0);
-    _defineProperty(_assertThisInitialized(_this), "endpoint", void 0);
-    _defineProperty(_assertThisInitialized(_this), "connections", {
+    _defineProperty(_this, "children", []);
+    _defineProperty(_this, "collapsed", false);
+    _defineProperty(_this, "droppable", void 0);
+    _defineProperty(_this, "enabled", void 0);
+    _defineProperty(_this, "orphan", void 0);
+    _defineProperty(_this, "constrain", void 0);
+    _defineProperty(_this, "proxied", void 0);
+    _defineProperty(_this, "ghost", void 0);
+    _defineProperty(_this, "revert", void 0);
+    _defineProperty(_this, "prune", void 0);
+    _defineProperty(_this, "dropOverride", void 0);
+    _defineProperty(_this, "anchor", void 0);
+    _defineProperty(_this, "endpoint", void 0);
+    _defineProperty(_this, "connections", {
       source: [],
       target: [],
       internal: []
     });
-    _defineProperty(_assertThisInitialized(_this), "manager", void 0);
-    _defineProperty(_assertThisInitialized(_this), "id", void 0);
-    _defineProperty(_assertThisInitialized(_this), "elId", void 0);
+    _defineProperty(_this, "manager", void 0);
+    _defineProperty(_this, "id", void 0);
+    _defineProperty(_this, "elId", void 0);
     var jel = _this.el;
     jel._isJsPlumbGroup = true;
-    jel._jsPlumbGroup = _assertThisInitialized(_this);
+    jel._jsPlumbGroup = _this;
     _this.elId = instance.getId(el);
     _this.orphan = options.orphan === true;
     _this.revert = _this.orphan === true ? false : options.revert !== false;
@@ -8090,7 +7964,8 @@ var UIGroup = function (_UINode) {
     instance.setAttribute(el, ATTRIBUTE_GROUP, "");
     return _this;
   }
-  _createClass(UIGroup, [{
+  _inherits(UIGroup, _UINode2);
+  return _createClass(UIGroup, [{
     key: "contentArea",
     get: function get() {
       return this.instance.getGroupContentArea(this);
@@ -8288,7 +8163,6 @@ var UIGroup = function (_UINode) {
       }
     }
   }]);
-  return UIGroup;
 }(UINode);
 
 var GroupManager = function () {
@@ -8330,12 +8204,12 @@ var GroupManager = function () {
     });
     instance.bind(EVENT_CONNECTION_MOVED, function (p) {
       var originalElement = p.originalEndpoint.element,
-          originalGroup = _this.getGroupFor(originalElement),
-          newEndpoint = p.connection.endpoints[p.index],
-          newElement = newEndpoint.element,
-          newGroup = _this.getGroupFor(newElement),
-          connMap = p.index === 0 ? _this._connectionSourceMap : _this._connectionTargetMap,
-          otherConnMap = p.index === 0 ? _this._connectionTargetMap : _this._connectionSourceMap;
+        originalGroup = _this.getGroupFor(originalElement),
+        newEndpoint = p.connection.endpoints[p.index],
+        newElement = newEndpoint.element,
+        newGroup = _this.getGroupFor(newElement),
+        connMap = p.index === 0 ? _this._connectionSourceMap : _this._connectionTargetMap,
+        otherConnMap = p.index === 0 ? _this._connectionTargetMap : _this._connectionSourceMap;
       if (newGroup != null) {
         connMap[p.connection.id] = newGroup;
         if (p.connection.source === p.connection.target) {
@@ -8355,12 +8229,12 @@ var GroupManager = function () {
       }
     });
   }
-  _createClass(GroupManager, [{
+  return _createClass(GroupManager, [{
     key: "_cleanupDetachedConnection",
     value: function _cleanupDetachedConnection(conn) {
       conn.proxies.length = 0;
       var group = this._connectionSourceMap[conn.id],
-          f;
+        f;
       if (group != null) {
         f = function f(c) {
           return c.id === conn.id;
@@ -8423,7 +8297,7 @@ var GroupManager = function () {
       var jel = el;
       var c = this.instance.getContainer();
       var abort = false,
-          g = null;
+        g = null;
       while (!abort) {
         if (jel == null || jel === c) {
           abort = true;
@@ -8486,8 +8360,8 @@ var GroupManager = function () {
   }, {
     key: "removeAllGroups",
     value: function removeAllGroups(deleteMembers, manipulateView, doNotFireEvent) {
-      for (var _g in this.groupMap) {
-        this.removeGroup(this.groupMap[_g], deleteMembers, manipulateView, doNotFireEvent);
+      for (var g in this.groupMap) {
+        this.removeGroup(this.groupMap[g], deleteMembers, manipulateView, doNotFireEvent);
       }
     }
   }, {
@@ -8579,16 +8453,15 @@ var GroupManager = function () {
         return false;
       }
       var es = conn.endpoints[0].element,
-          esg = es._jsPlumbParentGroup,
-          esgcp = esg != null ? esg.collapseParent || esg : null,
-          et = conn.endpoints[1].element,
-          etg = et._jsPlumbParentGroup,
-          etgcp = etg != null ? etg.collapseParent || etg : null;
+        esg = es._jsPlumbParentGroup,
+        esgcp = esg != null ? esg.collapseParent || esg : null,
+        et = conn.endpoints[1].element,
+        etg = et._jsPlumbParentGroup,
+        etgcp = etg != null ? etg.collapseParent || etg : null;
       if (esgcp == null || etgcp == null || esgcp.id !== etgcp.id) {
         var groupEl = group.el;
-            this.instance.getId(groupEl);
-        this.instance.proxyConnection(conn, index, groupEl,
-        function (conn, index) {
+          this.instance.getId(groupEl);
+        this.instance.proxyConnection(conn, index, groupEl, function (conn, index) {
           return group.getEndpoint(conn, index);
         }, function (conn, index) {
           return group.getAnchor(conn, index);
@@ -8772,7 +8645,7 @@ var GroupManager = function () {
         var _one = function _one(el) {
           var jel = el;
           var isGroup = jel._isJsPlumbGroup != null,
-              droppingGroup = jel._jsPlumbGroup;
+            droppingGroup = jel._jsPlumbGroup;
           var currentGroup = jel._jsPlumbParentGroup;
           if (currentGroup !== actualGroup) {
             var entry = _this7.instance.manage(el);
@@ -8921,7 +8794,6 @@ var GroupManager = function () {
       this.groupMap = {};
     }
   }]);
-  return GroupManager;
 }();
 
 var SelectionBase = function () {
@@ -8930,7 +8802,7 @@ var SelectionBase = function () {
     this.instance = instance;
     this.entries = entries;
   }
-  _createClass(SelectionBase, [{
+  return _createClass(SelectionBase, [{
     key: "length",
     get: function get() {
       return this.entries.length;
@@ -9133,17 +9005,15 @@ var SelectionBase = function () {
       return this;
     }
   }]);
-  return SelectionBase;
 }();
 
 var EndpointSelection = function (_SelectionBase) {
-  _inherits(EndpointSelection, _SelectionBase);
-  var _super = _createSuper(EndpointSelection);
   function EndpointSelection() {
     _classCallCheck(this, EndpointSelection);
-    return _super.apply(this, arguments);
+    return _callSuper(this, EndpointSelection, arguments);
   }
-  _createClass(EndpointSelection, [{
+  _inherits(EndpointSelection, _SelectionBase);
+  return _createClass(EndpointSelection, [{
     key: "setEnabled",
     value: function setEnabled(e) {
       this.each(function (ep) {
@@ -9178,17 +9048,15 @@ var EndpointSelection = function (_SelectionBase) {
       return this;
     }
   }]);
-  return EndpointSelection;
 }(SelectionBase);
 
 var ConnectionSelection = function (_SelectionBase) {
-  _inherits(ConnectionSelection, _SelectionBase);
-  var _super = _createSuper(ConnectionSelection);
   function ConnectionSelection() {
     _classCallCheck(this, ConnectionSelection);
-    return _super.apply(this, arguments);
+    return _callSuper(this, ConnectionSelection, arguments);
   }
-  _createClass(ConnectionSelection, [{
+  _inherits(ConnectionSelection, _SelectionBase);
+  return _createClass(ConnectionSelection, [{
     key: "setDetachable",
     value: function setDetachable(d) {
       this.each(function (c) {
@@ -9231,13 +9099,12 @@ var ConnectionSelection = function (_SelectionBase) {
       return this;
     }
   }]);
-  return ConnectionSelection;
 }(SelectionBase);
 
-var Transaction = function Transaction() {
+var Transaction = _createClass(function Transaction() {
   _classCallCheck(this, Transaction);
   _defineProperty(this, "affectedElements", new Set());
-};
+});
 function EMPTY_POSITION() {
   return {
     x: 0,
@@ -9271,26 +9138,26 @@ function EMPTY_POSITION() {
 }
 function rotate(x, y, w, h, r) {
   var center = {
-    x: x + w / 2,
-    y: y + h / 2
-  },
-      cr = Math.cos(r / 360 * Math.PI * 2),
-      sr = Math.sin(r / 360 * Math.PI * 2),
-      _point = function _point(x, y) {
-    return {
-      x: center.x + Math.round((x - center.x) * cr - (y - center.y) * sr),
-      y: center.y + Math.round((y - center.y) * cr - (x - center.x) * sr)
+      x: x + w / 2,
+      y: y + h / 2
+    },
+    cr = Math.cos(r / 360 * Math.PI * 2),
+    sr = Math.sin(r / 360 * Math.PI * 2),
+    _point = function _point(x, y) {
+      return {
+        x: center.x + Math.round((x - center.x) * cr - (y - center.y) * sr),
+        y: center.y + Math.round((y - center.y) * cr - (x - center.x) * sr)
+      };
     };
-  };
   var p1 = _point(x, y),
-      p2 = _point(x + w, y),
-      p3 = _point(x + w, y + h),
-      p4 = _point(x, y + h),
-      c = _point(x + w / 2, y + h / 2);
+    p2 = _point(x + w, y),
+    p3 = _point(x + w, y + h),
+    p4 = _point(x, y + h),
+    c = _point(x + w / 2, y + h / 2);
   var xmin = Math.min(p1.x, p2.x, p3.x, p4.x),
-      xmax = Math.max(p1.x, p2.x, p3.x, p4.x),
-      ymin = Math.min(p1.y, p2.y, p3.y, p4.y),
-      ymax = Math.max(p1.y, p2.y, p3.y, p4.y);
+    xmax = Math.max(p1.x, p2.x, p3.x, p4.x),
+    ymin = Math.min(p1.y, p2.y, p3.y, p4.y),
+    ymax = Math.max(p1.y, p2.y, p3.y, p4.y);
   return {
     x: xmin,
     y: ymin,
@@ -9328,23 +9195,21 @@ function _clearElementIndex(id, array) {
   }
 }
 var Viewport = function (_EventGenerator) {
-  _inherits(Viewport, _EventGenerator);
-  var _super = _createSuper(Viewport);
   function Viewport(instance) {
     var _this;
     _classCallCheck(this, Viewport);
-    _this = _super.call(this);
+    _this = _callSuper(this, Viewport);
     _this.instance = instance;
-    _defineProperty(_assertThisInitialized(_this), "_currentTransaction", null);
-    _defineProperty(_assertThisInitialized(_this), "_sortedElements", {
+    _defineProperty(_this, "_currentTransaction", null);
+    _defineProperty(_this, "_sortedElements", {
       xmin: [],
       xmax: [],
       ymin: [],
       ymax: []
     });
-    _defineProperty(_assertThisInitialized(_this), "_elementMap", new Map());
-    _defineProperty(_assertThisInitialized(_this), "_transformedElementMap", new Map());
-    _defineProperty(_assertThisInitialized(_this), "_bounds", {
+    _defineProperty(_this, "_elementMap", new Map());
+    _defineProperty(_this, "_transformedElementMap", new Map());
+    _defineProperty(_this, "_bounds", {
       minx: 0,
       maxx: 0,
       miny: 0,
@@ -9352,7 +9217,8 @@ var Viewport = function (_EventGenerator) {
     });
     return _this;
   }
-  _createClass(Viewport, [{
+  _inherits(Viewport, _EventGenerator);
+  return _createClass(Viewport, [{
     key: "_updateBounds",
     value: function _updateBounds(id, updatedElement, doNotRecalculateBounds) {
       if (updatedElement != null) {
@@ -9584,27 +9450,25 @@ var Viewport = function (_EventGenerator) {
       return this._elementMap.size === 0;
     }
   }]);
-  return Viewport;
 }(EventGenerator);
 
-var _edgeSortFunctions;
 function _placeAnchorsOnLine(element, connections, horizontal, otherMultiplier, reverse) {
   var sizeInAxis = horizontal ? element.w : element.h;
   var sizeInOtherAxis = horizontal ? element.h : element.w;
   var a = [],
-      step = sizeInAxis / (connections.length + 1);
+    step = sizeInAxis / (connections.length + 1);
   for (var i = 0; i < connections.length; i++) {
     var val = (i + 1) * step,
-        other = otherMultiplier * sizeInOtherAxis;
+      other = otherMultiplier * sizeInOtherAxis;
     if (reverse) {
       val = sizeInAxis - val;
     }
     var dx = horizontal ? val : other,
-        x = element.x + dx,
-        xp = dx / element.w;
+      x = element.x + dx,
+      xp = dx / element.w;
     var dy = horizontal ? other : val,
-        y = element.y + dy,
-        yp = dy / element.h;
+      y = element.y + dy,
+      yp = dy / element.h;
     if (element.r !== 0 && element.r != null) {
       var rotated = rotatePoint({
         x: x,
@@ -9628,10 +9492,10 @@ function _rightAndBottomSort(a, b) {
 }
 function _leftAndTopSort(a, b) {
   var p1 = a.theta < 0 ? -Math.PI - a.theta : Math.PI - a.theta,
-      p2 = b.theta < 0 ? -Math.PI - b.theta : Math.PI - b.theta;
+    p2 = b.theta < 0 ? -Math.PI - b.theta : Math.PI - b.theta;
   return p1 - p2;
 }
-var edgeSortFunctions = (_edgeSortFunctions = {}, _defineProperty(_edgeSortFunctions, TOP, _leftAndTopSort), _defineProperty(_edgeSortFunctions, RIGHT, _rightAndBottomSort), _defineProperty(_edgeSortFunctions, BOTTOM, _rightAndBottomSort), _defineProperty(_edgeSortFunctions, LEFT, _leftAndTopSort), _edgeSortFunctions);
+var edgeSortFunctions = _defineProperty(_defineProperty(_defineProperty(_defineProperty({}, TOP, _leftAndTopSort), RIGHT, _rightAndBottomSort), BOTTOM, _rightAndBottomSort), LEFT, _leftAndTopSort);
 function isContinuous(a) {
   return a.isContinuous === true;
 }
@@ -9663,7 +9527,7 @@ var LightweightRouter = function () {
       _this._removeEndpointFromAnchorLists(ep);
     });
   }
-  _createClass(LightweightRouter, [{
+  return _createClass(LightweightRouter, [{
     key: "getAnchorOrientation",
     value: function getAnchorOrientation(anchor) {
       var loc = this.anchorLocations.get(anchor.id);
@@ -9673,9 +9537,9 @@ var LightweightRouter = function () {
     key: "_distance",
     value: function _distance(anchor, cx, cy, xy, wh, rotation, targetRotation) {
       var ax = xy.x + anchor.x * wh.w,
-          ay = xy.y + anchor.y * wh.h,
-          acx = xy.x + wh.w / 2,
-          acy = xy.y + wh.h / 2;
+        ay = xy.y + anchor.y * wh.h,
+        acx = xy.x + wh.w / 2,
+        acy = xy.y + wh.h / 2;
       if (rotation != null && rotation.length > 0) {
         var rotated = this.instance._applyRotations([ax, ay, 0, 0], rotation);
         ax = rotated.x;
@@ -9687,9 +9551,9 @@ var LightweightRouter = function () {
     key: "_anchorSelector",
     value: function _anchorSelector(xy, wh, txy, twh, rotation, targetRotation, locations) {
       var cx = txy.x + twh.w / 2,
-          cy = txy.y + twh.h / 2;
+        cy = txy.y + twh.h / 2;
       var minIdx = -1,
-          minDist = Infinity;
+        minDist = Infinity;
       for (var i = 0; i < locations.length; i++) {
         var d = this._distance(locations[i], cx, cy, xy, wh, rotation, targetRotation);
         if (d < minDist) {
@@ -9738,12 +9602,12 @@ var LightweightRouter = function () {
       };
       if (rotation != null && rotation.length > 0) {
         var o = [loc.iox, loc.ioy],
-            current = {
-          x: candidate.curX,
-          y: candidate.curY,
-          cr: 0,
-          sr: 0
-        };
+          current = {
+            x: candidate.curX,
+            y: candidate.curY,
+            cr: 0,
+            sr: 0
+          };
         forEach(rotation, function (r) {
           current = rotatePoint(current, r.c, r.r);
           var _o = [Math.round(o[0] * current.cr - o[1] * current.sr), Math.round(o[1] * current.cr + o[0] * current.sr)];
@@ -9773,16 +9637,16 @@ var LightweightRouter = function () {
     key: "_singleAnchorCompute",
     value: function _singleAnchorCompute(anchor, params) {
       var xy = params.xy,
-          wh = params.wh,
-          timestamp = params.timestamp,
-          pos = this.anchorLocations.get(anchor.id);
+        wh = params.wh,
+        timestamp = params.timestamp,
+        pos = this.anchorLocations.get(anchor.id);
       if (pos != null && timestamp && timestamp === anchor.timestamp) {
         return pos;
       }
       var _getCurrentLocation = getCurrentLocation(anchor),
-          _getCurrentLocation2 = _slicedToArray(_getCurrentLocation, 2);
-          _getCurrentLocation2[0];
-          var currentLoc = _getCurrentLocation2[1];
+        _getCurrentLocation2 = _slicedToArray(_getCurrentLocation, 2);
+        _getCurrentLocation2[0];
+        var currentLoc = _getCurrentLocation2[1];
       pos = this._computeSingleLocation(currentLoc, xy, wh, params);
       return this._setComputedPosition(anchor, pos, timestamp);
     }
@@ -9794,20 +9658,20 @@ var LightweightRouter = function () {
         return this._singleAnchorCompute(anchor, params);
       }
       var xy = params.xy,
-          wh = params.wh,
-          txy = params.txy,
-          twh = params.twh;
+        wh = params.wh,
+        txy = params.txy,
+        twh = params.twh;
       var _getCurrentLocation3 = getCurrentLocation(anchor),
-          _getCurrentLocation4 = _slicedToArray(_getCurrentLocation3, 2),
-          currentIdx = _getCurrentLocation4[0],
-          currentLoc = _getCurrentLocation4[1];
+        _getCurrentLocation4 = _slicedToArray(_getCurrentLocation3, 2),
+        currentIdx = _getCurrentLocation4[0],
+        currentLoc = _getCurrentLocation4[1];
       if (anchor.locked || txy == null || twh == null) {
         pos = this._computeSingleLocation(currentLoc, xy, wh, params);
       } else {
         var _this$_anchorSelector = this._anchorSelector(xy, wh, txy, twh, params.rotation, params.tRotation, anchor.locations),
-            _this$_anchorSelector2 = _slicedToArray(_this$_anchorSelector, 2),
-            newIdx = _this$_anchorSelector2[0],
-            newLoc = _this$_anchorSelector2[1];
+          _this$_anchorSelector2 = _slicedToArray(_this$_anchorSelector, 2),
+          newIdx = _this$_anchorSelector2[0],
+          newLoc = _this$_anchorSelector2[1];
         anchor.currentLocation = newIdx;
         if (newIdx !== currentIdx) {
           anchor.cssClass = newLoc.cls || anchor.cssClass;
@@ -9822,26 +9686,26 @@ var LightweightRouter = function () {
     value: function _placeAnchors(elementId, _anchorLists) {
       var _this2 = this;
       var cd = this.instance.viewport.getPosition(elementId),
-          placeSomeAnchors = function placeSomeAnchors(desc, element, unsortedConnections, isHorizontal, otherMultiplier, orientation) {
-        if (unsortedConnections.length > 0) {
-          var sc = unsortedConnections.sort(edgeSortFunctions[desc]),
-          reverse = desc === RIGHT || desc === TOP,
+        placeSomeAnchors = function placeSomeAnchors(desc, element, unsortedConnections, isHorizontal, otherMultiplier, orientation) {
+          if (unsortedConnections.length > 0) {
+            var sc = unsortedConnections.sort(edgeSortFunctions[desc]),
+              reverse = desc === RIGHT || desc === TOP,
               anchors = _placeAnchorsOnLine(cd, sc, isHorizontal, otherMultiplier, reverse);
-          for (var i = 0; i < anchors.length; i++) {
-            var c = anchors[i].c,
+            for (var i = 0; i < anchors.length; i++) {
+              var c = anchors[i].c,
                 weAreSource = c.endpoints[0].elementId === elementId,
                 ep = weAreSource ? c.endpoints[0] : c.endpoints[1];
-            _this2._setComputedPosition(ep._anchor, {
-              curX: anchors[i].x,
-              curY: anchors[i].y,
-              x: anchors[i].xLoc,
-              y: anchors[i].yLoc,
-              ox: orientation[0],
-              oy: orientation[1]
-            });
+              _this2._setComputedPosition(ep._anchor, {
+                curX: anchors[i].x,
+                curY: anchors[i].y,
+                x: anchors[i].xLoc,
+                y: anchors[i].yLoc,
+                ox: orientation[0],
+                oy: orientation[1]
+              });
+            }
           }
-        }
-      };
+        };
       placeSomeAnchors(BOTTOM, cd, _anchorLists.bottom, true, 1, [0, 1]);
       placeSomeAnchors(TOP, cd, _anchorLists.top, true, 0, [0, -1]);
       placeSomeAnchors(LEFT, cd, _anchorLists.left, false, 0, [-1, 0]);
@@ -9851,19 +9715,19 @@ var LightweightRouter = function () {
     key: "_updateAnchorList",
     value: function _updateAnchorList(lists, theta, order, conn, aBoolean, otherElId, idx, reverse, edgeId, connsToPaint, endpointsToPaint) {
       var endpoint = conn.endpoints[idx],
-          endpointId = endpoint.id,
-          oIdx = [1, 0][idx],
-          values = {
-        theta: theta,
-        order: order,
-        c: conn,
-        b: aBoolean,
-        elId: otherElId,
-        epId: endpointId
-      },
-          listToAddTo = lists[edgeId],
-          listToRemoveFrom = endpoint._continuousAnchorEdge ? lists[endpoint._continuousAnchorEdge] : null,
-          candidate;
+        endpointId = endpoint.id,
+        oIdx = [1, 0][idx],
+        values = {
+          theta: theta,
+          order: order,
+          c: conn,
+          b: aBoolean,
+          elId: otherElId,
+          epId: endpointId
+        },
+        listToAddTo = lists[edgeId],
+        listToRemoveFrom = endpoint._continuousAnchorEdge ? lists[endpoint._continuousAnchorEdge] : null,
+        candidate;
       if (listToRemoveFrom) {
         var rIdx = findWithFunction(listToRemoveFrom, function (e) {
           return e.epId === endpointId;
@@ -9944,23 +9808,23 @@ var LightweightRouter = function () {
     key: "computePath",
     value: function computePath(connection, timestamp) {
       var sourceInfo = this.instance.viewport.getPosition(connection.sourceId),
-          targetInfo = this.instance.viewport.getPosition(connection.targetId),
-          sE = connection.endpoints[0],
-          tE = connection.endpoints[1];
+        targetInfo = this.instance.viewport.getPosition(connection.targetId),
+        sE = connection.endpoints[0],
+        tE = connection.endpoints[1];
       var sAnchorP = this.getEndpointLocation(sE, {
-        xy: sourceInfo,
-        wh: sourceInfo,
-        element: sE,
-        timestamp: timestamp,
-        rotation: this.instance._getRotations(connection.sourceId)
-      }),
-          tAnchorP = this.getEndpointLocation(tE, {
-        xy: targetInfo,
-        wh: targetInfo,
-        element: tE,
-        timestamp: timestamp,
-        rotation: this.instance._getRotations(connection.targetId)
-      });
+          xy: sourceInfo,
+          wh: sourceInfo,
+          element: sE,
+          timestamp: timestamp,
+          rotation: this.instance._getRotations(connection.sourceId)
+        }),
+        tAnchorP = this.getEndpointLocation(tE, {
+          xy: targetInfo,
+          wh: targetInfo,
+          element: tE,
+          timestamp: timestamp,
+          rotation: this.instance._getRotations(connection.targetId)
+        });
       connection.connector.resetBounds();
       connection.connector.compute({
         sourcePos: sAnchorP,
@@ -10018,14 +9882,14 @@ var LightweightRouter = function () {
     value: function redraw(elementId, timestamp, offsetToUI) {
       var _this3 = this;
       var connectionsToPaint = new Set(),
-          endpointsToPaint = new Set(),
-          anchorsToUpdate = new Set();
+        endpointsToPaint = new Set(),
+        anchorsToUpdate = new Set();
       if (!this.instance._suspendDrawing) {
         var ep = this.instance.endpointsByElement[elementId] || [];
         timestamp = timestamp || uuid();
         var orientationCache = {},
-            a,
-            anEndpoint;
+          a,
+          anEndpoint;
         for (var i = 0; i < ep.length; i++) {
           anEndpoint = ep[i];
           if (anEndpoint.visible === false) {
@@ -10052,16 +9916,16 @@ var LightweightRouter = function () {
           } else {
             for (var _i2 = 0; _i2 < anEndpoint.connections.length; _i2++) {
               var conn = anEndpoint.connections[_i2],
-                  sourceId = conn.sourceId,
-                  targetId = conn.targetId,
-                  sourceContinuous = isContinuous(conn.endpoints[0]._anchor),
-                  targetContinuous = isContinuous(conn.endpoints[1]._anchor);
+                sourceId = conn.sourceId,
+                targetId = conn.targetId,
+                sourceContinuous = isContinuous(conn.endpoints[0]._anchor),
+                targetContinuous = isContinuous(conn.endpoints[1]._anchor);
               if (sourceContinuous || targetContinuous) {
                 var c1 = (conn.endpoints[0]._anchor.faces || []).join("-"),
-                    c2 = (conn.endpoints[1]._anchor.faces || []).join("-"),
-                    oKey = [sourceId, c1, targetId, c2].join("-"),
-                    o = orientationCache[oKey],
-                    oIdx = conn.sourceId === elementId ? 1 : 0;
+                  c2 = (conn.endpoints[1]._anchor.faces || []).join("-"),
+                  oKey = [sourceId, c1, targetId, c2].join("-"),
+                  o = orientationCache[oKey],
+                  oIdx = conn.sourceId === elementId ? 1 : 0;
                 if (sourceContinuous && !this.anchorLists.has(sourceId)) {
                   this.anchorLists.set(sourceId, {
                     top: [],
@@ -10079,7 +9943,7 @@ var LightweightRouter = function () {
                   });
                 }
                 var td = this.instance.viewport.getPosition(targetId),
-                    sd = this.instance.viewport.getPosition(sourceId);
+                  sd = this.instance.viewport.getPosition(sourceId);
                 if (targetId === sourceId && (sourceContinuous || targetContinuous)) {
                   this._updateAnchorList(this.anchorLists.get(sourceId), -Math.PI / 2, 0, conn, false, targetId, 0, false, TOP, connectionsToPaint, endpointsToPaint);
                   this._updateAnchorList(this.anchorLists.get(targetId), -Math.PI / 2, 0, conn, false, sourceId, 1, false, TOP, connectionsToPaint, endpointsToPaint);
@@ -10109,7 +9973,7 @@ var LightweightRouter = function () {
                 }
               } else {
                 var otherEndpoint = anEndpoint.connections[_i2].endpoints[conn.sourceId === elementId ? 1 : 0],
-                    otherAnchor = otherEndpoint._anchor;
+                  otherAnchor = otherEndpoint._anchor;
                 if (isDynamic(otherAnchor)) {
                   this.instance._paintEndpoint(otherEndpoint, {
                     elementWithPrecedence: elementId,
@@ -10185,25 +10049,24 @@ var LightweightRouter = function () {
         };
       }
       var theta = Math.atan2(td.c.y - sd.c.y, td.c.x - sd.c.x),
-          theta2 = Math.atan2(sd.c.y - td.c.y, sd.c.x - td.c.x);
+        theta2 = Math.atan2(sd.c.y - td.c.y, sd.c.x - td.c.x);
       var candidates = [],
-          midpoints = {};
+        midpoints = {};
       (function (types, dim) {
         for (var i = 0; i < types.length; i++) {
-          var _midpoints$types$i;
-          midpoints[types[i]] = (_midpoints$types$i = {}, _defineProperty(_midpoints$types$i, LEFT, {
+          midpoints[types[i]] = _defineProperty(_defineProperty(_defineProperty(_defineProperty({}, LEFT, {
             x: dim[i][0].x,
             y: dim[i][0].c.y
-          }), _defineProperty(_midpoints$types$i, RIGHT, {
+          }), RIGHT, {
             x: dim[i][0].x + dim[i][0].w,
             y: dim[i][0].c.y
-          }), _defineProperty(_midpoints$types$i, TOP, {
+          }), TOP, {
             x: dim[i][0].c.x,
             y: dim[i][0].y
-          }), _defineProperty(_midpoints$types$i, BOTTOM, {
+          }), BOTTOM, {
             x: dim[i][0].c.x,
             y: dim[i][0].y + dim[i][0].h
-          }), _midpoints$types$i);
+          });
           if (dim[i][1] != null && dim[i][1].length > 0) {
             for (var axis in midpoints[types[i]]) {
               midpoints[types[i]][axis] = _this4.instance._applyRotationsXY(midpoints[types[i]][axis], dim[i][1]);
@@ -10227,17 +10090,16 @@ var LightweightRouter = function () {
         } else if (b.dist < a.dist) {
           return 1;
         } else {
-          var _axisIndices;
-          var axisIndices = (_axisIndices = {}, _defineProperty(_axisIndices, LEFT, 0), _defineProperty(_axisIndices, TOP, 1), _defineProperty(_axisIndices, RIGHT, 2), _defineProperty(_axisIndices, BOTTOM, 3), _axisIndices),
-              ais = axisIndices[a.source],
-              bis = axisIndices[b.source],
-              ait = axisIndices[a.target],
-              bit = axisIndices[b.target];
+          var axisIndices = _defineProperty(_defineProperty(_defineProperty(_defineProperty({}, LEFT, 0), TOP, 1), RIGHT, 2), BOTTOM, 3),
+            ais = axisIndices[a.source],
+            bis = axisIndices[b.source],
+            ait = axisIndices[a.target],
+            bit = axisIndices[b.target];
           return ais < bis ? -1 : bis < ais ? 1 : ait < bit ? -1 : bit < ait ? 1 : 0;
         }
       });
       var sourceEdge = candidates[0].source,
-          targetEdge = candidates[0].target;
+        targetEdge = candidates[0].target;
       for (var i = 0; i < candidates.length; i++) {
         if (isContinuous(sourceAnchor) && sourceAnchor.locked) {
           sourceEdge = sourceAnchor.currentFace;
@@ -10325,11 +10187,10 @@ var LightweightRouter = function () {
         return false;
       }
       var l1 = a1.locations[a1.currentLocation],
-          l2 = a2.locations[a2.currentLocation];
+        l2 = a2.locations[a2.currentLocation];
       return l1.x === l2.x && l1.y === l2.y && l1.offx === l2.offx && l1.offy === l2.offy && l1.ox === l2.ox && l1.oy === l2.oy;
     }
   }]);
-  return LightweightRouter;
 }();
 
 var connectorMap = {};
@@ -10350,16 +10211,14 @@ var Connectors = {
 };
 
 var StraightSegment = function (_AbstractSegment) {
-  _inherits(StraightSegment, _AbstractSegment);
-  var _super = _createSuper(StraightSegment);
   function StraightSegment(params) {
     var _this;
     _classCallCheck(this, StraightSegment);
-    _this = _super.call(this, params);
-    _defineProperty(_assertThisInitialized(_this), "length", void 0);
-    _defineProperty(_assertThisInitialized(_this), "m", void 0);
-    _defineProperty(_assertThisInitialized(_this), "m2", void 0);
-    _defineProperty(_assertThisInitialized(_this), "type", StraightSegment.segmentType);
+    _this = _callSuper(this, StraightSegment, [params]);
+    _defineProperty(_this, "length", void 0);
+    _defineProperty(_this, "m", void 0);
+    _defineProperty(_this, "m2", void 0);
+    _defineProperty(_this, "type", StraightSegment.segmentType);
     _this._setCoordinates({
       x1: params.x1,
       y1: params.y1,
@@ -10368,7 +10227,8 @@ var StraightSegment = function (_AbstractSegment) {
     });
     return _this;
   }
-  _createClass(StraightSegment, [{
+  _inherits(StraightSegment, _AbstractSegment);
+  return _createClass(StraightSegment, [{
     key: "getPath",
     value: function getPath(isFirstSegment) {
       return (isFirstSegment ? "M " + this.x1 + " " + this.y1 + " " : "") + "L " + this.x2 + " " + this.y2;
@@ -10444,13 +10304,13 @@ var StraightSegment = function (_AbstractSegment) {
     key: "pointAlongPathFrom",
     value: function pointAlongPathFrom(location, distance, absolute) {
       var p = this.pointOnPath(location, absolute),
-          farAwayPoint = distance <= 0 ? {
-        x: this.x1,
-        y: this.y1
-      } : {
-        x: this.x2,
-        y: this.y2
-      };
+        farAwayPoint = distance <= 0 ? {
+          x: this.x1,
+          y: this.y1
+        } : {
+          x: this.x2,
+          y: this.y2
+        };
       if (distance <= 0 && Math.abs(distance) > 1) {
         distance *= -1;
       }
@@ -10487,9 +10347,9 @@ var StraightSegment = function (_AbstractSegment) {
         out.y = this.within(this.y1, this.y2, y) ? y : this.closest(this.y1, this.y2, y);
       } else {
         var b = this.y1 - this.m * this.x1,
-            b2 = y - this.m2 * x,
-        _x1 = (b2 - b) / (this.m - this.m2),
-            _y1 = this.m * _x1 + b;
+          b2 = y - this.m2 * x,
+          _x1 = (b2 - b) / (this.m - this.m2),
+          _y1 = this.m * _x1 + b;
         out.x = this.within(this.x1, this.x2, _x1) ? _x1 : this.closest(this.x1, this.x2, _x1);
         out.y = this.within(this.y1, this.y2, _y1) ? _y1 : this.closest(this.y1, this.y2, _y1);
       }
@@ -10516,16 +10376,16 @@ var StraightSegment = function (_AbstractSegment) {
     key: "lineIntersection",
     value: function lineIntersection(_x1, _y1, _x2, _y2) {
       var m2 = Math.abs(gradient({
-        x: _x1,
-        y: _y1
-      }, {
-        x: _x2,
-        y: _y2
-      })),
-          m1 = Math.abs(this.m),
-          b = m1 === Infinity ? this.x1 : this.y1 - m1 * this.x1,
-          out = [],
-          b2 = m2 === Infinity ? _x1 : _y1 - m2 * _x1;
+          x: _x1,
+          y: _y1
+        }, {
+          x: _x2,
+          y: _y2
+        })),
+        m1 = Math.abs(this.m),
+        b = m1 === Infinity ? this.x1 : this.y1 - m1 * this.x1,
+        out = [],
+        b2 = m2 === Infinity ? _x1 : _y1 - m2 * _x1;
       if (m2 !== m1) {
         if (m2 === Infinity && m1 === 0) {
           if (this._pointLiesBetween(_x1, this.x1, this.x2) && this._pointLiesBetween(this.y1, _y1, _y2)) {
@@ -10590,24 +10450,22 @@ var StraightSegment = function (_AbstractSegment) {
       return a;
     }
   }]);
-  return StraightSegment;
 }(AbstractSegment);
 _defineProperty(StraightSegment, "segmentType", "Straight");
 
 var StraightConnector = function (_AbstractConnector) {
-  _inherits(StraightConnector, _AbstractConnector);
-  var _super = _createSuper(StraightConnector);
   function StraightConnector() {
     var _this;
     _classCallCheck(this, StraightConnector);
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
-    _this = _super.call.apply(_super, [this].concat(args));
-    _defineProperty(_assertThisInitialized(_this), "type", StraightConnector.type);
+    _this = _callSuper(this, StraightConnector, [].concat(args));
+    _defineProperty(_this, "type", StraightConnector.type);
     return _this;
   }
-  _createClass(StraightConnector, [{
+  _inherits(StraightConnector, _AbstractConnector);
+  return _createClass(StraightConnector, [{
     key: "getDefaultStubs",
     value: function getDefaultStubs() {
       return [0, 0];
@@ -10647,13 +10505,12 @@ var StraightConnector = function (_AbstractConnector) {
       };
     }
   }]);
-  return StraightConnector;
 }(AbstractConnector);
 _defineProperty(StraightConnector, "type", "Straight");
 
 function _scopeMatch(e1, e2) {
   var s1 = e1.scope.split(/\s/),
-      s2 = e2.scope.split(/\s/);
+    s2 = e2.scope.split(/\s/);
   for (var i = 0; i < s1.length; i++) {
     for (var j = 0; j < s2.length; j++) {
       if (s2[j] === s1[i]) {
@@ -10744,47 +10601,45 @@ function removeManagedConnection(connection, sourceEl, targetEl) {
   }
 }
 var JsPlumbInstance = function (_EventGenerator) {
-  _inherits(JsPlumbInstance, _EventGenerator);
-  var _super = _createSuper(JsPlumbInstance);
   function JsPlumbInstance(_instanceIndex, defaults) {
     var _this;
     _classCallCheck(this, JsPlumbInstance);
-    _this = _super.call(this);
+    _this = _callSuper(this, JsPlumbInstance);
     _this._instanceIndex = _instanceIndex;
-    _defineProperty(_assertThisInitialized(_this), "defaults", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_initialDefaults", {});
-    _defineProperty(_assertThisInitialized(_this), "isConnectionBeingDragged", false);
-    _defineProperty(_assertThisInitialized(_this), "currentlyDragging", false);
-    _defineProperty(_assertThisInitialized(_this), "hoverSuspended", false);
-    _defineProperty(_assertThisInitialized(_this), "_suspendDrawing", false);
-    _defineProperty(_assertThisInitialized(_this), "_suspendedAt", null);
-    _defineProperty(_assertThisInitialized(_this), "connectorClass", CLASS_CONNECTOR);
-    _defineProperty(_assertThisInitialized(_this), "connectorOutlineClass", CLASS_CONNECTOR_OUTLINE);
-    _defineProperty(_assertThisInitialized(_this), "connectedClass", CLASS_CONNECTED);
-    _defineProperty(_assertThisInitialized(_this), "endpointClass", CLASS_ENDPOINT);
-    _defineProperty(_assertThisInitialized(_this), "endpointConnectedClass", CLASS_ENDPOINT_CONNECTED);
-    _defineProperty(_assertThisInitialized(_this), "endpointFullClass", CLASS_ENDPOINT_FULL);
-    _defineProperty(_assertThisInitialized(_this), "endpointFloatingClass", CLASS_ENDPOINT_FLOATING);
-    _defineProperty(_assertThisInitialized(_this), "endpointDropAllowedClass", CLASS_ENDPOINT_DROP_ALLOWED);
-    _defineProperty(_assertThisInitialized(_this), "endpointDropForbiddenClass", CLASS_ENDPOINT_DROP_FORBIDDEN);
-    _defineProperty(_assertThisInitialized(_this), "endpointAnchorClassPrefix", CLASS_ENDPOINT_ANCHOR_PREFIX);
-    _defineProperty(_assertThisInitialized(_this), "overlayClass", CLASS_OVERLAY);
-    _defineProperty(_assertThisInitialized(_this), "connections", []);
-    _defineProperty(_assertThisInitialized(_this), "endpointsByElement", {});
-    _defineProperty(_assertThisInitialized(_this), "endpointsByUUID", new Map());
-    _defineProperty(_assertThisInitialized(_this), "sourceSelectors", []);
-    _defineProperty(_assertThisInitialized(_this), "targetSelectors", []);
-    _defineProperty(_assertThisInitialized(_this), "allowNestedGroups", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_curIdStamp", 1);
-    _defineProperty(_assertThisInitialized(_this), "viewport", new Viewport(_assertThisInitialized(_this)));
-    _defineProperty(_assertThisInitialized(_this), "router", void 0);
-    _defineProperty(_assertThisInitialized(_this), "groupManager", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_connectionTypes", new Map());
-    _defineProperty(_assertThisInitialized(_this), "_endpointTypes", new Map());
-    _defineProperty(_assertThisInitialized(_this), "_container", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_managedElements", {});
-    _defineProperty(_assertThisInitialized(_this), "DEFAULT_SCOPE", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_zoom", 1);
+    _defineProperty(_this, "defaults", void 0);
+    _defineProperty(_this, "_initialDefaults", {});
+    _defineProperty(_this, "isConnectionBeingDragged", false);
+    _defineProperty(_this, "currentlyDragging", false);
+    _defineProperty(_this, "hoverSuspended", false);
+    _defineProperty(_this, "_suspendDrawing", false);
+    _defineProperty(_this, "_suspendedAt", null);
+    _defineProperty(_this, "connectorClass", CLASS_CONNECTOR);
+    _defineProperty(_this, "connectorOutlineClass", CLASS_CONNECTOR_OUTLINE);
+    _defineProperty(_this, "connectedClass", CLASS_CONNECTED);
+    _defineProperty(_this, "endpointClass", CLASS_ENDPOINT);
+    _defineProperty(_this, "endpointConnectedClass", CLASS_ENDPOINT_CONNECTED);
+    _defineProperty(_this, "endpointFullClass", CLASS_ENDPOINT_FULL);
+    _defineProperty(_this, "endpointFloatingClass", CLASS_ENDPOINT_FLOATING);
+    _defineProperty(_this, "endpointDropAllowedClass", CLASS_ENDPOINT_DROP_ALLOWED);
+    _defineProperty(_this, "endpointDropForbiddenClass", CLASS_ENDPOINT_DROP_FORBIDDEN);
+    _defineProperty(_this, "endpointAnchorClassPrefix", CLASS_ENDPOINT_ANCHOR_PREFIX);
+    _defineProperty(_this, "overlayClass", CLASS_OVERLAY);
+    _defineProperty(_this, "connections", []);
+    _defineProperty(_this, "endpointsByElement", {});
+    _defineProperty(_this, "endpointsByUUID", new Map());
+    _defineProperty(_this, "sourceSelectors", []);
+    _defineProperty(_this, "targetSelectors", []);
+    _defineProperty(_this, "allowNestedGroups", void 0);
+    _defineProperty(_this, "_curIdStamp", 1);
+    _defineProperty(_this, "viewport", new Viewport(_this));
+    _defineProperty(_this, "router", void 0);
+    _defineProperty(_this, "groupManager", void 0);
+    _defineProperty(_this, "_connectionTypes", new Map());
+    _defineProperty(_this, "_endpointTypes", new Map());
+    _defineProperty(_this, "_container", void 0);
+    _defineProperty(_this, "_managedElements", {});
+    _defineProperty(_this, "DEFAULT_SCOPE", void 0);
+    _defineProperty(_this, "_zoom", 1);
     _this.defaults = {
       anchor: AnchorLocations.Bottom,
       anchors: [null, null],
@@ -10821,12 +10676,13 @@ var JsPlumbInstance = function (_EventGenerator) {
     }
     _this.DEFAULT_SCOPE = _this.defaults[DEFAULT_KEY_SCOPE];
     _this.allowNestedGroups = _this._initialDefaults[DEFAULT_KEY_ALLOW_NESTED_GROUPS] !== false;
-    _this.router = new LightweightRouter(_assertThisInitialized(_this));
-    _this.groupManager = new GroupManager(_assertThisInitialized(_this));
+    _this.router = new LightweightRouter(_this);
+    _this.groupManager = new GroupManager(_this);
     _this.setContainer(_this._initialDefaults.container);
     return _this;
   }
-  _createClass(JsPlumbInstance, [{
+  _inherits(JsPlumbInstance, _EventGenerator);
+  return _createClass(JsPlumbInstance, [{
     key: "defaultScope",
     get: function get() {
       return this.DEFAULT_SCOPE;
@@ -10870,7 +10726,7 @@ var JsPlumbInstance = function (_EventGenerator) {
     key: "checkCondition",
     value: function checkCondition(conditionName, args) {
       var l = this.getListener(conditionName),
-          r = true;
+        r = true;
       if (l && l.length > 0) {
         var values = Array.prototype.slice.call(arguments, 1);
         try {
@@ -10911,25 +10767,25 @@ var JsPlumbInstance = function (_EventGenerator) {
         };
       }
       var scope = options.scope || this.defaultScope,
-          scopes = prepareList(this, scope, true),
-          sources = prepareList(this, options.source),
-          targets = prepareList(this, options.target),
-          results = !flat && scopes.length > 1 ? {} : [],
-          _addOne = function _addOne(scope, obj) {
-        if (!flat && scopes.length > 1) {
-          var ss = results[scope];
-          if (ss == null) {
-            ss = results[scope] = [];
+        scopes = prepareList(this, scope, true),
+        sources = prepareList(this, options.source),
+        targets = prepareList(this, options.target),
+        results = !flat && scopes.length > 1 ? {} : [],
+        _addOne = function _addOne(scope, obj) {
+          if (!flat && scopes.length > 1) {
+            var ss = results[scope];
+            if (ss == null) {
+              ss = results[scope] = [];
+            }
+            ss.push(obj);
+          } else {
+            results.push(obj);
           }
-          ss.push(obj);
-        } else {
-          results.push(obj);
-        }
-      };
+        };
       for (var j = 0, jj = this.connections.length; j < jj; j++) {
         var _c2 = this.connections[j],
-            sourceId = _c2.proxies && _c2.proxies[0] ? _c2.proxies[0].originalEp.elementId : _c2.sourceId,
-            targetId = _c2.proxies && _c2.proxies[1] ? _c2.proxies[1].originalEp.elementId : _c2.targetId;
+          sourceId = _c2.proxies && _c2.proxies[0] ? _c2.proxies[0].originalEp.elementId : _c2.sourceId,
+          targetId = _c2.proxies && _c2.proxies[1] ? _c2.proxies[1].originalEp.elementId : _c2.targetId;
         if (filterList(scopes, _c2.scope) && filterList(sources, sourceId) && filterList(targets, targetId)) {
           _addOne(_c2.scope, _c2);
         }
@@ -10949,23 +10805,23 @@ var JsPlumbInstance = function (_EventGenerator) {
       params = params || {};
       params.scope = params.scope || WILDCARD;
       var noElementFilters = !params.element && !params.source && !params.target,
-          elements = noElementFilters ? WILDCARD : prepareList(this, params.element),
-          sources = noElementFilters ? WILDCARD : prepareList(this, params.source),
-          targets = noElementFilters ? WILDCARD : prepareList(this, params.target),
-          scopes = prepareList(this, params.scope, true);
+        elements = noElementFilters ? WILDCARD : prepareList(this, params.element),
+        sources = noElementFilters ? WILDCARD : prepareList(this, params.source),
+        targets = noElementFilters ? WILDCARD : prepareList(this, params.target),
+        scopes = prepareList(this, params.scope, true);
       var ep = [];
       for (var _el2 in this.endpointsByElement) {
         var either = filterList(elements, _el2, true),
-            source = filterList(sources, _el2, true),
-            sourceMatchExact = sources !== "*",
-            target = filterList(targets, _el2, true),
-            targetMatchExact = targets !== "*";
+          source = filterList(sources, _el2, true),
+          sourceMatchExact = sources !== "*",
+          target = filterList(targets, _el2, true),
+          targetMatchExact = targets !== "*";
         if (either || source || target) {
           inner: for (var i = 0, ii = this.endpointsByElement[_el2].length; i < ii; i++) {
             var _ep = this.endpointsByElement[_el2][i];
             if (filterList(scopes, _ep.scope, true)) {
               var noMatchSource = sourceMatchExact && sources.length > 0 && !_ep.isSource,
-                  noMatchTarget = targetMatchExact && targets.length > 0 && !_ep.isTarget;
+                noMatchTarget = targetMatchExact && targets.length > 0 && !_ep.isTarget;
               if (noMatchSource || noMatchTarget) {
                 continue inner;
               }
@@ -10993,10 +10849,10 @@ var JsPlumbInstance = function (_EventGenerator) {
         elId: "targetId"
       }];
       var ep,
-          _st = stTypes[idx],
-          cId = c[_st.elId],
-          sid,
-          oldEndpoint = c.endpoints[idx];
+        _st = stTypes[idx],
+        cId = c[_st.elId],
+        sid,
+        oldEndpoint = c.endpoints[idx];
       var evtParams = {
         index: idx,
         originalEndpoint: oldEndpoint,
@@ -11150,7 +11006,7 @@ var JsPlumbInstance = function (_EventGenerator) {
       var _this2 = this;
       params = params || {};
       var count = this.connections.length,
-          deletedCount = 0;
+        deletedCount = 0;
       this.batch(function () {
         for (var i = 0; i < count; i++) {
           deletedCount += _this2.deleteConnection(_this2.connections[0], params) ? 1 : 0;
@@ -11162,7 +11018,7 @@ var JsPlumbInstance = function (_EventGenerator) {
     key: "deleteConnectionsForElement",
     value: function deleteConnectionsForElement(el, params) {
       var id = this.getId(el),
-          m = this._managedElements[id];
+        m = this._managedElements[id];
       if (m) {
         var l = m.connections.length;
         for (var i = 0; i < l; i++) {
@@ -11175,15 +11031,15 @@ var JsPlumbInstance = function (_EventGenerator) {
     key: "fireDetachEvent",
     value: function fireDetachEvent(jpc, doFireEvent, originalEvent) {
       var argIsConnection = jpc.id != null,
-          params = argIsConnection ? {
-        connection: jpc,
-        source: jpc.source,
-        target: jpc.target,
-        sourceId: jpc.sourceId,
-        targetId: jpc.targetId,
-        sourceEndpoint: jpc.endpoints[0],
-        targetEndpoint: jpc.endpoints[1]
-      } : jpc;
+        params = argIsConnection ? {
+          connection: jpc,
+          source: jpc.source,
+          target: jpc.target,
+          sourceId: jpc.sourceId,
+          targetId: jpc.targetId,
+          sourceEndpoint: jpc.endpoints[0],
+          targetEndpoint: jpc.endpoints[1]
+        } : jpc;
       if (doFireEvent) {
         this.fire(EVENT_CONNECTION_DETACHED, params, originalEvent);
       }
@@ -11383,10 +11239,10 @@ var JsPlumbInstance = function (_EventGenerator) {
     key: "_deriveEndpointAndAnchorSpec",
     value: function _deriveEndpointAndAnchorSpec(type, dontPrependDefault) {
       var bits = ((dontPrependDefault ? "" : "default ") + type).split(/[\s]/),
-          eps = null,
-          ep = null,
-          a = null,
-          as = null;
+        eps = null,
+        ep = null,
+        a = null,
+        as = null;
       for (var i = 0; i < bits.length; i++) {
         var _t = this.getConnectionType(bits[i]);
         if (_t) {
@@ -11424,7 +11280,7 @@ var JsPlumbInstance = function (_EventGenerator) {
     key: "repaintEverything",
     value: function repaintEverything() {
       var timestamp = uuid(),
-          elId;
+        elId;
       for (elId in this._managedElements) {
         this.viewport.refreshElement(elId, true);
       }
@@ -11601,7 +11457,7 @@ var JsPlumbInstance = function (_EventGenerator) {
     value: function connect(params, referenceParams) {
       try {
         var _p = this._prepareConnectionParams(params, referenceParams),
-            jpc = this._newConnection(_p);
+          jpc = this._newConnection(_p);
         this._finaliseConnection(jpc, _p);
         return jpc;
       } catch (errorMessage) {
@@ -11707,9 +11563,9 @@ var JsPlumbInstance = function (_EventGenerator) {
       var _this7 = this;
       var _one = function _one(_el) {
         var id = _this7.getId(_el),
-            ebe = _this7.endpointsByElement[id],
-            i,
-            ii;
+          ebe = _this7.endpointsByElement[id],
+          i,
+          ii;
         if (ebe) {
           for (i = 0, ii = ebe.length; i < ii; i++) {
             _this7.deleteEndpoint(ebe[i]);
@@ -11941,10 +11797,10 @@ var JsPlumbInstance = function (_EventGenerator) {
     key: "proxyConnection",
     value: function proxyConnection(connection, index, proxyEl, endpointGenerator, anchorGenerator) {
       var alreadyProxied = connection.proxies[index] != null,
-          proxyEp,
-          originalElementId = alreadyProxied ? connection.proxies[index].originalEp.elementId : connection.endpoints[index].elementId,
-          originalEndpoint = alreadyProxied ? connection.proxies[index].originalEp : connection.endpoints[index],
-          proxyElId = this.getId(proxyEl);
+        proxyEp,
+        originalElementId = alreadyProxied ? connection.proxies[index].originalEp.elementId : connection.endpoints[index].elementId,
+        originalEndpoint = alreadyProxied ? connection.proxies[index].originalEp : connection.endpoints[index],
+        proxyElId = this.getId(proxyEl);
       if (connection.proxies[index]) {
         if (connection.proxies[index].ep.elementId === proxyElId) {
           proxyEp = connection.proxies[index].ep;
@@ -11990,8 +11846,8 @@ var JsPlumbInstance = function (_EventGenerator) {
         return;
       }
       var originalElement = connection.proxies[index].originalEp.element,
-          originalElementId = connection.proxies[index].originalEp.elementId,
-          proxyElId = connection.proxies[index].ep.elementId;
+        originalElementId = connection.proxies[index].originalEp.elementId,
+        proxyElId = connection.proxies[index].ep.elementId;
       connection.endpoints[index] = connection.proxies[index].originalEp;
       delete connection.proxies[index].originalEp.proxiedBy;
       this.sourceOrTargetChanged(proxyElId, originalElementId, connection, originalElement, index);
@@ -12099,7 +11955,7 @@ var JsPlumbInstance = function (_EventGenerator) {
       }
       params = params || {};
       var timestamp = params.timestamp,
-          recalc = !(params.recalc === false);
+        recalc = !(params.recalc === false);
       if (!timestamp || endpoint.timestamp !== timestamp) {
         var info = this.viewport.getPosition(endpoint.elementId);
         var xy = params.offset ? {
@@ -12120,9 +11976,9 @@ var JsPlumbInstance = function (_EventGenerator) {
             };
             if (recalc && this.router.isDynamicAnchor(endpoint) && endpoint.connections.length > 0) {
               var _c3 = findConnectionToUseForDynamicAnchor(endpoint),
-                  oIdx = _c3.endpoints[0] === endpoint ? 1 : 0,
-                  oId = oIdx === 0 ? _c3.sourceId : _c3.targetId,
-                  oInfo = this.viewport.getPosition(oId);
+                oIdx = _c3.endpoints[0] === endpoint ? 1 : 0,
+                oId = oIdx === 0 ? _c3.sourceId : _c3.targetId,
+                oInfo = this.viewport.getPosition(oId);
               anchorParams.index = oIdx === 0 ? 1 : 0;
               anchorParams.connection = _c3;
               anchorParams.txy = oInfo;
@@ -12183,13 +12039,13 @@ var JsPlumbInstance = function (_EventGenerator) {
             }
           }
           var lineWidth = parseFloat("" + connection.paintStyleInUse.strokeWidth || "1") / 2,
-              outlineWidth = parseFloat("" + connection.paintStyleInUse.strokeWidth || "0"),
-              _extents = {
-            xmin: Math.min(connection.connector.bounds.xmin - (lineWidth + outlineWidth), overlayExtents.xmin),
-            ymin: Math.min(connection.connector.bounds.ymin - (lineWidth + outlineWidth), overlayExtents.ymin),
-            xmax: Math.max(connection.connector.bounds.xmax + (lineWidth + outlineWidth), overlayExtents.xmax),
-            ymax: Math.max(connection.connector.bounds.ymax + (lineWidth + outlineWidth), overlayExtents.ymax)
-          };
+            outlineWidth = parseFloat("" + connection.paintStyleInUse.strokeWidth || "0"),
+            _extents = {
+              xmin: Math.min(connection.connector.bounds.xmin - (lineWidth + outlineWidth), overlayExtents.xmin),
+              ymin: Math.min(connection.connector.bounds.ymin - (lineWidth + outlineWidth), overlayExtents.ymin),
+              xmax: Math.max(connection.connector.bounds.xmax + (lineWidth + outlineWidth), overlayExtents.xmax),
+              ymax: Math.max(connection.connector.bounds.ymax + (lineWidth + outlineWidth), overlayExtents.ymax)
+            };
           this.paintConnector(connection.connector, connection.paintStyleInUse, _extents);
           for (var j in connection.overlays) {
             if (connection.overlays.hasOwnProperty(j)) {
@@ -12293,7 +12149,6 @@ var JsPlumbInstance = function (_EventGenerator) {
       return p;
     }
   }]);
-  return JsPlumbInstance;
 }(EventGenerator);
 
 var endpointMap = {};
@@ -12303,26 +12158,26 @@ function registerEndpointRenderer(name, fns) {
 function getPositionOnElement(evt, el, zoom) {
   var jel = el;
   var box = _typeof(el.getBoundingClientRect) !== UNDEFINED ? el.getBoundingClientRect() : {
-    left: 0,
-    top: 0,
-    width: 0,
-    height: 0
-  },
-      body = document.body,
-      docElem = document.documentElement,
-      scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
-      scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft,
-      clientTop = docElem.clientTop || body.clientTop || 0,
-      clientLeft = docElem.clientLeft || body.clientLeft || 0,
-      pst = 0,
-      psl = 0,
-      top = box.top + scrollTop - clientTop + pst * zoom,
-      left = box.left + scrollLeft - clientLeft + psl * zoom,
-      cl = pageLocation(evt),
-      w = box.width || jel.offsetWidth * zoom,
-      h = box.height || jel.offsetHeight * zoom,
-      x = (cl.x - left) / w,
-      y = (cl.y - top) / h;
+      left: 0,
+      top: 0,
+      width: 0,
+      height: 0
+    },
+    body = document.body,
+    docElem = document.documentElement,
+    scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop,
+    scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft,
+    clientTop = docElem.clientTop || body.clientTop || 0,
+    clientLeft = docElem.clientLeft || body.clientLeft || 0,
+    pst = 0,
+    psl = 0,
+    top = box.top + scrollTop - clientTop + pst * zoom,
+    left = box.left + scrollLeft - clientLeft + psl * zoom,
+    cl = pageLocation(evt),
+    w = box.width || jel.offsetWidth * zoom,
+    h = box.height || jel.offsetHeight * zoom,
+    x = (cl.x - left) / w,
+    y = (cl.y - top) / h;
   return {
     x: x,
     y: y
@@ -12357,7 +12212,7 @@ function getCustomElement(o) {
 }
 function groupDragConstrain(desiredLoc, dragEl, constrainRect, size) {
   var x = desiredLoc.x,
-      y = desiredLoc.y;
+    y = desiredLoc.y;
   if (dragEl._jsPlumbParentGroup && dragEl._jsPlumbParentGroup.constrain) {
     x = Math.max(desiredLoc.x, 0);
     y = Math.max(desiredLoc.y, 0);
@@ -12370,62 +12225,60 @@ function groupDragConstrain(desiredLoc, dragEl, constrainRect, size) {
   };
 }
 var BrowserJsPlumbInstance = function (_JsPlumbInstance) {
-  _inherits(BrowserJsPlumbInstance, _JsPlumbInstance);
-  var _super = _createSuper(BrowserJsPlumbInstance);
   function BrowserJsPlumbInstance(_instanceIndex, defaults) {
     var _this;
     _classCallCheck(this, BrowserJsPlumbInstance);
-    _this = _super.call(this, _instanceIndex, defaults);
+    _this = _callSuper(this, BrowserJsPlumbInstance, [_instanceIndex, defaults]);
     _this._instanceIndex = _instanceIndex;
-    _defineProperty(_assertThisInitialized(_this), "containerType", null);
-    _defineProperty(_assertThisInitialized(_this), "dragSelection", void 0);
-    _defineProperty(_assertThisInitialized(_this), "dragManager", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_connectorClick", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_connectorDblClick", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_connectorTap", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_connectorDblTap", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_endpointClick", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_endpointDblClick", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_overlayClick", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_overlayDblClick", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_overlayTap", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_overlayDblTap", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_connectorMouseover", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_connectorMouseout", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_endpointMouseover", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_endpointMouseout", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_connectorContextmenu", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_connectorMousedown", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_connectorMouseup", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_endpointMousedown", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_endpointMouseup", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_overlayMouseover", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_overlayMouseout", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_elementClick", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_elementTap", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_elementDblTap", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_elementMouseenter", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_elementMouseexit", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_elementMousemove", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_elementMouseup", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_elementMousedown", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_elementContextmenu", void 0);
-    _defineProperty(_assertThisInitialized(_this), "_resizeObserver", void 0);
-    _defineProperty(_assertThisInitialized(_this), "eventManager", void 0);
-    _defineProperty(_assertThisInitialized(_this), "draggingClass", "jtk-dragging");
-    _defineProperty(_assertThisInitialized(_this), "elementDraggingClass", "jtk-element-dragging");
-    _defineProperty(_assertThisInitialized(_this), "hoverClass", "jtk-hover");
-    _defineProperty(_assertThisInitialized(_this), "sourceElementDraggingClass", "jtk-source-element-dragging");
-    _defineProperty(_assertThisInitialized(_this), "targetElementDraggingClass", "jtk-target-element-dragging");
-    _defineProperty(_assertThisInitialized(_this), "hoverSourceClass", "jtk-source-hover");
-    _defineProperty(_assertThisInitialized(_this), "hoverTargetClass", "jtk-target-hover");
-    _defineProperty(_assertThisInitialized(_this), "dragSelectClass", "jtk-drag-select");
-    _defineProperty(_assertThisInitialized(_this), "managedElementsSelector", void 0);
-    _defineProperty(_assertThisInitialized(_this), "elementsDraggable", void 0);
-    _defineProperty(_assertThisInitialized(_this), "elementDragHandler", void 0);
-    _defineProperty(_assertThisInitialized(_this), "groupDragOptions", void 0);
-    _defineProperty(_assertThisInitialized(_this), "elementDragOptions", void 0);
-    _defineProperty(_assertThisInitialized(_this), "svg", {
+    _defineProperty(_this, "containerType", null);
+    _defineProperty(_this, "dragSelection", void 0);
+    _defineProperty(_this, "dragManager", void 0);
+    _defineProperty(_this, "_connectorClick", void 0);
+    _defineProperty(_this, "_connectorDblClick", void 0);
+    _defineProperty(_this, "_connectorTap", void 0);
+    _defineProperty(_this, "_connectorDblTap", void 0);
+    _defineProperty(_this, "_endpointClick", void 0);
+    _defineProperty(_this, "_endpointDblClick", void 0);
+    _defineProperty(_this, "_overlayClick", void 0);
+    _defineProperty(_this, "_overlayDblClick", void 0);
+    _defineProperty(_this, "_overlayTap", void 0);
+    _defineProperty(_this, "_overlayDblTap", void 0);
+    _defineProperty(_this, "_connectorMouseover", void 0);
+    _defineProperty(_this, "_connectorMouseout", void 0);
+    _defineProperty(_this, "_endpointMouseover", void 0);
+    _defineProperty(_this, "_endpointMouseout", void 0);
+    _defineProperty(_this, "_connectorContextmenu", void 0);
+    _defineProperty(_this, "_connectorMousedown", void 0);
+    _defineProperty(_this, "_connectorMouseup", void 0);
+    _defineProperty(_this, "_endpointMousedown", void 0);
+    _defineProperty(_this, "_endpointMouseup", void 0);
+    _defineProperty(_this, "_overlayMouseover", void 0);
+    _defineProperty(_this, "_overlayMouseout", void 0);
+    _defineProperty(_this, "_elementClick", void 0);
+    _defineProperty(_this, "_elementTap", void 0);
+    _defineProperty(_this, "_elementDblTap", void 0);
+    _defineProperty(_this, "_elementMouseenter", void 0);
+    _defineProperty(_this, "_elementMouseexit", void 0);
+    _defineProperty(_this, "_elementMousemove", void 0);
+    _defineProperty(_this, "_elementMouseup", void 0);
+    _defineProperty(_this, "_elementMousedown", void 0);
+    _defineProperty(_this, "_elementContextmenu", void 0);
+    _defineProperty(_this, "_resizeObserver", void 0);
+    _defineProperty(_this, "eventManager", void 0);
+    _defineProperty(_this, "draggingClass", "jtk-dragging");
+    _defineProperty(_this, "elementDraggingClass", "jtk-element-dragging");
+    _defineProperty(_this, "hoverClass", "jtk-hover");
+    _defineProperty(_this, "sourceElementDraggingClass", "jtk-source-element-dragging");
+    _defineProperty(_this, "targetElementDraggingClass", "jtk-target-element-dragging");
+    _defineProperty(_this, "hoverSourceClass", "jtk-source-hover");
+    _defineProperty(_this, "hoverTargetClass", "jtk-target-hover");
+    _defineProperty(_this, "dragSelectClass", "jtk-drag-select");
+    _defineProperty(_this, "managedElementsSelector", void 0);
+    _defineProperty(_this, "elementsDraggable", void 0);
+    _defineProperty(_this, "elementDragHandler", void 0);
+    _defineProperty(_this, "groupDragOptions", void 0);
+    _defineProperty(_this, "elementDragOptions", void 0);
+    _defineProperty(_this, "svg", {
       node: function node(name, attributes) {
         return _node(name, attributes);
       },
@@ -12441,14 +12294,14 @@ var BrowserJsPlumbInstance = function (_JsPlumbInstance) {
     _this.elementsDraggable = defaults && defaults.elementsDraggable !== false;
     _this.managedElementsSelector = defaults ? defaults.managedElementsSelector || SELECTOR_MANAGED_ELEMENT : SELECTOR_MANAGED_ELEMENT;
     _this.eventManager = new EventManager();
-    _this.dragSelection = new DragSelection(_assertThisInitialized(_this));
-    _this.dragManager = new DragManager(_assertThisInitialized(_this), _this.dragSelection);
-    _this.dragManager.addHandler(new EndpointDragHandler(_assertThisInitialized(_this)));
+    _this.dragSelection = new DragSelection(_this);
+    _this.dragManager = new DragManager(_this, _this.dragSelection);
+    _this.dragManager.addHandler(new EndpointDragHandler(_this));
     _this.groupDragOptions = {
       constrainFunction: groupDragConstrain
     };
-    _this.dragManager.addHandler(new GroupDragHandler(_assertThisInitialized(_this), _this.dragSelection), _this.groupDragOptions);
-    _this.elementDragHandler = new ElementDragHandler(_assertThisInitialized(_this), _this.dragSelection);
+    _this.dragManager.addHandler(new GroupDragHandler(_this, _this.dragSelection), _this.groupDragOptions);
+    _this.elementDragHandler = new ElementDragHandler(_this, _this.dragSelection);
     _this.elementDragOptions = defaults && defaults.dragOptions || {};
     _this.dragManager.addHandler(_this.elementDragHandler, _this.elementDragOptions);
     if (defaults && defaults.dragOptions && defaults.dragOptions.filter) {
@@ -12478,7 +12331,8 @@ var BrowserJsPlumbInstance = function (_JsPlumbInstance) {
     }
     return _this;
   }
-  _createClass(BrowserJsPlumbInstance, [{
+  _inherits(BrowserJsPlumbInstance, _JsPlumbInstance);
+  return _createClass(BrowserJsPlumbInstance, [{
     key: "fireOverlayMethod",
     value: function fireOverlayMethod(overlay, event, e) {
       var stem = overlay.component instanceof Connection ? CONNECTION : ENDPOINT;
@@ -12650,13 +12504,13 @@ var BrowserJsPlumbInstance = function (_JsPlumbInstance) {
       var jel = el;
       var container = this.getContainer();
       var out = this.getPosition(jel),
-          op = el !== container && jel.offsetParent !== container ? jel.offsetParent : null,
-          _maybeAdjustScroll = function _maybeAdjustScroll(offsetParent) {
-        if (offsetParent != null && offsetParent !== document.body && (offsetParent.scrollTop > 0 || offsetParent.scrollLeft > 0)) {
-          out.x -= offsetParent.scrollLeft;
-          out.y -= offsetParent.scrollTop;
-        }
-      };
+        op = el !== container && jel.offsetParent !== container ? jel.offsetParent : null,
+        _maybeAdjustScroll = function _maybeAdjustScroll(offsetParent) {
+          if (offsetParent != null && offsetParent !== document.body && (offsetParent.scrollTop > 0 || offsetParent.scrollLeft > 0)) {
+            out.x -= offsetParent.scrollLeft;
+            out.y -= offsetParent.scrollTop;
+          }
+        };
       while (op != null) {
         out.x += op.offsetLeft;
         out.y += op.offsetTop;
@@ -12665,7 +12519,7 @@ var BrowserJsPlumbInstance = function (_JsPlumbInstance) {
       }
       if (container != null && (container.scrollTop > 0 || container.scrollLeft > 0)) {
         var pp = jel.offsetParent != null ? this.getStyle(jel.offsetParent, PROPERTY_POSITION) : STATIC,
-        p = this.getStyle(jel, PROPERTY_POSITION);
+          p = this.getStyle(jel, PROPERTY_POSITION);
         if (p !== ABSOLUTE && p !== FIXED && pp !== ABSOLUTE && pp !== FIXED) {
           out.x -= container.scrollLeft;
           out.y -= container.scrollTop;
@@ -13246,7 +13100,7 @@ var BrowserJsPlumbInstance = function (_JsPlumbInstance) {
             };
           } else {
             var loc = o.location,
-                absolute = false;
+              absolute = false;
             if (isString(o.location) || o.location < 0 || o.location > 1) {
               loc = parseInt("" + o.location, 10);
               absolute = true;
@@ -13254,7 +13108,7 @@ var BrowserJsPlumbInstance = function (_JsPlumbInstance) {
             cxy = component.pointOnPath(loc, absolute);
           }
           var minx = cxy.x - td.w / 2,
-              miny = cxy.y - td.h / 2;
+            miny = cxy.y - td.h / 2;
           return {
             component: o,
             d: {
@@ -13542,7 +13396,6 @@ var BrowserJsPlumbInstance = function (_JsPlumbInstance) {
       return managedElement;
     }
   }]);
-  return BrowserJsPlumbInstance;
 }(JsPlumbInstance);
 
 var CIRCLE = "circle";
@@ -13566,21 +13419,20 @@ var register$2 = function register() {
 };
 
 var RectangleEndpoint = function (_EndpointRepresentati) {
-  _inherits(RectangleEndpoint, _EndpointRepresentati);
-  var _super = _createSuper(RectangleEndpoint);
   function RectangleEndpoint(endpoint, params) {
     var _this;
     _classCallCheck(this, RectangleEndpoint);
-    _this = _super.call(this, endpoint, params);
-    _defineProperty(_assertThisInitialized(_this), "width", void 0);
-    _defineProperty(_assertThisInitialized(_this), "height", void 0);
-    _defineProperty(_assertThisInitialized(_this), "type", RectangleEndpoint.type);
+    _this = _callSuper(this, RectangleEndpoint, [endpoint, params]);
+    _defineProperty(_this, "width", void 0);
+    _defineProperty(_this, "height", void 0);
+    _defineProperty(_this, "type", RectangleEndpoint.type);
     params = params || {};
     _this.width = params.width || 10;
     _this.height = params.height || 10;
     return _this;
   }
-  _createClass(RectangleEndpoint, null, [{
+  _inherits(RectangleEndpoint, _EndpointRepresentati);
+  return _createClass(RectangleEndpoint, null, [{
     key: "_getParams",
     value: function _getParams(ep) {
       return {
@@ -13589,7 +13441,6 @@ var RectangleEndpoint = function (_EndpointRepresentati) {
       };
     }
   }]);
-  return RectangleEndpoint;
 }(EndpointRepresentation);
 _defineProperty(RectangleEndpoint, "type", "Rectangle");
 var RectangleEndpointHandler = {
@@ -13597,9 +13448,9 @@ var RectangleEndpointHandler = {
   cls: RectangleEndpoint,
   compute: function compute(ep, anchorPoint, orientation, endpointStyle) {
     var width = endpointStyle.width || ep.width,
-        height = endpointStyle.height || ep.height,
-        x = anchorPoint.curX - width / 2,
-        y = anchorPoint.curY - height / 2;
+      height = endpointStyle.height || ep.height,
+      x = anchorPoint.curX - width / 2,
+      y = anchorPoint.curY - height / 2;
     ep.x = x;
     ep.y = y;
     ep.w = width;
@@ -13633,16 +13484,15 @@ var register$1 = function register() {
 };
 
 var BlankEndpoint = function (_EndpointRepresentati) {
-  _inherits(BlankEndpoint, _EndpointRepresentati);
-  var _super = _createSuper(BlankEndpoint);
   function BlankEndpoint(endpoint, params) {
     var _this;
     _classCallCheck(this, BlankEndpoint);
-    _this = _super.call(this, endpoint, params);
-    _defineProperty(_assertThisInitialized(_this), "type", BlankEndpoint.type);
+    _this = _callSuper(this, BlankEndpoint, [endpoint, params]);
+    _defineProperty(_this, "type", BlankEndpoint.type);
     return _this;
   }
-  return BlankEndpoint;
+  _inherits(BlankEndpoint, _EndpointRepresentati);
+  return _createClass(BlankEndpoint);
 }(EndpointRepresentation);
 _defineProperty(BlankEndpoint, "type", "Blank");
 var BlankEndpointHandler = {
@@ -13681,11 +13531,11 @@ register$2();
 register();
 register$1();
 
-var SupportedEdge;
-(function (SupportedEdge) {
+var SupportedEdge = function (SupportedEdge) {
   SupportedEdge[SupportedEdge["top"] = 0] = "top";
   SupportedEdge[SupportedEdge["bottom"] = 1] = "bottom";
-})(SupportedEdge || (SupportedEdge = {}));
+  return SupportedEdge;
+}({});
 var DEFAULT_ANCHOR_LOCATIONS = new Map();
 DEFAULT_ANCHOR_LOCATIONS.set(SupportedEdge.top, [AnchorLocations.TopRight, AnchorLocations.TopLeft]);
 DEFAULT_ANCHOR_LOCATIONS.set(SupportedEdge.bottom, [AnchorLocations.BottomRight, AnchorLocations.BottomLeft]);
@@ -13736,7 +13586,7 @@ var JsPlumbListManager = function () {
       return dropList == null || el.offsetTop >= dropList.domElement.scrollTop && el.offsetTop + el.offsetHeight <= dropList.domElement.scrollTop + dropList.domElement.offsetHeight;
     });
   }
-  _createClass(JsPlumbListManager, [{
+  return _createClass(JsPlumbListManager, [{
     key: "addList",
     value: function addList(el, options) {
       var dp = extend({}, DEFAULT_LIST_OPTIONS);
@@ -13767,8 +13617,8 @@ var JsPlumbListManager = function () {
     key: "findParentList",
     value: function findParentList(el) {
       var parent = el.parentNode,
-          container = this.instance.getContainer(),
-          parentList;
+        container = this.instance.getContainer(),
+        parentList;
       while (parent != null && parent !== container && parent !== document) {
         parentList = this.getList(parent);
         if (parentList != null) {
@@ -13778,7 +13628,6 @@ var JsPlumbListManager = function () {
       }
     }
   }]);
-  return JsPlumbListManager;
 }();
 var JsPlumbList = function () {
   function JsPlumbList(instance, el, options, id) {
@@ -13798,7 +13647,7 @@ var JsPlumbList = function () {
     instance.on(el, EVENT_SCROLL, this._scrollHandler);
     this._scrollHandler();
   }
-  _createClass(JsPlumbList, [{
+  return _createClass(JsPlumbList, [{
     key: "deriveAnchor",
     value: function deriveAnchor(edge, index, ep, conn) {
       return this.options.anchor ? this.options.anchor : this.options.deriveAnchor(edge, index, ep, conn);
@@ -13888,13 +13737,12 @@ var JsPlumbList = function () {
       }
     }
   }]);
-  return JsPlumbList;
 }();
 
 var VERY_SMALL_VALUE = 0.0000000001;
 function gentleRound(n) {
   var f = Math.floor(n),
-      r = Math.ceil(n);
+    r = Math.ceil(n);
   if (n - f < VERY_SMALL_VALUE) {
     return f;
   } else if (r - n < VERY_SMALL_VALUE) {
@@ -13903,23 +13751,21 @@ function gentleRound(n) {
   return n;
 }
 var ArcSegment = function (_AbstractSegment) {
-  _inherits(ArcSegment, _AbstractSegment);
-  var _super = _createSuper(ArcSegment);
   function ArcSegment(params) {
     var _this;
     _classCallCheck(this, ArcSegment);
-    _this = _super.call(this, params);
-    _defineProperty(_assertThisInitialized(_this), "type", ArcSegment.segmentType);
-    _defineProperty(_assertThisInitialized(_this), "cx", void 0);
-    _defineProperty(_assertThisInitialized(_this), "cy", void 0);
-    _defineProperty(_assertThisInitialized(_this), "radius", void 0);
-    _defineProperty(_assertThisInitialized(_this), "anticlockwise", void 0);
-    _defineProperty(_assertThisInitialized(_this), "startAngle", void 0);
-    _defineProperty(_assertThisInitialized(_this), "endAngle", void 0);
-    _defineProperty(_assertThisInitialized(_this), "sweep", void 0);
-    _defineProperty(_assertThisInitialized(_this), "length", void 0);
-    _defineProperty(_assertThisInitialized(_this), "circumference", void 0);
-    _defineProperty(_assertThisInitialized(_this), "frac", void 0);
+    _this = _callSuper(this, ArcSegment, [params]);
+    _defineProperty(_this, "type", ArcSegment.segmentType);
+    _defineProperty(_this, "cx", void 0);
+    _defineProperty(_this, "cy", void 0);
+    _defineProperty(_this, "radius", void 0);
+    _defineProperty(_this, "anticlockwise", void 0);
+    _defineProperty(_this, "startAngle", void 0);
+    _defineProperty(_this, "endAngle", void 0);
+    _defineProperty(_this, "sweep", void 0);
+    _defineProperty(_this, "length", void 0);
+    _defineProperty(_this, "circumference", void 0);
+    _defineProperty(_this, "frac", void 0);
     _this.cx = params.cx;
     _this.cy = params.cy;
     _this.radius = params.r;
@@ -13957,7 +13803,8 @@ var ArcSegment = function (_AbstractSegment) {
     };
     return _this;
   }
-  _createClass(ArcSegment, [{
+  _inherits(ArcSegment, _AbstractSegment);
+  return _createClass(ArcSegment, [{
     key: "_calcAngle",
     value: function _calcAngle(_x, _y) {
       return theta({
@@ -13973,11 +13820,11 @@ var ArcSegment = function (_AbstractSegment) {
     value: function _calcAngleForLocation(segment, location) {
       if (segment.anticlockwise) {
         var sa = segment.startAngle < segment.endAngle ? segment.startAngle + TWO_PI : segment.startAngle,
-            s = Math.abs(sa - segment.endAngle);
+          s = Math.abs(sa - segment.endAngle);
         return sa - s * location;
       } else {
         var ea = segment.endAngle < segment.startAngle ? segment.endAngle + TWO_PI : segment.endAngle,
-            ss = Math.abs(ea - segment.startAngle);
+          ss = Math.abs(ea - segment.startAngle);
         return segment.startAngle + ss * location;
       }
     }
@@ -13985,7 +13832,7 @@ var ArcSegment = function (_AbstractSegment) {
     key: "getPath",
     value: function getPath(isFirstSegment) {
       var laf = this.sweep > Math.PI ? 1 : 0,
-          sf = this.anticlockwise ? 0 : 1;
+        sf = this.anticlockwise ? 0 : 1;
       return (isFirstSegment ? "M" + this.x1 + " " + this.y1 + " " : "") + "A " + this.radius + " " + this.radius + " 0 " + laf + "," + sf + " " + this.x2 + " " + this.y2;
     }
   }, {
@@ -14013,8 +13860,8 @@ var ArcSegment = function (_AbstractSegment) {
         location = location / length;
       }
       var angle = this._calcAngleForLocation(this, location),
-          _x = this.cx + this.radius * Math.cos(angle),
-          _y = this.cy + this.radius * Math.sin(angle);
+        _x = this.cx + this.radius * Math.cos(angle),
+        _y = this.cy + this.radius * Math.sin(angle);
       return {
         x: gentleRound(_x),
         y: gentleRound(_y),
@@ -14038,38 +13885,35 @@ var ArcSegment = function (_AbstractSegment) {
     key: "pointAlongPathFrom",
     value: function pointAlongPathFrom(location, distance, absolute) {
       var p = this.pointOnPath(location, absolute),
-          arcSpan = distance / this.circumference * 2 * Math.PI,
-          dir = this.anticlockwise ? -1 : 1,
-          startAngle = p.theta + dir * arcSpan,
-          startX = this.cx + this.radius * Math.cos(startAngle),
-          startY = this.cy + this.radius * Math.sin(startAngle);
+        arcSpan = distance / this.circumference * 2 * Math.PI,
+        dir = this.anticlockwise ? -1 : 1,
+        startAngle = p.theta + dir * arcSpan,
+        startX = this.cx + this.radius * Math.cos(startAngle),
+        startY = this.cy + this.radius * Math.sin(startAngle);
       return {
         x: startX,
         y: startY
       };
     }
   }]);
-  return ArcSegment;
 }(AbstractSegment);
 _defineProperty(ArcSegment, "segmentType", "Arc");
 
 var AbstractBezierConnector = function (_AbstractConnector) {
-  _inherits(AbstractBezierConnector, _AbstractConnector);
-  var _super = _createSuper(AbstractBezierConnector);
   function AbstractBezierConnector(connection, params) {
     var _this;
     _classCallCheck(this, AbstractBezierConnector);
-    _this = _super.call(this, connection, params);
+    _this = _callSuper(this, AbstractBezierConnector, [connection, params]);
     _this.connection = connection;
-    _defineProperty(_assertThisInitialized(_this), "showLoopback", void 0);
-    _defineProperty(_assertThisInitialized(_this), "curviness", void 0);
-    _defineProperty(_assertThisInitialized(_this), "margin", void 0);
-    _defineProperty(_assertThisInitialized(_this), "proximityLimit", void 0);
-    _defineProperty(_assertThisInitialized(_this), "orientation", void 0);
-    _defineProperty(_assertThisInitialized(_this), "loopbackRadius", void 0);
-    _defineProperty(_assertThisInitialized(_this), "clockwise", void 0);
-    _defineProperty(_assertThisInitialized(_this), "isLoopbackCurrently", void 0);
-    _defineProperty(_assertThisInitialized(_this), "geometry", null);
+    _defineProperty(_this, "showLoopback", void 0);
+    _defineProperty(_this, "curviness", void 0);
+    _defineProperty(_this, "margin", void 0);
+    _defineProperty(_this, "proximityLimit", void 0);
+    _defineProperty(_this, "orientation", void 0);
+    _defineProperty(_this, "loopbackRadius", void 0);
+    _defineProperty(_this, "clockwise", void 0);
+    _defineProperty(_this, "isLoopbackCurrently", void 0);
+    _defineProperty(_this, "geometry", null);
     params = params || {};
     _this.showLoopback = params.showLoopback !== false;
     _this.curviness = params.curviness || 10;
@@ -14080,7 +13924,8 @@ var AbstractBezierConnector = function (_AbstractConnector) {
     _this.isLoopbackCurrently = false;
     return _this;
   }
-  _createClass(AbstractBezierConnector, [{
+  _inherits(AbstractBezierConnector, _AbstractConnector);
+  return _createClass(AbstractBezierConnector, [{
     key: "getDefaultStubs",
     value: function getDefaultStubs() {
       return [0, 0];
@@ -14089,20 +13934,20 @@ var AbstractBezierConnector = function (_AbstractConnector) {
     key: "_compute",
     value: function _compute(paintInfo, p) {
       var sp = p.sourcePos,
-          tp = p.targetPos,
-          _w = Math.abs(sp.curX - tp.curX),
-          _h = Math.abs(sp.curY - tp.curY);
+        tp = p.targetPos,
+        _w = Math.abs(sp.curX - tp.curX),
+        _h = Math.abs(sp.curY - tp.curY);
       if (!this.showLoopback || p.sourceEndpoint.elementId !== p.targetEndpoint.elementId) {
         this.isLoopbackCurrently = false;
         this._computeBezier(paintInfo, p, sp, tp, _w, _h);
       } else {
         this.isLoopbackCurrently = true;
         var x1 = p.sourcePos.curX,
-            y1 = p.sourcePos.curY - this.margin,
-            cx = x1,
-            cy = y1 - this.loopbackRadius,
-        _x = cx - this.loopbackRadius,
-            _y = cy - this.loopbackRadius;
+          y1 = p.sourcePos.curY - this.margin,
+          cx = x1,
+          cy = y1 - this.loopbackRadius,
+          _x = cx - this.loopbackRadius,
+          _y = cy - this.loopbackRadius;
         _w = 2 * this.loopbackRadius;
         _h = 2 * this.loopbackRadius;
         paintInfo.points[0] = _x;
@@ -14183,7 +14028,6 @@ var AbstractBezierConnector = function (_AbstractConnector) {
       }
     }
   }]);
-  return AbstractBezierConnector;
 }(AbstractConnector);
 
 var Vectors = {
@@ -14210,14 +14054,14 @@ var maxRecursion = 64;
 var flatnessTolerance = Math.pow(2.0, -maxRecursion - 1);
 function distanceFromCurve(point, curve) {
   var candidates = [],
-      w = _convertToBezier(point, curve),
-      degree = curve.length - 1,
-      higherDegree = 2 * degree - 1,
-      numSolutions = _findRoots(w, higherDegree, candidates, 0),
-      v = Vectors.subtract(point, curve[0]),
-      dist = Vectors.square(v),
-      t = 0.0,
-      newDist;
+    w = _convertToBezier(point, curve),
+    degree = curve.length - 1,
+    higherDegree = 2 * degree - 1,
+    numSolutions = _findRoots(w, higherDegree, candidates, 0),
+    v = Vectors.subtract(point, curve[0]),
+    dist = Vectors.square(v),
+    t = 0.0,
+    newDist;
   for (var i = 0; i < numSolutions; i++) {
     v = Vectors.subtract(point, _bezier(curve, degree, candidates[i], null, null));
     newDist = Vectors.square(v);
@@ -14246,12 +14090,12 @@ function nearestPointOnCurve(point, curve) {
 }
 function _convertToBezier(point, curve) {
   var degree = curve.length - 1,
-      higherDegree = 2 * degree - 1,
-      c = [],
-      d = [],
-      cdTable = [],
-      w = [],
-      z = [[1.0, 0.6, 0.3, 0.1], [0.4, 0.6, 0.6, 0.4], [0.1, 0.3, 0.6, 1.0]];
+    higherDegree = 2 * degree - 1,
+    c = [],
+    d = [],
+    cdTable = [],
+    w = [],
+    z = [[1.0, 0.6, 0.3, 0.1], [0.4, 0.6, 0.6, 0.4], [0.1, 0.3, 0.6, 1.0]];
   for (var i = 0; i <= degree; i++) {
     c[i] = Vectors.subtract(curve[i], point);
   }
@@ -14273,10 +14117,10 @@ function _convertToBezier(point, curve) {
     w[_i2].x = parseFloat("" + _i2) / higherDegree;
   }
   var n = degree,
-      m = degree - 1;
+    m = degree - 1;
   for (var k = 0; k <= n + m; k++) {
     var lb = Math.max(0, k - m),
-        ub = Math.min(k, n);
+      ub = Math.min(k, n);
     for (var _i3 = lb; _i3 <= ub; _i3++) {
       var j = k - _i3;
       w[_i3 + j].y += cdTable[j][_i3] * z[j][_i3];
@@ -14286,11 +14130,11 @@ function _convertToBezier(point, curve) {
 }
 function _findRoots(w, degree, t, depth) {
   var left = [],
-      right = [],
-      left_count,
-      right_count,
-      left_t = [],
-      right_t = [];
+    right = [],
+    left_count,
+    right_count,
+    left_t = [],
+    right_t = [];
   switch (_getCrossingCount(w, degree)) {
     case 0:
       {
@@ -14322,8 +14166,8 @@ function _findRoots(w, degree, t, depth) {
 }
 function _getCrossingCount(curve, degree) {
   var n_crossings = 0,
-      sign,
-      old_sign;
+    sign,
+    old_sign;
   sign = old_sign = sgn$1(curve[0].y);
   for (var i = 1; i <= degree; i++) {
     sign = sgn$1(curve[i].y);
@@ -14369,14 +14213,14 @@ function _isFlatEnough(curve, degree) {
 }
 function _computeXIntercept(curve, degree) {
   var XLK = 1.0,
-      YLK = 0.0,
-      XNM = curve[degree].x - curve[0].x,
-      YNM = curve[degree].y - curve[0].y,
-      XMK = curve[0].x - 0.0,
-      YMK = curve[0].y - 0.0,
-      det = XNM * YLK - YNM * XLK,
-      detInv = 1.0 / det,
-      S = (XNM * YMK - YNM * XMK) * detInv;
+    YLK = 0.0,
+    XNM = curve[degree].x - curve[0].x,
+    YNM = curve[degree].y - curve[0].y,
+    XMK = curve[0].x - 0.0,
+    YMK = curve[0].y - 0.0,
+    det = XNM * YLK - YNM * XLK,
+    detInv = 1.0 / det,
+    S = (XNM * YMK - YNM * XMK) * detInv;
   return 0.0 + XLK * S;
 }
 function _bezier(curve, degree, t, left, right) {
@@ -14437,11 +14281,11 @@ function _computeLookup(e, curve) {
   }
   if (4 > degree) {
     var l = s * s,
-        h = e * e,
-        u = 0,
-        m,
-        g,
-        f;
+      h = e * e,
+      u = 0,
+      m,
+      g,
+      f;
     if (degree === 2) {
       o = [o[0], o[1], o[2], EMPTY_POINT];
       m = l;
@@ -14468,7 +14312,7 @@ function computeBezierLength(curve) {
     var lut = _getLUT(steps, curve);
     for (var i = 0; i < steps - 1; i++) {
       var a = lut[i],
-          b = lut[i + 1];
+        b = lut[i + 1];
       length += dist(a, b);
     }
   }
@@ -14480,48 +14324,44 @@ function _getCurveFunctions(order) {
   if (!fns) {
     fns = [];
     var f_term = function f_term() {
-      return function (t) {
-        return Math.pow(t, order);
+        return function (t) {
+          return Math.pow(t, order);
+        };
+      },
+      l_term = function l_term() {
+        return function (t) {
+          return Math.pow(1 - t, order);
+        };
+      },
+      c_term = function c_term(c) {
+        return function (t) {
+          return c;
+        };
+      },
+      t_term = function t_term() {
+        return function (t) {
+          return t;
+        };
+      },
+      one_minus_t_term = function one_minus_t_term() {
+        return function (t) {
+          return 1 - t;
+        };
+      },
+      _termFunc = function _termFunc(terms) {
+        return function (t) {
+          var p = 1;
+          for (var i = 0; i < terms.length; i++) {
+            p = p * terms[i](t);
+          }
+          return p;
+        };
       };
-    },
-        l_term = function l_term() {
-      return function (t) {
-        return Math.pow(1 - t, order);
-      };
-    },
-        c_term = function c_term(c) {
-      return function (t) {
-        return c;
-      };
-    },
-        t_term = function t_term() {
-      return function (t) {
-        return t;
-      };
-    },
-        one_minus_t_term = function one_minus_t_term() {
-      return function (t) {
-        return 1 - t;
-      };
-    },
-        _termFunc = function _termFunc(terms) {
-      return function (t) {
-        var p = 1;
-        for (var i = 0; i < terms.length; i++) {
-          p = p * terms[i](t);
-        }
-        return p;
-      };
-    };
     fns.push(f_term());
     for (var i = 1; i < order; i++) {
       var terms = [c_term(order)];
-      for (var j = 0; j < order - i; j++) {
-        terms.push(t_term());
-      }
-      for (var _j4 = 0; _j4 < i; _j4++) {
-        terms.push(one_minus_t_term());
-      }
+      for (var j = 0; j < order - i; j++) terms.push(t_term());
+      for (var _j4 = 0; _j4 < i; _j4++) terms.push(one_minus_t_term());
       fns.push(_termFunc(terms));
     }
     fns.push(l_term());
@@ -14531,8 +14371,8 @@ function _getCurveFunctions(order) {
 }
 function pointOnCurve(curve, location) {
   var cc = _getCurveFunctions(curve.length - 1),
-      _x = 0,
-      _y = 0;
+    _x = 0,
+    _y = 0;
   for (var i = 0; i < curve.length; i++) {
     _x = _x + curve[i].x * cc[i](location);
     _y = _y + curve[i].y * cc[i](location);
@@ -14556,10 +14396,10 @@ function pointAlongPath(curve, location, distance) {
     };
   }
   var prev = pointOnCurve(curve, location),
-      tally = 0,
-      curLoc = location,
-      direction = distance > 0 ? 1 : -1,
-      cur = null;
+    tally = 0,
+    curLoc = location,
+    direction = distance > 0 ? 1 : -1,
+    cur = null;
   while (tally < Math.abs(distance)) {
     curLoc += 0.005 * direction;
     cur = pointOnCurve(curve, curLoc);
@@ -14579,9 +14419,9 @@ function locationAlongCurveFrom(curve, location, distance) {
 }
 function gradientAtPoint(curve, location) {
   var p1 = pointOnCurve(curve, location),
-      p2 = pointOnCurve(curve.slice(0, curve.length - 1), location),
-      dy = p2.y - p1.y,
-      dx = p2.x - p1.x;
+    p2 = pointOnCurve(curve.slice(0, curve.length - 1), location),
+    dy = p2.y - p1.y,
+    dx = p2.x - p1.x;
   return dy === 0 ? Infinity : Math.atan(dy / dx);
 }
 function gradientAtPointAlongPathFrom(curve, location, distance) {
@@ -14593,10 +14433,10 @@ function gradientAtPointAlongPathFrom(curve, location, distance) {
 function perpendicularToPathAt(curve, location, length, distance) {
   distance = distance == null ? 0 : distance;
   var p = pointAlongPath(curve, location, distance),
-      m = gradientAtPoint(curve, p.location),
-      _theta2 = Math.atan(-1 / m),
-      y = length / 2 * Math.sin(_theta2),
-      x = length / 2 * Math.cos(_theta2);
+    m = gradientAtPoint(curve, p.location),
+    _theta2 = Math.atan(-1 / m),
+    y = length / 2 * Math.sin(_theta2),
+    x = length / 2 * Math.cos(_theta2);
   return [{
     x: p.point.x + x,
     y: p.point.y + y
@@ -14607,21 +14447,21 @@ function perpendicularToPathAt(curve, location, length, distance) {
 }
 function bezierLineIntersection(x1, y1, x2, y2, curve) {
   var a = y2 - y1,
-      b = x1 - x2,
-      c = x1 * (y1 - y2) + y1 * (x2 - x1),
-      coeffs = _computeCoefficients(curve),
-      p = [a * coeffs[0][0] + b * coeffs[1][0], a * coeffs[0][1] + b * coeffs[1][1], a * coeffs[0][2] + b * coeffs[1][2], a * coeffs[0][3] + b * coeffs[1][3] + c],
-      r = _cubicRoots.apply(null, p),
-      intersections = [];
+    b = x1 - x2,
+    c = x1 * (y1 - y2) + y1 * (x2 - x1),
+    coeffs = _computeCoefficients(curve),
+    p = [a * coeffs[0][0] + b * coeffs[1][0], a * coeffs[0][1] + b * coeffs[1][1], a * coeffs[0][2] + b * coeffs[1][2], a * coeffs[0][3] + b * coeffs[1][3] + c],
+    r = _cubicRoots.apply(null, p),
+    intersections = [];
   if (r != null) {
     for (var i = 0; i < 3; i++) {
       var _t = r[i],
-          t2 = Math.pow(_t, 2),
-          t3 = Math.pow(_t, 3),
-          x = {
-        x: coeffs[0][0] * t3 + coeffs[0][1] * t2 + coeffs[0][2] * _t + coeffs[0][3],
-        y: coeffs[1][0] * t3 + coeffs[1][1] * t2 + coeffs[1][2] * _t + coeffs[1][3]
-      };
+        t2 = Math.pow(_t, 2),
+        t3 = Math.pow(_t, 3),
+        x = {
+          x: coeffs[0][0] * t3 + coeffs[0][1] * t2 + coeffs[0][2] * _t + coeffs[0][3],
+          y: coeffs[1][0] * t3 + coeffs[1][1] * t2 + coeffs[1][2] * _t + coeffs[1][3]
+        };
       var s = void 0;
       if (x2 - x1 !== 0) {
         s = (x[0] - x1) / (x2 - x1);
@@ -14659,14 +14499,14 @@ function _computeCoefficients(curve) {
 }
 function _cubicRoots(a, b, c, d) {
   var A = b / a,
-      B = c / a,
-      C = d / a,
-      Q = (3 * B - Math.pow(A, 2)) / 9,
-      R = (9 * A * B - 27 * C - 2 * Math.pow(A, 3)) / 54,
-      D = Math.pow(Q, 3) + Math.pow(R, 2),
-      S,
-      T,
-      t = [0, 0, 0];
+    B = c / a,
+    C = d / a,
+    Q = (3 * B - Math.pow(A, 2)) / 9,
+    R = (9 * A * B - 27 * C - 2 * Math.pow(A, 3)) / 54,
+    D = Math.pow(Q, 3) + Math.pow(R, 2),
+    S,
+    T,
+    t = [0, 0, 0];
   if (D >= 0)
     {
       S = sgn$1(R + Math.sqrt(D)) * Math.pow(Math.abs(R + Math.sqrt(D)), 1 / 3);
@@ -14694,19 +14534,17 @@ function _cubicRoots(a, b, c, d) {
 }
 
 var BezierSegment = function (_AbstractSegment) {
-  _inherits(BezierSegment, _AbstractSegment);
-  var _super = _createSuper(BezierSegment);
   function BezierSegment(params) {
     var _this;
     _classCallCheck(this, BezierSegment);
-    _this = _super.call(this, params);
-    _defineProperty(_assertThisInitialized(_this), "curve", void 0);
-    _defineProperty(_assertThisInitialized(_this), "cp1x", void 0);
-    _defineProperty(_assertThisInitialized(_this), "cp1y", void 0);
-    _defineProperty(_assertThisInitialized(_this), "cp2x", void 0);
-    _defineProperty(_assertThisInitialized(_this), "cp2y", void 0);
-    _defineProperty(_assertThisInitialized(_this), "length", 0);
-    _defineProperty(_assertThisInitialized(_this), "type", BezierSegment.segmentType);
+    _this = _callSuper(this, BezierSegment, [params]);
+    _defineProperty(_this, "curve", void 0);
+    _defineProperty(_this, "cp1x", void 0);
+    _defineProperty(_this, "cp1y", void 0);
+    _defineProperty(_this, "cp2x", void 0);
+    _defineProperty(_this, "cp2y", void 0);
+    _defineProperty(_this, "length", 0);
+    _defineProperty(_this, "type", BezierSegment.segmentType);
     _this.cp1x = params.cp1x;
     _this.cp1y = params.cp1y;
     _this.cp2x = params.cp2x;
@@ -14736,7 +14574,8 @@ var BezierSegment = function (_AbstractSegment) {
     };
     return _this;
   }
-  _createClass(BezierSegment, [{
+  _inherits(BezierSegment, _AbstractSegment);
+  return _createClass(BezierSegment, [{
     key: "getPath",
     value: function getPath(isFirstSegment) {
       return (isFirstSegment ? "M " + this.x2 + " " + this.y2 + " " : "") + "C " + this.cp2x + " " + this.cp2y + " " + this.cp1x + " " + this.cp1y + " " + this.x1 + " " + this.y1;
@@ -14800,27 +14639,27 @@ var BezierSegment = function (_AbstractSegment) {
       return location;
     }
   }]);
-  return BezierSegment;
 }(AbstractSegment);
 _defineProperty(BezierSegment, "segmentType", "Bezier");
 
 var BezierConnector = function (_AbstractBezierConnec) {
-  _inherits(BezierConnector, _AbstractBezierConnec);
-  var _super = _createSuper(BezierConnector);
   function BezierConnector(connection, params) {
     var _this;
     _classCallCheck(this, BezierConnector);
-    _this = _super.call(this, connection, params);
+    _this = _callSuper(this, BezierConnector, [connection, params]);
     _this.connection = connection;
-    _defineProperty(_assertThisInitialized(_this), "type", BezierConnector.type);
-    _defineProperty(_assertThisInitialized(_this), "majorAnchor", void 0);
-    _defineProperty(_assertThisInitialized(_this), "minorAnchor", void 0);
+    _defineProperty(_this, "type", BezierConnector.type);
+    _defineProperty(_this, "majorAnchor", void 0);
+    _defineProperty(_this, "minorAnchor", void 0);
+    _defineProperty(_this, "straightMargin", void 0);
     params = params || {};
     _this.majorAnchor = params.curviness || 150;
     _this.minorAnchor = 10;
+    _this.straightMargin = params.margin || null;
     return _this;
   }
-  _createClass(BezierConnector, [{
+  _inherits(BezierConnector, _AbstractBezierConnec);
+  return _createClass(BezierConnector, [{
     key: "getCurviness",
     value: function getCurviness() {
       return this.majorAnchor;
@@ -14829,29 +14668,32 @@ var BezierConnector = function (_AbstractBezierConnec) {
     key: "_findControlPoint",
     value: function _findControlPoint(point, sourceAnchorPosition, targetAnchorPosition, soo, too) {
       var perpendicular = soo[0] !== too[0] || soo[1] === too[1],
-          p = {
-        x: 0,
-        y: 0
-      };
+        p = {
+          x: 0,
+          y: 0
+        };
+      console.log('sourceAnchorPosition', sourceAnchorPosition);
+      console.log('targetAnchorPosition', targetAnchorPosition);
+      console.log('point', point);
       if (!perpendicular) {
         if (soo[0] === 0) {
-          p.x = sourceAnchorPosition.curX < targetAnchorPosition.curX ? point.x + this.minorAnchor : point.x - this.minorAnchor;
+          p.x = this._computeMinorPoint(sourceAnchorPosition.curX, targetAnchorPosition.curX, point.x);
         } else {
           p.x = point.x - this.majorAnchor * soo[0];
         }
         if (soo[1] === 0) {
-          p.y = sourceAnchorPosition.curY < targetAnchorPosition.curY ? point.y + this.minorAnchor : point.y - this.minorAnchor;
+          p.y = this._computeMinorPoint(sourceAnchorPosition.curY, targetAnchorPosition.curY, point.y);
         } else {
           p.y = point.y + this.majorAnchor * too[1];
         }
       } else {
         if (too[0] === 0) {
-          p.x = targetAnchorPosition.curX < sourceAnchorPosition.curX ? point.x + this.minorAnchor : point.x - this.minorAnchor;
+          p.x = this._computeMinorPoint(targetAnchorPosition.curX, sourceAnchorPosition.curX, point.x);
         } else {
           p.x = point.x + this.majorAnchor * too[0];
         }
         if (too[1] === 0) {
-          p.y = targetAnchorPosition.curY < sourceAnchorPosition.curY ? point.y + this.minorAnchor : point.y - this.minorAnchor;
+          p.y = this._computeMinorPoint(targetAnchorPosition.curY, sourceAnchorPosition.curY, point.y);
         } else {
           p.y = point.y + this.majorAnchor * soo[1];
         }
@@ -14859,14 +14701,20 @@ var BezierConnector = function (_AbstractBezierConnec) {
       return p;
     }
   }, {
+    key: "_computeMinorPoint",
+    value: function _computeMinorPoint(sourcePosition, targetPosition, pointPosition) {
+      if (this.straightMargin && Math.abs(sourcePosition - targetPosition) < this.straightMargin) return pointPosition;
+      return sourcePosition < targetPosition ? pointPosition + this.minorAnchor : pointPosition - this.minorAnchor;
+    }
+  }, {
     key: "_computeBezier",
     value: function _computeBezier(paintInfo, p, sp, tp, _w, _h) {
       var _CP,
-          _CP2,
-          _sx = sp.curX < tp.curX ? _w : 0,
-          _sy = sp.curY < tp.curY ? _h : 0,
-          _tx = sp.curX < tp.curX ? 0 : _w,
-          _ty = sp.curY < tp.curY ? 0 : _h;
+        _CP2,
+        _sx = sp.curX < tp.curX ? _w : 0,
+        _sy = sp.curY < tp.curY ? _h : 0,
+        _tx = sp.curX < tp.curX ? 0 : _w,
+        _ty = sp.curY < tp.curY ? 0 : _h;
       if (this.edited !== true) {
         _CP = this._findControlPoint({
           x: _sx,
@@ -14897,7 +14745,6 @@ var BezierConnector = function (_AbstractBezierConnec) {
       });
     }
   }]);
-  return BezierConnector;
 }(AbstractBezierConnector);
 _defineProperty(BezierConnector, "type", "Bezier");
 
@@ -14989,28 +14836,27 @@ function _findControlPoint(midx, midy, segment, sourceEdge, targetEdge, dx, dy, 
   }
 }
 var StateMachineConnector = function (_AbstractBezierConnec) {
-  _inherits(StateMachineConnector, _AbstractBezierConnec);
-  var _super = _createSuper(StateMachineConnector);
   function StateMachineConnector(connection, params) {
     var _this;
     _classCallCheck(this, StateMachineConnector);
-    _this = _super.call(this, connection, params);
+    _this = _callSuper(this, StateMachineConnector, [connection, params]);
     _this.connection = connection;
-    _defineProperty(_assertThisInitialized(_this), "type", StateMachineConnector.type);
-    _defineProperty(_assertThisInitialized(_this), "_controlPoint", void 0);
+    _defineProperty(_this, "type", StateMachineConnector.type);
+    _defineProperty(_this, "_controlPoint", void 0);
     _this.curviness = params.curviness || 10;
     _this.margin = params.margin || 5;
     _this.proximityLimit = params.proximityLimit || 80;
     _this.clockwise = params.orientation && params.orientation === "clockwise";
     return _this;
   }
-  _createClass(StateMachineConnector, [{
+  _inherits(StateMachineConnector, _AbstractBezierConnec);
+  return _createClass(StateMachineConnector, [{
     key: "_computeBezier",
     value: function _computeBezier(paintInfo, params, sp, tp, w, h) {
       var _sx = sp.curX < tp.curX ? 0 : w,
-          _sy = sp.curY < tp.curY ? 0 : h,
-          _tx = sp.curX < tp.curX ? w : 0,
-          _ty = sp.curY < tp.curY ? h : 0;
+        _sy = sp.curY < tp.curY ? 0 : h,
+        _tx = sp.curX < tp.curX ? w : 0,
+        _ty = sp.curY < tp.curY ? h : 0;
       if (sp.x === 0) {
         _sx -= this.margin;
       }
@@ -15037,9 +14883,9 @@ var StateMachineConnector = function (_AbstractBezierConnec) {
       }
       if (this.edited !== true) {
         var _midx = (_sx + _tx) / 2,
-            _midy = (_sy + _ty) / 2,
-            segment = _segment(_sx, _sy, _tx, _ty),
-            distance = Math.sqrt(Math.pow(_tx - _sx, 2) + Math.pow(_ty - _sy, 2));
+          _midy = (_sy + _ty) / 2,
+          segment = _segment(_sx, _sy, _tx, _ty),
+          distance = Math.sqrt(Math.pow(_tx - _sx, 2) + Math.pow(_ty - _sy, 2));
         this._controlPoint = _findControlPoint(_midx, _midy, segment, params.sourcePos, params.targetPos, this.curviness, this.curviness, distance, this.proximityLimit);
       } else {
         this._controlPoint = this.geometry.controlPoints[0];
@@ -15066,7 +14912,6 @@ var StateMachineConnector = function (_AbstractBezierConnec) {
       });
     }
   }]);
-  return StateMachineConnector;
 }(AbstractBezierConnector);
 _defineProperty(StateMachineConnector, "type", "StateMachine");
 
@@ -15088,23 +14933,21 @@ function _cloneArray(a) {
   return _a;
 }
 var FlowchartConnector = function (_AbstractConnector) {
-  _inherits(FlowchartConnector, _AbstractConnector);
-  var _super = _createSuper(FlowchartConnector);
   function FlowchartConnector(connection, params) {
     var _this;
     _classCallCheck(this, FlowchartConnector);
-    _this = _super.call(this, connection, params);
+    _this = _callSuper(this, FlowchartConnector, [connection, params]);
     _this.connection = connection;
-    _defineProperty(_assertThisInitialized(_this), "type", FlowchartConnector.type);
-    _defineProperty(_assertThisInitialized(_this), "internalSegments", []);
-    _defineProperty(_assertThisInitialized(_this), "midpoint", void 0);
-    _defineProperty(_assertThisInitialized(_this), "alwaysRespectStubs", void 0);
-    _defineProperty(_assertThisInitialized(_this), "cornerRadius", void 0);
-    _defineProperty(_assertThisInitialized(_this), "lastx", void 0);
-    _defineProperty(_assertThisInitialized(_this), "lasty", void 0);
-    _defineProperty(_assertThisInitialized(_this), "lastOrientation", void 0);
-    _defineProperty(_assertThisInitialized(_this), "loopbackRadius", void 0);
-    _defineProperty(_assertThisInitialized(_this), "isLoopbackCurrently", void 0);
+    _defineProperty(_this, "type", FlowchartConnector.type);
+    _defineProperty(_this, "internalSegments", []);
+    _defineProperty(_this, "midpoint", void 0);
+    _defineProperty(_this, "alwaysRespectStubs", void 0);
+    _defineProperty(_this, "cornerRadius", void 0);
+    _defineProperty(_this, "lastx", void 0);
+    _defineProperty(_this, "lasty", void 0);
+    _defineProperty(_this, "lastOrientation", void 0);
+    _defineProperty(_this, "loopbackRadius", void 0);
+    _defineProperty(_this, "isLoopbackCurrently", void 0);
     _this.midpoint = params.midpoint == null || isNaN(params.midpoint) ? 0.5 : params.midpoint;
     _this.cornerRadius = params.cornerRadius != null ? params.cornerRadius : 0;
     _this.alwaysRespectStubs = params.alwaysRespectStubs === true;
@@ -15115,7 +14958,8 @@ var FlowchartConnector = function (_AbstractConnector) {
     _this.isLoopbackCurrently = false;
     return _this;
   }
-  _createClass(FlowchartConnector, [{
+  _inherits(FlowchartConnector, _AbstractConnector);
+  return _createClass(FlowchartConnector, [{
     key: "getDefaultStubs",
     value: function getDefaultStubs() {
       return [30, 30];
@@ -15127,8 +14971,8 @@ var FlowchartConnector = function (_AbstractConnector) {
         return;
       }
       var lx = this.lastx == null ? paintInfo.sx : this.lastx,
-          ly = this.lasty == null ? paintInfo.sy : this.lasty,
-          o = lx === x ? "v" : "h";
+        ly = this.lasty == null ? paintInfo.sy : this.lasty,
+        o = lx === x ? "v" : "h";
       this.lastx = x;
       this.lasty = y;
       this.internalSegments.push([lx, ly, x, y, o]);
@@ -15137,9 +14981,9 @@ var FlowchartConnector = function (_AbstractConnector) {
     key: "writeSegments",
     value: function writeSegments(paintInfo) {
       var current = null,
-          next,
-          currentDirection,
-          nextDirection;
+        next,
+        currentDirection,
+        nextDirection;
       for (var i = 0; i < this.internalSegments.length - 1; i++) {
         current = current || _cloneArray(this.internalSegments[i]);
         next = _cloneArray(this.internalSegments[i + 1]);
@@ -15153,11 +14997,11 @@ var FlowchartConnector = function (_AbstractConnector) {
           next[0] += nextDirection[0] * radiusToUse;
           next[1] += nextDirection[1] * radiusToUse;
           var ac = currentDirection[1] === nextDirection[0] && nextDirection[0] === 1 || currentDirection[1] === nextDirection[0] && nextDirection[0] === 0 && currentDirection[0] !== nextDirection[1] || currentDirection[1] === nextDirection[0] && nextDirection[0] === -1,
-              sgny = next[1] > current[3] ? 1 : -1,
-              sgnx = next[0] > current[2] ? 1 : -1,
-              sgnEqual = sgny === sgnx,
-              cx = sgnEqual && ac || !sgnEqual && !ac ? next[0] : current[2],
-              cy = sgnEqual && ac || !sgnEqual && !ac ? current[3] : next[1];
+            sgny = next[1] > current[3] ? 1 : -1,
+            sgnx = next[0] > current[2] ? 1 : -1,
+            sgnEqual = sgny === sgnx,
+            cx = sgnEqual && ac || !sgnEqual && !ac ? next[0] : current[2],
+            cy = sgnEqual && ac || !sgnEqual && !ac ? current[3] : next[1];
           this._addSegment(StraightSegment, {
             x1: current[0],
             y1: current[1],
@@ -15202,77 +15046,77 @@ var FlowchartConnector = function (_AbstractConnector) {
       this.lasty = null;
       this.lastOrientation = null;
       var commonStubCalculator = function commonStubCalculator(axis) {
-        return [paintInfo.startStubX, paintInfo.startStubY, paintInfo.endStubX, paintInfo.endStubY];
-      },
-          stubCalculators = {
-        perpendicular: commonStubCalculator,
-        orthogonal: commonStubCalculator,
-        opposite: function opposite(axis) {
-          var pi = paintInfo,
+          return [paintInfo.startStubX, paintInfo.startStubY, paintInfo.endStubX, paintInfo.endStubY];
+        },
+        stubCalculators = {
+          perpendicular: commonStubCalculator,
+          orthogonal: commonStubCalculator,
+          opposite: function opposite(axis) {
+            var pi = paintInfo,
               idx = axis === "x" ? 0 : 1,
               areInProximity = {
-            "x": function x() {
-              return pi.so[idx] === 1 && (pi.startStubX > pi.endStubX && pi.tx > pi.startStubX || pi.sx > pi.endStubX && pi.tx > pi.sx) || pi.so[idx] === -1 && (pi.startStubX < pi.endStubX && pi.tx < pi.startStubX || pi.sx < pi.endStubX && pi.tx < pi.sx);
-            },
-            "y": function y() {
-              return pi.so[idx] === 1 && (pi.startStubY > pi.endStubY && pi.ty > pi.startStubY || pi.sy > pi.endStubY && pi.ty > pi.sy) || pi.so[idx] === -1 && (pi.startStubY < pi.endStubY && pi.ty < pi.startStubY || pi.sy < pi.endStubY && pi.ty < pi.sy);
+                "x": function x() {
+                  return pi.so[idx] === 1 && (pi.startStubX > pi.endStubX && pi.tx > pi.startStubX || pi.sx > pi.endStubX && pi.tx > pi.sx) || pi.so[idx] === -1 && (pi.startStubX < pi.endStubX && pi.tx < pi.startStubX || pi.sx < pi.endStubX && pi.tx < pi.sx);
+                },
+                "y": function y() {
+                  return pi.so[idx] === 1 && (pi.startStubY > pi.endStubY && pi.ty > pi.startStubY || pi.sy > pi.endStubY && pi.ty > pi.sy) || pi.so[idx] === -1 && (pi.startStubY < pi.endStubY && pi.ty < pi.startStubY || pi.sy < pi.endStubY && pi.ty < pi.sy);
+                }
+              };
+            if (!_this2.alwaysRespectStubs && areInProximity[axis]()) {
+              return {
+                "x": [(paintInfo.sx + paintInfo.tx) / 2, paintInfo.startStubY, (paintInfo.sx + paintInfo.tx) / 2, paintInfo.endStubY],
+                "y": [paintInfo.startStubX, (paintInfo.sy + paintInfo.ty) / 2, paintInfo.endStubX, (paintInfo.sy + paintInfo.ty) / 2]
+              }[axis];
+            } else {
+              return [paintInfo.startStubX, paintInfo.startStubY, paintInfo.endStubX, paintInfo.endStubY];
             }
-          };
-          if (!_this2.alwaysRespectStubs && areInProximity[axis]()) {
-            return {
-              "x": [(paintInfo.sx + paintInfo.tx) / 2, paintInfo.startStubY, (paintInfo.sx + paintInfo.tx) / 2, paintInfo.endStubY],
-              "y": [paintInfo.startStubX, (paintInfo.sy + paintInfo.ty) / 2, paintInfo.endStubX, (paintInfo.sy + paintInfo.ty) / 2]
-            }[axis];
-          } else {
-            return [paintInfo.startStubX, paintInfo.startStubY, paintInfo.endStubX, paintInfo.endStubY];
           }
-        }
-      };
+        };
       var stubs = stubCalculators[paintInfo.anchorOrientation](paintInfo.sourceAxis),
-          idx = paintInfo.sourceAxis === "x" ? 0 : 1,
-          oidx = paintInfo.sourceAxis === "x" ? 1 : 0,
-          ss = stubs[idx],
-          oss = stubs[oidx],
-          es = stubs[idx + 2],
-          oes = stubs[oidx + 2];
+        idx = paintInfo.sourceAxis === "x" ? 0 : 1,
+        oidx = paintInfo.sourceAxis === "x" ? 1 : 0,
+        ss = stubs[idx],
+        oss = stubs[oidx],
+        es = stubs[idx + 2],
+        oes = stubs[oidx + 2];
       this.addASegment(stubs[0], stubs[1], paintInfo);
       var midx = paintInfo.startStubX + (paintInfo.endStubX - paintInfo.startStubX) * this.midpoint,
-          midy = paintInfo.startStubY + (paintInfo.endStubY - paintInfo.startStubY) * this.midpoint;
+        midy = paintInfo.startStubY + (paintInfo.endStubY - paintInfo.startStubY) * this.midpoint;
       var orientations = {
-        x: [0, 1],
-        y: [1, 0]
-      },
-          lineCalculators = {
-        perpendicular: function perpendicular(axis, ss, oss, es, oes) {
-          var pi = paintInfo,
+          x: [0, 1],
+          y: [1, 0]
+        },
+        lineCalculators = {
+          perpendicular: function perpendicular(axis, ss, oss, es, oes) {
+            var pi = paintInfo,
               sis = {
-            x: [[[1, 2, 3, 4], null, [2, 1, 4, 3]], null, [[4, 3, 2, 1], null, [3, 4, 1, 2]]],
-            y: [[[3, 2, 1, 4], null, [2, 3, 4, 1]], null, [[4, 1, 2, 3], null, [1, 4, 3, 2]]]
-          },
+                x: [[[1, 2, 3, 4], null, [2, 1, 4, 3]], null, [[4, 3, 2, 1], null, [3, 4, 1, 2]]],
+                y: [[[3, 2, 1, 4], null, [2, 3, 4, 1]], null, [[4, 1, 2, 3], null, [1, 4, 3, 2]]]
+              },
               stubs = {
-            x: [[pi.startStubX, pi.endStubX], null, [pi.endStubX, pi.startStubX]],
-            y: [[pi.startStubY, pi.endStubY], null, [pi.endStubY, pi.startStubY]]
-          },
+                x: [[pi.startStubX, pi.endStubX], null, [pi.endStubX, pi.startStubX]],
+                y: [[pi.startStubY, pi.endStubY], null, [pi.endStubY, pi.startStubY]]
+              },
               midLines = {
-            x: [[midx, pi.startStubY], [midx, pi.endStubY]],
-            y: [[pi.startStubX, midy], [pi.endStubX, midy]]
-          },
+                x: [[midx, pi.startStubY], [midx, pi.endStubY]],
+                y: [[pi.startStubX, midy], [pi.endStubX, midy]]
+              },
               linesToEnd = {
-            x: [[pi.endStubX, pi.startStubY]],
-            y: [[pi.startStubX, pi.endStubY]]
-          },
+                x: [[pi.endStubX, pi.startStubY]],
+                y: [[pi.startStubX, pi.endStubY]]
+              },
               startToEnd = {
-            x: [[pi.startStubX, pi.endStubY], [pi.endStubX, pi.endStubY]],
-            y: [[pi.endStubX, pi.startStubY], [pi.endStubX, pi.endStubY]]
-          },
+                x: [[pi.startStubX, pi.endStubY], [pi.endStubX, pi.endStubY]],
+                y: [[pi.endStubX, pi.startStubY], [pi.endStubX, pi.endStubY]]
+              },
               startToMidToEnd = {
-            x: [[pi.startStubX, midy], [pi.endStubX, midy], [pi.endStubX, pi.endStubY]],
-            y: [[midx, pi.startStubY], [midx, pi.endStubY], [pi.endStubX, pi.endStubY]]
-          },
+                x: [[pi.startStubX, midy], [pi.endStubX, midy], [pi.endStubX, pi.endStubY]],
+                y: [[midx, pi.startStubY], [midx, pi.endStubY], [pi.endStubX, pi.endStubY]]
+              },
               otherStubs = {
-            x: [pi.startStubY, pi.endStubY],
-            y: [pi.startStubX, pi.endStubX]
-          },
+                x: [pi.startStubY, pi.endStubY],
+                y: [pi.startStubX, pi.endStubX]
+              },
               soIdx = orientations[axis][0],
               toIdx = orientations[axis][1],
               _so = pi.so[soIdx] + 1,
@@ -15281,57 +15125,57 @@ var FlowchartConnector = function (_AbstractConnector) {
               stub1 = stubs[axis][_so][0],
               stub2 = stubs[axis][_so][1],
               segmentIndexes = sis[axis][_so][_to];
-          if (pi.segment === segmentIndexes[3] || pi.segment === segmentIndexes[2] && otherFlipped) {
-            return midLines[axis];
-          } else if (pi.segment === segmentIndexes[2] && stub2 < stub1) {
-            return linesToEnd[axis];
-          } else if (pi.segment === segmentIndexes[2] && stub2 >= stub1 || pi.segment === segmentIndexes[1] && !otherFlipped) {
-            return startToMidToEnd[axis];
-          } else if (pi.segment === segmentIndexes[0] || pi.segment === segmentIndexes[1] && otherFlipped) {
-            return startToEnd[axis];
-          }
-        },
-        orthogonal: function orthogonal(axis, startStub, otherStartStub, endStub, otherEndStub) {
-          var pi = paintInfo,
+            if (pi.segment === segmentIndexes[3] || pi.segment === segmentIndexes[2] && otherFlipped) {
+              return midLines[axis];
+            } else if (pi.segment === segmentIndexes[2] && stub2 < stub1) {
+              return linesToEnd[axis];
+            } else if (pi.segment === segmentIndexes[2] && stub2 >= stub1 || pi.segment === segmentIndexes[1] && !otherFlipped) {
+              return startToMidToEnd[axis];
+            } else if (pi.segment === segmentIndexes[0] || pi.segment === segmentIndexes[1] && otherFlipped) {
+              return startToEnd[axis];
+            }
+          },
+          orthogonal: function orthogonal(axis, startStub, otherStartStub, endStub, otherEndStub) {
+            var pi = paintInfo,
               extent = {
-            "x": pi.so[0] === -1 ? Math.min(startStub, endStub) : Math.max(startStub, endStub),
-            "y": pi.so[1] === -1 ? Math.min(startStub, endStub) : Math.max(startStub, endStub)
-          }[axis];
-          return {
-            "x": [[extent, otherStartStub], [extent, otherEndStub], [endStub, otherEndStub]],
-            "y": [[otherStartStub, extent], [otherEndStub, extent], [otherEndStub, endStub]]
-          }[axis];
-        },
-        opposite: function opposite(axis, ss, oss, es, oes) {
-          var pi = paintInfo,
+                "x": pi.so[0] === -1 ? Math.min(startStub, endStub) : Math.max(startStub, endStub),
+                "y": pi.so[1] === -1 ? Math.min(startStub, endStub) : Math.max(startStub, endStub)
+              }[axis];
+            return {
+              "x": [[extent, otherStartStub], [extent, otherEndStub], [endStub, otherEndStub]],
+              "y": [[otherStartStub, extent], [otherEndStub, extent], [otherEndStub, endStub]]
+            }[axis];
+          },
+          opposite: function opposite(axis, ss, oss, es, oes) {
+            var pi = paintInfo,
               otherAxis = {
-            "x": "y",
-            "y": "x"
-          }[axis],
+                "x": "y",
+                "y": "x"
+              }[axis],
               dim = {
-            "x": "h",
-            "y": "w"
-          }[axis],
+                "x": "h",
+                "y": "w"
+              }[axis],
               comparator = pi["is" + axis.toUpperCase() + "GreaterThanStubTimes2"];
-          if (params.sourceEndpoint.elementId === params.targetEndpoint.elementId) {
-            var _val = oss + (1 - params.sourceEndpoint._anchor.computedPosition[otherAxis]) * params.sourceInfo[dim] + _this2.maxStub;
-            return {
-              "x": [[ss, _val], [es, _val]],
-              "y": [[_val, ss], [_val, es]]
-            }[axis];
-          } else if (!comparator || pi.so[idx] === 1 && ss > es || pi.so[idx] === -1 && ss < es) {
-            return {
-              "x": [[ss, midy], [es, midy]],
-              "y": [[midx, ss], [midx, es]]
-            }[axis];
-          } else if (pi.so[idx] === 1 && ss < es || pi.so[idx] === -1 && ss > es) {
-            return {
-              "x": [[midx, pi.sy], [midx, pi.ty]],
-              "y": [[pi.sx, midy], [pi.tx, midy]]
-            }[axis];
+            if (params.sourceEndpoint.elementId === params.targetEndpoint.elementId) {
+              var _val = oss + (1 - params.sourceEndpoint._anchor.computedPosition[otherAxis]) * params.sourceInfo[dim] + _this2.maxStub;
+              return {
+                "x": [[ss, _val], [es, _val]],
+                "y": [[_val, ss], [_val, es]]
+              }[axis];
+            } else if (!comparator || pi.so[idx] === 1 && ss > es || pi.so[idx] === -1 && ss < es) {
+              return {
+                "x": [[ss, midy], [es, midy]],
+                "y": [[midx, ss], [midx, es]]
+              }[axis];
+            } else if (pi.so[idx] === 1 && ss < es || pi.so[idx] === -1 && ss > es) {
+              return {
+                "x": [[midx, pi.sy], [midx, pi.ty]],
+                "y": [[pi.sx, midy], [pi.tx, midy]]
+              }[axis];
+            }
           }
-        }
-      };
+        };
       var p = lineCalculators[paintInfo.anchorOrientation](paintInfo.sourceAxis, ss, oss, es, oes);
       if (p) {
         for (var i = 0; i < p.length; i++) {
@@ -15348,7 +15192,6 @@ var FlowchartConnector = function (_AbstractConnector) {
       return g;
     }
   }]);
-  return FlowchartConnector;
 }(AbstractConnector);
 _defineProperty(FlowchartConnector, "type", "Flowchart");
 
@@ -15361,7 +15204,7 @@ Connectors.register(StraightConnector.type, StraightConnector);
 
 function _randomEvent() {
   var x = Math.floor(Math.random() * 2000),
-      y = Math.floor(Math.random() * 2000);
+    y = Math.floor(Math.random() * 2000);
   return {
     clientX: x,
     clientY: y,
@@ -15379,9 +15222,8 @@ var _distantPointEvent = {
   pageX: 50000,
   pageY: 50000
 };
-var lut = [];
 for (var i = 0; i < 256; i++) {
-  lut[i] = (i < 16 ? '0' : '') + i.toString(16);
+  (i < 16 ? '0' : '') + i.toString(16);
 }
 var VERY_SMALL_NUMBER = 0.00000000001;
 var BrowserUITestSupport = function () {
@@ -15394,7 +15236,7 @@ var BrowserUITestSupport = function () {
     _defineProperty(this, "mottle", void 0);
     this.mottle = new EventManager();
   }
-  _createClass(BrowserUITestSupport, [{
+  return _createClass(BrowserUITestSupport, [{
     key: "_t",
     value: function _t(el, evt, x, y) {
       this.mottle.trigger(el, evt, {
@@ -15425,29 +15267,27 @@ var BrowserUITestSupport = function () {
   }, {
     key: "addDivs",
     value: function addDivs(ids, parent) {
-      for (var _i = 0; _i < ids.length; _i++) {
-        this.addDiv(ids[_i], parent);
-      }
+      for (var _i = 0; _i < ids.length; _i++) this.addDiv(ids[_i], parent);
     }
   }, {
     key: "assertEndpointCount",
     value: function assertEndpointCount(el, count) {
       var ep = this._jsPlumb.getEndpoints(el),
-          epl = ep ? ep.length : 0;
+        epl = ep ? ep.length : 0;
       this.equal(epl, count, el.getAttribute("data-jtk-managed") + " has " + count + (count > 1 || count == 0 ? " endpoints" : " endpoint"));
     }
   }, {
     key: "_assertManagedEndpointCount",
     value: function _assertManagedEndpointCount(el, count) {
       var id = this._jsPlumb.getId(el),
-          _mel = this._jsPlumb._managedElements[id];
+        _mel = this._jsPlumb._managedElements[id];
       this.equal(_mel.endpoints.length, count, id + " has " + count + " endpoints in managed record");
     }
   }, {
     key: "_assertManagedConnectionCount",
     value: function _assertManagedConnectionCount(el, count) {
       var id = this._jsPlumb.getId(el),
-          _mel = this._jsPlumb._managedElements[id];
+        _mel = this._jsPlumb._managedElements[id];
       this.equal(_mel.connections.length, count, id + " has " + count + " connections in managed record");
     }
   }, {
@@ -15459,7 +15299,7 @@ var BrowserUITestSupport = function () {
     key: "makeDragStartEvt",
     value: function makeDragStartEvt(el) {
       var e = this.makeEvent(el),
-          c = this._jsPlumb.getContainer();
+        c = this._jsPlumb.getContainer();
       e.clientX += c.offsetLeft;
       e.screenX += c.offsetLeft;
       e.pageX += c.offsetLeft;
@@ -15514,8 +15354,8 @@ var BrowserUITestSupport = function () {
     value: function dragToGroup(el, targetGroupId, events) {
       var targetGroup = this._jsPlumb.getGroup(targetGroupId);
       var tgo = this._jsPlumb.viewport.getPosition(targetGroup.elId),
-          tx = tgo.x + tgo.w / 2,
-          ty = tgo.y + tgo.h / 2;
+        tx = tgo.x + tgo.w / 2,
+        ty = tgo.y + tgo.h / 2;
       this.dragNodeTo(el, tx, ty, events);
     }
   }, {
@@ -15564,9 +15404,9 @@ var BrowserUITestSupport = function () {
     key: "dragConnection",
     value: function dragConnection(d1, d2, mouseUpOnTarget, events) {
       var el1 = this.getCanvas(d1),
-          el2 = this.getCanvas(d2);
+        el2 = this.getCanvas(d2);
       var e1 = this.makeEvent(el1),
-          e2 = this.makeEvent(el2);
+        e2 = this.makeEvent(el2);
       events = events || {};
       var conns = this._jsPlumb.select().length;
       this._jsPlumb.trigger(el1, EVENT_MOUSEDOWN, e1);
@@ -15586,9 +15426,9 @@ var BrowserUITestSupport = function () {
       var _this2 = this;
       events = events || {};
       var el1 = this.getCanvas(d1),
-          el2 = this.getCanvas(d2);
+        el2 = this.getCanvas(d2);
       var e1 = this.makeEvent(el1),
-          e2 = this.makeEvent(el2);
+        e2 = this.makeEvent(el2);
       var conns = this._jsPlumb.select().length;
       this._jsPlumb.trigger(el1, EVENT_MOUSEDOWN, e1);
       setTimeout(function () {
@@ -15681,7 +15521,7 @@ var BrowserUITestSupport = function () {
     value: function makeEvent(el) {
       var b = el.getBoundingClientRect();
       var l = b.x + b.width / 2,
-          t = b.y + b.height / 2;
+        t = b.y + b.height / 2;
       return {
         clientX: l,
         clientY: t,
@@ -15730,14 +15570,14 @@ var BrowserUITestSupport = function () {
     key: "assertManagedEndpointCount",
     value: function assertManagedEndpointCount(el, count) {
       var id = this._jsPlumb.getId(el),
-          _mel = this._jsPlumb._managedElements[id];
+        _mel = this._jsPlumb._managedElements[id];
       this.equal(_mel.endpoints.length, count, id + " has " + count + " endpoints in managed record");
     }
   }, {
     key: "assertManagedConnectionCount",
     value: function assertManagedConnectionCount(el, count) {
       var id = this._jsPlumb.getId(el),
-          _mel = this._jsPlumb._managedElements[id];
+        _mel = this._jsPlumb._managedElements[id];
       this.equal(_mel.connections.length, count, id + " has " + count + " connections in managed record");
     }
   }, {
@@ -15859,9 +15699,9 @@ var BrowserUITestSupport = function () {
       }
       this._divs.length = 0;
       var connCount = this._jsPlumb.select().length,
-          epCount = this._jsPlumb.selectEndpoints().length,
-          epElCount = container.querySelectorAll(".jtk-endpoint").length,
-          connElCount = container.querySelectorAll(".jtk-connector").length;
+        epCount = this._jsPlumb.selectEndpoints().length,
+        epElCount = container.querySelectorAll(".jtk-endpoint").length,
+        connElCount = container.querySelectorAll(".jtk-connector").length;
       for (var k in container.__ta) {
         for (var kk in container.__ta[k]) {
           throw "Container event bindings not empty for key " + k;
@@ -15907,7 +15747,6 @@ var BrowserUITestSupport = function () {
       return uuid();
     }
   }]);
-  return BrowserUITestSupport;
 }();
 
 function createTestSupportInstance(instance, ok, equal) {

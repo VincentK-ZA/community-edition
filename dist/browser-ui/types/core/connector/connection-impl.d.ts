@@ -12,7 +12,7 @@ import { PaintStyle } from "../../common/paint-style";
 /**
  * @internal
  */
-export declare type ConnectionOptions<E = any> = Merge<ConnectParams<E>, {
+export type ConnectionOptions<E = any> = Merge<ConnectParams<E>, {
     source?: E;
     target?: E;
     sourceEndpoint?: Endpoint;

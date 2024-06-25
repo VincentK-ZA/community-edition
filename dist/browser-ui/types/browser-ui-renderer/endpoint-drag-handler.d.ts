@@ -8,7 +8,7 @@ import { EndpointRepresentation } from "../core/endpoint/endpoints";
 import { LightweightFloatingAnchor } from "../core/factory/anchor-record-factory";
 import { SourceOrTargetDefinition } from "../core/type-descriptors";
 import { Connection } from "../core/connector/connection-impl";
-declare type EndpointDropTarget = {
+type EndpointDropTarget = {
     el: jsPlumbDOMElement;
     endpoint: Endpoint;
     r: BoundingBox;

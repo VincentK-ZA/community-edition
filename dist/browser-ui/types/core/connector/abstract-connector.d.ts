@@ -9,7 +9,7 @@ import { Segment } from "../../common/abstract-segment";
 /**
  * @internal
  */
-declare type SegmentForPoint = {
+type SegmentForPoint = {
     d: number;
     s: Segment;
     x: number;
@@ -22,7 +22,7 @@ declare type SegmentForPoint = {
     index: number;
     connectorLocation: number;
 };
-export declare type ConnectorComputeParams = {
+export type ConnectorComputeParams = {
     sourcePos: AnchorPlacement;
     targetPos: AnchorPlacement;
     sourceEndpoint: Endpoint;

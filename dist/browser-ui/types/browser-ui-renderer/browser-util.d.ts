@@ -72,7 +72,7 @@ export declare enum ElementTypes {
     SVG = "SVG",
     HTML = "HTML"
 }
-export declare type ElementType = keyof typeof ElementTypes;
+export type ElementType = keyof typeof ElementTypes;
 export declare function getElementType(el: Element): ElementType;
 export declare function isSVGElement(el: Element): boolean;
 /**

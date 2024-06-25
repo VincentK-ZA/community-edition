@@ -12,7 +12,7 @@ export interface DragStartEventParams {
 export interface DragEventParams extends DragStartEventParams {
     originalPos: PointXY;
 }
-export declare type RevertEventParams = jsPlumbDOMElement;
+export type RevertEventParams = jsPlumbDOMElement;
 export interface BeforeStartEventParams extends DragStartEventParams {
 }
 export interface DragStopEventParams extends DragEventParams {
@@ -27,16 +27,16 @@ export declare const EVENT_DROP = "drop";
 export declare const EVENT_OVER = "over";
 export declare const EVENT_OUT = "out";
 export declare const EVENT_STOP = "stop";
-export declare type GetPositionFunction = (el: Element) => PointXY;
-export declare type SetPositionFunction = (el: Element, p: PointXY) => void;
-export declare type SetSizeFunction = (el: Element, s: Size) => void;
-export declare type GetSizeFunction = (el: Element) => Size;
+export type GetPositionFunction = (el: Element) => PointXY;
+export type SetPositionFunction = (el: Element, p: PointXY) => void;
+export type SetSizeFunction = (el: Element, s: Size) => void;
+export type GetSizeFunction = (el: Element) => Size;
 export declare enum PositioningStrategies {
     absolutePosition = "absolutePosition",
     transform = "transform",
     xyAttributes = "xyAttributes"
 }
-export declare type PositioningStrategy = keyof typeof PositioningStrategies;
+export type PositioningStrategy = keyof typeof PositioningStrategies;
 declare abstract class Base {
     protected el: jsPlumbDOMElement;
     protected manager: Collicat;
@@ -56,7 +56,7 @@ declare abstract class Base {
     removeScope(scopes: string): void;
     toggleScope(scopes: string): void;
 }
-export declare type GhostProxyGenerator = (el: Element) => Element;
+export type GhostProxyGenerator = (el: Element) => Element;
 export declare enum ContainmentType {
     notNegative = "notNegative",
     parent = "parent",
@@ -188,8 +188,8 @@ export declare class Drag extends Base {
  * @param size - The size of the element being dragged
  * @param e - The mouse event associated with this tick of the drag lifecycle.
  */
-export declare type ConstrainFunction = (desiredLoc: PointXY, dragEl: HTMLElement, constrainRect: Size, size: Size, e: MouseEvent) => PointXY;
-export declare type RevertFunction = (dragEl: HTMLElement, pos: PointXY) => boolean;
+export type ConstrainFunction = (desiredLoc: PointXY, dragEl: HTMLElement, constrainRect: Size, size: Size, e: MouseEvent) => PointXY;
+export type RevertFunction = (dragEl: HTMLElement, pos: PointXY) => boolean;
 export interface CollicatOptions {
     zoom?: number;
     css?: Record<string, string>;

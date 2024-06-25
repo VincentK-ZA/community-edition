@@ -9,7 +9,7 @@ interface ConnectionFacade {
     endpoints: [Endpoint, Endpoint];
     placeholder?: boolean;
 }
-declare type AnchorListEntry = {
+type AnchorListEntry = {
     theta: number;
     order: number;
     c: ConnectionFacade;
@@ -17,7 +17,7 @@ declare type AnchorListEntry = {
     elId: string;
     epId: string;
 };
-declare type AnchorLists = {
+type AnchorLists = {
     top: Array<AnchorListEntry>;
     right: Array<AnchorListEntry>;
     bottom: Array<AnchorListEntry>;

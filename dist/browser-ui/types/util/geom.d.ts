@@ -29,7 +29,7 @@ import { Grid, LineXY, PointXY, RectangleXY } from "./util";
 /**
  * @public
  */
-export declare type Quadrant = 1 | 2 | 3 | 4;
+export type Quadrant = 1 | 2 | 3 | 4;
 /**
  * Definition of 2 PI
  * @public

@@ -2,7 +2,7 @@ import { EndpointRepresentation } from "./endpoints";
 import { Endpoint } from "./endpoint";
 import { EndpointHandler } from "../factory/endpoint-factory";
 import { DotEndpointParams } from "../../common/endpoint";
-export declare type ComputedDotEndpoint = [number, number, number, number, number];
+export type ComputedDotEndpoint = [number, number, number, number, number];
 export declare class DotEndpoint extends EndpointRepresentation<ComputedDotEndpoint> {
     radius: number;
     defaultOffset: number;

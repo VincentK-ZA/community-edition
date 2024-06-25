@@ -32,7 +32,7 @@ export interface TranslatedViewportElementBase<E> extends ViewportElementBase<E>
     cr: number;
     sr: number;
 }
-export declare type TranslatedViewportElement<E> = Omit<TranslatedViewportElementBase<E>, "dirty">;
+export type TranslatedViewportElement<E> = Omit<TranslatedViewportElementBase<E>, "dirty">;
 /**
  * Models the positions of the elements a given jsPlumb instance is tracking. Users of the API should not need to interact directly
  * with a Viewport.

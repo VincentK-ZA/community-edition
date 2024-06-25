@@ -60,16 +60,16 @@
  *
  */
 import { BoundingBox, LineXY, PointXY } from "../util/util";
-export declare type Curve = Array<PointXY>;
-export declare type PointOnPath = {
+export type Curve = Array<PointXY>;
+export type PointOnPath = {
     point: PointXY;
     location: number;
 };
-export declare type DistanceFromCurve = {
+export type DistanceFromCurve = {
     location: number;
     distance: number;
 };
-export declare type AxisCoefficients = [number, number, number, number];
+export type AxisCoefficients = [number, number, number, number];
 /**
  * Calculates the distance that the given point lies from the given Bezier.  Note that it is computed relative to the center of the Bezier,
  * so if you have stroked the curve with a wide pen you may wish to take that into account!  The distance returned is relative to the values

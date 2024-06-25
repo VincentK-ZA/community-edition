@@ -2,7 +2,7 @@ import { EndpointRepresentation } from "./endpoints";
 import { Endpoint } from "./endpoint";
 import { EndpointHandler } from "../factory/endpoint-factory";
 import { RectangleEndpointParams } from "../../common/endpoint";
-export declare type ComputedRectangleEndpoint = [number, number, number, number];
+export type ComputedRectangleEndpoint = [number, number, number, number];
 export declare class RectangleEndpoint extends EndpointRepresentation<ComputedRectangleEndpoint> {
     width: number;
     height: number;

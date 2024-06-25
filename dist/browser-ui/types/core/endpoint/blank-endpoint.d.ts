@@ -2,7 +2,7 @@ import { EndpointRepresentation } from "./endpoints";
 import { Endpoint } from "./endpoint";
 import { EndpointHandler } from "../factory/endpoint-factory";
 import { BlankEndpointParams } from "../../common/endpoint";
-export declare type ComputedBlankEndpoint = [number, number, number, number];
+export type ComputedBlankEndpoint = [number, number, number, number];
 export declare class BlankEndpoint extends EndpointRepresentation<ComputedBlankEndpoint> {
     constructor(endpoint: Endpoint, params?: BlankEndpointParams);
     static type: string;

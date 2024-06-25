@@ -6,7 +6,7 @@ export declare const STROKE_WIDTH = "stroke-width";
 export declare const LINE_WIDTH = "strokeWidth";
 export declare const ELEMENT_SVG = "svg";
 export declare const ELEMENT_PATH = "path";
-export declare type ElementAttributes = Record<string, string | number>;
+export type ElementAttributes = Record<string, string | number>;
 export declare function _attr(node: SVGElement, attributes: ElementAttributes): void;
 export declare function _node(name: string, attributes?: ElementAttributes): SVGElement;
 export declare function _pos(d: [number, number]): string;

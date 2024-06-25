@@ -14,9 +14,11 @@ export declare class BezierConnector extends AbstractBezierConnector {
     type: string;
     majorAnchor: number;
     minorAnchor: number;
+    straightMargin: number;
     constructor(connection: Connection, params: BezierOptions);
     getCurviness(): number;
     protected _findControlPoint(point: PointXY, sourceAnchorPosition: AnchorPlacement, targetAnchorPosition: AnchorPlacement, soo: [number, number], too: [number, number]): PointXY;
+    _computeMinorPoint(sourcePosition: number, targetPosition: number, pointPosition: number): number;
     _computeBezier(paintInfo: PaintGeometry, p: ConnectorComputeParams, sp: AnchorPlacement, tp: AnchorPlacement, _w: number, _h: number): void;
 }
 //# sourceMappingURL=bezier-connector.d.ts.map

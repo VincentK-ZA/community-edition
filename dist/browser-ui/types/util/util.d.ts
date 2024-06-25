@@ -426,23 +426,23 @@ export declare function insertSorted<T>(value: T, array: Array<T>, comparator: (
  * A copy of a concept from a later version of Typescript than jsPlumb can currently use.
  * @internal
  */
-export declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 /**
  * A copy of a concept from a later version of Typescript than jsPlumb can currently use.
  * @internal
  */
-export declare type Merge<M, N> = Omit<M, Extract<keyof M, keyof N>> & N;
+export type Merge<M, N> = Omit<M, Extract<keyof M, keyof N>> & N;
 /**
  * Defines a function that can be used to sort an array.
  * @internal
  */
-export declare type SortFunction<T> = (a: T, b: T) => number;
+export type SortFunction<T> = (a: T, b: T) => number;
 /**
  * Defines an object that has a constructor. Used internally to create endpoints/connectors/overlays from their names.
  * Exposed as public for people to create their own endpoints/connectors/overlays.
  * @public
  */
-export declare type Constructable<T> = {
+export type Constructable<T> = {
     new (...args: any[]): T;
 };
 /**
@@ -460,7 +460,7 @@ export interface PointXY {
  * it here.
  * @public
  */
-export declare type BoundingBox = {
+export type BoundingBox = {
     x: number;
     y: number;
     w: number;
@@ -471,12 +471,12 @@ export declare type BoundingBox = {
  * This is an alias for BoundingBox.
  * @public
  */
-export declare type RectangleXY = BoundingBox;
+export type RectangleXY = BoundingBox;
 /**
  * Defines a line from some point to another.
  * @public
  */
-export declare type LineXY = [PointXY, PointXY];
+export type LineXY = [PointXY, PointXY];
 /**
  * Definition of a grid - the width/height of each cell, and, optionally, a threshold value for each axis to use when
  * trying to snap some coordinate to the grid.
@@ -506,7 +506,7 @@ export interface Rotation {
  * A set of compound rotations - used when nesting elements/groups inside other groups.
  * @internal
  */
-export declare type Rotations = Array<Rotation>;
+export type Rotations = Array<Rotation>;
 /**
  * Definition of the extends of some set of elements: the min/max values in each axis.
  * @internal

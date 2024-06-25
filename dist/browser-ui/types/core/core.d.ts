@@ -32,8 +32,8 @@ export interface jsPlumbElement<E> {
     _isJsPlumbGroup: boolean;
     parentNode: jsPlumbElement<E>;
 }
-export declare type ElementSelectionSpecifier<E> = E | Array<E> | '*';
-export declare type SelectionList = '*' | Array<string>;
+export type ElementSelectionSpecifier<E> = E | Array<E> | '*';
+export type SelectionList = '*' | Array<string>;
 export interface AbstractSelectOptions<E> {
     scope?: SelectionList;
     source?: ElementSelectionSpecifier<E>;
@@ -48,7 +48,7 @@ export interface SelectEndpointOptions<E> extends AbstractSelectOptions<E> {
 /**
  * Optional parameters to the `DeleteConnection` method.
  */
-export declare type DeleteConnectionOptions = {
+export type DeleteConnectionOptions = {
     /**
      * if true, force deletion even if the connection tries to cancel the deletion.
      */
@@ -67,7 +67,7 @@ export declare type DeleteConnectionOptions = {
      */
     endpointToIgnore?: Endpoint;
 };
-export declare type ManagedElement<E> = {
+export type ManagedElement<E> = {
     el: jsPlumbElement<E>;
     viewportElement?: ViewportElement<E>;
     endpoints?: Array<Endpoint>;

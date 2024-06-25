@@ -11,7 +11,7 @@ export interface SegmentParams {
 /**
  * @internal
  */
-export declare type PointNearPath = {
+export type PointNearPath = {
     s?: Segment;
     d: number;
     x: number;

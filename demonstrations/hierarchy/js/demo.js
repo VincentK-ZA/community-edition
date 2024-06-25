@@ -6,7 +6,7 @@ jsPlumb.ready(function () {
     var instance = jsPlumb.newInstance({
         // notice the 'curviness' argument to this Bezier curve.  the curves on this page are far smoother
         // than the curves on the first demo, which use the default curviness value.
-        connector: { type:"Bezier", options:{ curviness: 50 } },
+        connector: { type:"Bezier", options:{ curviness: 50, margin: 50 } },
         dragOptions: { cursor: "pointer", zIndex: 2000 },
         paintStyle: { stroke: color, strokeWidth: 2 },
         endpointStyle: { radius: 9, fill: color },
@@ -39,11 +39,7 @@ jsPlumb.ready(function () {
             });
         }
 
-        instance.connect({uuids: ["chartWindow3-bottom", "chartWindow6-top" ], overlays: overlays, detachable: true, reattach: true});
-        instance.connect({uuids: ["chartWindow1-bottom", "chartWindow2-top" ], overlays: overlays});
         instance.connect({uuids: ["chartWindow1-bottom", "chartWindow3-top" ], overlays: overlays});
-        instance.connect({uuids: ["chartWindow2-bottom", "chartWindow4-top" ], overlays: overlays});
-        instance.connect({uuids: ["chartWindow2-bottom", "chartWindow5-top" ], overlays: overlays});
 
     });
 });

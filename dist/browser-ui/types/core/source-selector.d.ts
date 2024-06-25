@@ -44,5 +44,5 @@ export declare const REDROP_POLICY_ANY_SOURCE_OR_TARGET = "anySourceOrTarget";
  * Defines how redrop of source endpoints can be done.
  * @public
  */
-export declare type RedropPolicy = typeof REDROP_POLICY_STRICT | typeof REDROP_POLICY_ANY | typeof REDROP_POLICY_ANY_SOURCE | typeof REDROP_POLICY_ANY_TARGET | typeof REDROP_POLICY_ANY_SOURCE_OR_TARGET;
+export type RedropPolicy = typeof REDROP_POLICY_STRICT | typeof REDROP_POLICY_ANY | typeof REDROP_POLICY_ANY_SOURCE | typeof REDROP_POLICY_ANY_TARGET | typeof REDROP_POLICY_ANY_SOURCE_OR_TARGET;
 //# sourceMappingURL=source-selector.d.ts.map

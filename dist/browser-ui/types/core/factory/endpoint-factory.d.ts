@@ -3,7 +3,7 @@ import { Endpoint } from "../endpoint/endpoint";
 import { Orientation } from "../factory/anchor-record-factory";
 import { Constructable } from "../../util/util";
 import { AnchorPlacement } from "../../common/anchor";
-export declare type EndpointComputeFunction<T> = (endpoint: EndpointRepresentation<T>, anchorPoint: AnchorPlacement, orientation: Orientation, endpointStyle: any) => T;
+export type EndpointComputeFunction<T> = (endpoint: EndpointRepresentation<T>, anchorPoint: AnchorPlacement, orientation: Orientation, endpointStyle: any) => T;
 export declare const EndpointFactory: {
     get: (ep: Endpoint, name: string, params: any) => EndpointRepresentation<any>;
     clone: <C>(epr: EndpointRepresentation<C>) => EndpointRepresentation<C>;

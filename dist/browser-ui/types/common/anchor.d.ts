@@ -34,7 +34,7 @@ export interface PerimeterAnchorOptions extends AnchorOptions {
  * Defines the current location that an anchor is placed at.
  * @internal
  */
-export declare type AnchorPlacement = {
+export type AnchorPlacement = {
     curX: number;
     curY: number;
     x: number;
@@ -125,27 +125,27 @@ export declare enum AnchorLocations {
  * List of entries in the AnchorLocations enum
  * @public
  */
-export declare type AnchorId = keyof typeof AnchorLocations;
+export type AnchorId = keyof typeof AnchorLocations;
 /**
  * An anchor spec in the form `{type:..., options:{ ... }}`
  * @public
  */
-export declare type FullAnchorSpec = {
+export type FullAnchorSpec = {
     type: AnchorId;
     options: AnchorOptions;
 };
 /**
  * An anchor spec in the form [ x, y, ox, oy ]
  */
-export declare type ArrayAnchorSpec = [number, number, AnchorOrientationHint, AnchorOrientationHint, number?, number?];
+export type ArrayAnchorSpec = [number, number, AnchorOrientationHint, AnchorOrientationHint, number?, number?];
 /**
  * Models the specification of a single anchor.
  * @public
  */
-export declare type SingleAnchorSpec = AnchorId | FullAnchorSpec | ArrayAnchorSpec;
+export type SingleAnchorSpec = AnchorId | FullAnchorSpec | ArrayAnchorSpec;
 /**
  * Models the specification of anchor - which may be a SingleAnchorSpec, or an array of SingleAnchorSpec objects.
  * @public
  */
-export declare type AnchorSpec = SingleAnchorSpec | Array<SingleAnchorSpec>;
+export type AnchorSpec = SingleAnchorSpec | Array<SingleAnchorSpec>;
 //# sourceMappingURL=anchor.d.ts.map
